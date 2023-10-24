@@ -136,4 +136,25 @@ let (x, y ) = (1,2)
 // x di isi dengan 1, y di isi dengan 2
 
 
+//pengulangan pada angka
+for index in 1..<5 {
+    print("\(index) time 5 is \(index * 5)")
+}
+
+//pengulangan pada array
+let names: [String] = ["Anna", "Alex", "Brian", "Jack"]
+for i in 2..<names.count {
+    print("Person \(i + 1 ) is called \(names[i])")
+}
+
+//bisa dengan menggunakan spesifik index kita mau atau disebut one sided range
+for name in names[2...]{
+    if name == "Brian"{
+        print(name + "Keren")
+    }
+}
+
+for name in names[...2]{
+    print(name)
+}
 
