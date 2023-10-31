@@ -16,6 +16,7 @@
 		369A2B9D2AF0A42800A3CE9C /* latihan_week2_hari2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369A2B9C2AF0A42800A3CE9C /* latihan_week2_hari2Tests.swift */; };
 		369A2BA72AF0A42800A3CE9C /* latihan_week2_hari2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369A2BA62AF0A42800A3CE9C /* latihan_week2_hari2UITests.swift */; };
 		369A2BA92AF0A42800A3CE9C /* latihan_week2_hari2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369A2BA82AF0A42800A3CE9C /* latihan_week2_hari2UITestsLaunchTests.swift */; };
+		36F5F61F2AF0B363004D311C /* StepSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 36F5F61E2AF0B363004D311C /* StepSlider */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36F5F61F2AF0B363004D311C /* StepSlider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,12 +101,10 @@
 		369A2B842AF0A42700A3CE9C /* latihan_week2_hari2 */ = {
 			isa = PBXGroup;
 			children = (
-				369A2B852AF0A42700A3CE9C /* AppDelegate.swift */,
-				369A2B872AF0A42700A3CE9C /* SceneDelegate.swift */,
-				369A2B892AF0A42700A3CE9C /* ViewController.swift */,
+				369A2BB52AF0A43C00A3CE9C /* App */,
+				369A2BB62AF0A44F00A3CE9C /* Resource */,
+				369A2BB72AF0A47900A3CE9C /* Module */,
 				369A2B8B2AF0A42700A3CE9C /* Main.storyboard */,
-				369A2B8E2AF0A42800A3CE9C /* Assets.xcassets */,
-				369A2B902AF0A42800A3CE9C /* LaunchScreen.storyboard */,
 				369A2B932AF0A42800A3CE9C /* Info.plist */,
 			);
 			path = latihan_week2_hari2;
@@ -127,6 +127,48 @@
 			path = latihan_week2_hari2UITests;
 			sourceTree = "<group>";
 		};
+		369A2BB52AF0A43C00A3CE9C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				369A2B852AF0A42700A3CE9C /* AppDelegate.swift */,
+				369A2B872AF0A42700A3CE9C /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		369A2BB62AF0A44F00A3CE9C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				369A2B8E2AF0A42800A3CE9C /* Assets.xcassets */,
+				369A2B902AF0A42800A3CE9C /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		369A2BB72AF0A47900A3CE9C /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				369A2BB92AF0A4CC00A3CE9C /* New Group */,
+				369A2BB82AF0A49A00A3CE9C /* Main View Controller */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		369A2BB82AF0A49A00A3CE9C /* Main View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				369A2B892AF0A42700A3CE9C /* ViewController.swift */,
+			);
+			path = "Main View Controller";
+			sourceTree = "<group>";
+		};
+		369A2BB92AF0A4CC00A3CE9C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +185,9 @@
 			dependencies = (
 			);
 			name = latihan_week2_hari2;
+			packageProductDependencies = (
+				36F5F61E2AF0B363004D311C /* StepSlider */,
+			);
 			productName = latihan_week2_hari2;
 			productReference = 369A2B822AF0A42700A3CE9C /* latihan_week2_hari2.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +260,9 @@
 				Base,
 			);
 			mainGroup = 369A2B792AF0A42700A3CE9C;
+			packageReferences = (
+				36F5F61D2AF0B363004D311C /* XCRemoteSwiftPackageReference "StepSlider" */,
+			);
 			productRefGroup = 369A2B832AF0A42700A3CE9C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -596,6 +644,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		36F5F61D2AF0B363004D311C /* XCRemoteSwiftPackageReference "StepSlider" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spromicky/StepSlider";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		36F5F61E2AF0B363004D311C /* StepSlider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36F5F61D2AF0B363004D311C /* XCRemoteSwiftPackageReference "StepSlider" */;
+			productName = StepSlider;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 369A2B7A2AF0A42700A3CE9C /* Project object */;
 }

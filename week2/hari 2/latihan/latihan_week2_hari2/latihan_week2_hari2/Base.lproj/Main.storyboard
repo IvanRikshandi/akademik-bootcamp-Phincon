@@ -1,24 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="latihan_week2_hari2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6m-Lw-CLI">
+                                <rect key="frame" x="20" y="89" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="light.min" catalog="system" maximumValueImage="light.max" translatesAutoresizingMaskIntoConstraints="NO" id="9cE-4c-Mcu">
+                                <rect key="frame" x="18" y="140" width="357" height="31"/>
+                            </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apW-XE-oNl" customClass="StepSlider">
+                                <rect key="frame" x="20" y="200" width="353" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="353" id="gGv-9b-yRd"/>
+                                    <constraint firstAttribute="height" constant="128" id="xHJ-4b-d90"/>
+                                </constraints>
+                            </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KXe-he-71z">
+                                <rect key="frame" x="20" y="358" width="49" height="31"/>
+                                <connections>
+                                    <action selector="toogleSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="MZa-fW-fUx"/>
+                                </connections>
+                            </switch>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Qh-8B-vAg">
+                                <rect key="frame" x="20" y="409" width="353" height="216"/>
+                            </pickerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="apW-XE-oNl" secondAttribute="trailing" constant="20" id="0oK-SF-kjX"/>
+                            <constraint firstItem="apW-XE-oNl" firstAttribute="top" secondItem="9cE-4c-Mcu" secondAttribute="bottom" constant="30" id="64I-o1-4OD"/>
+                            <constraint firstItem="3Qh-8B-vAg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6id-M7-dSA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9cE-4c-Mcu" secondAttribute="trailing" constant="20" id="7At-oD-td3"/>
+                            <constraint firstAttribute="trailing" secondItem="3Qh-8B-vAg" secondAttribute="trailing" constant="20" id="7EC-45-b5I"/>
+                            <constraint firstItem="9cE-4c-Mcu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8fJ-mN-qPY"/>
+                            <constraint firstItem="KXe-he-71z" firstAttribute="top" secondItem="apW-XE-oNl" secondAttribute="bottom" constant="30" id="Cg2-iU-FPA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KXe-he-71z" secondAttribute="trailing" constant="326" id="HwD-bB-AEp"/>
+                            <constraint firstItem="KXe-he-71z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Hww-wA-W2J"/>
+                            <constraint firstItem="3Qh-8B-vAg" firstAttribute="top" secondItem="KXe-he-71z" secondAttribute="bottom" constant="20" id="KyQ-Ul-qiY"/>
+                            <constraint firstItem="m6m-Lw-CLI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="PuY-wH-f3Y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m6m-Lw-CLI" secondAttribute="trailing" constant="20" id="esR-WA-t4g"/>
+                            <constraint firstItem="9cE-4c-Mcu" firstAttribute="top" secondItem="m6m-Lw-CLI" secondAttribute="bottom" constant="30" id="iAu-iE-K6a"/>
+                            <constraint firstItem="m6m-Lw-CLI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="jur-ot-Wd0"/>
+                            <constraint firstItem="apW-XE-oNl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rdl-jD-cT3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="labelValue" destination="m6m-Lw-CLI" id="A23-Lz-i0F"/>
+                        <outlet property="pickerViewClock" destination="3Qh-8B-vAg" id="OMW-j5-0WG"/>
+                        <outlet property="toogleSwitch" destination="KXe-he-71z" id="XZM-VJ-0F6"/>
+                        <outlet property="viewSlider" destination="apW-XE-oNl" id="SSv-P5-1KD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="light.max" catalog="system" width="128" height="72"/>
+        <image name="light.min" catalog="system" width="128" height="75"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
