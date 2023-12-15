@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22F66" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Cart" representedClassName="Cart" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imgUrlCoffee" optional="YES" attributeType="String"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="namaCoffee" optional="YES" attributeType="String"/>
+        <attribute name="quantityCoffee" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="region" optional="YES" attributeType="String"/>
+        <attribute name="sizeCoffee" optional="YES" attributeType="String"/>
+        <attribute name="taxCoffee" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totHargaCoffee" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="userID" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Payment" representedClassName="Payment" syncable="YES" codeGenerationType="class">
+        <attribute name="discount" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="imgUrl" optional="YES" attributeType="String"/>
+        <attribute name="namaCoffee" optional="YES" attributeType="String"/>
+        <attribute name="paymentId" optional="YES" attributeType="String"/>
+        <attribute name="paymentLogo" optional="YES" attributeType="String"/>
+        <attribute name="paymentName" optional="YES" attributeType="String"/>
+        <attribute name="paymentVA" optional="YES" attributeType="String"/>
+        <attribute name="quantityCoffee" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="region" optional="YES" attributeType="String"/>
+        <attribute name="sizeCoffee" optional="YES" attributeType="String"/>
+        <attribute name="taxCoffee" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalHarga" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="userID" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Promosi" representedClassName="Promosi" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="kode_promo" optional="YES" attributeType="String"/>
+        <attribute name="nama" optional="YES" attributeType="String"/>
+        <attribute name="persentase" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="tanggal_berakhir" optional="YES" attributeType="String"/>
+        <attribute name="tanggal_mulai" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Users" representedClassName="Users" syncable="YES" codeGenerationType="class">
+        <attribute name="uid" optional="YES" attributeType="String"/>
+        <relationship name="cart" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cart"/>
+    </entity>
+</model>

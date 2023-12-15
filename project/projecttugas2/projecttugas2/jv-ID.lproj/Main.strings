@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Get Started"; ObjectID = "Cp2-wi-TIZ"; */
+"Cp2-wi-TIZ.text" = "Get Started";
+
+/* Class = "UIButton"; configuration.title = "XIB Navigation"; ObjectID = "bMR-IJ-QCJ"; */
+"bMR-IJ-QCJ.configuration.title" = "XIB Navigation";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "bMR-IJ-QCJ"; */
+"bMR-IJ-QCJ.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Get Started"; ObjectID = "lze-ol-q5t"; */
+"lze-ol-q5t.normalTitle" = "Get Started";
+
+/* Class = "UIButton"; configuration.title = "StoryBoard Navigation"; ObjectID = "pfX-ZP-4EN"; */
+"pfX-ZP-4EN.configuration.title" = "StoryBoard Navigation";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "pfX-ZP-4EN"; */
+"pfX-ZP-4EN.normalTitle" = "Button";

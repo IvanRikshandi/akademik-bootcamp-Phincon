@@ -1,0 +1,63 @@
+//Profile
+
+"changephoto" = "Ubah Foto";
+"gallery" = "Galeri";
+"camera" = "Kamera";
+"username" = "Nama Pengguna";
+"password" = "Kata Sandi";
+"phone" = "Telepon";
+"history" = "Riwayat";
+"viewall" = "Lihat Semua";
+
+// Profile - More Menu
+
+"editprofile" = "Edit Profil";
+"settings" = "Pengaturan";
+"about" = "Tentang Aplikasi";
+"logout" = "Keluar";
+
+// Profile - More Menu - Edit Profile
+
+"please" = "Harap isi kolom teks di bawah ini.";
+"fullname" = "Nama Lengkap";
+"nickname" = "Nama Panggilan";
+"birth" = "Tanggal Lahir";
+"buttonsave" = "Simpan";
+
+// Tabbar
+
+"dashboard" = "Beranda";
+"cart" = "Keranjang";
+"news" = "Berita";
+"profile" = "Saya";
+
+// Coffee News
+
+"titleCoffee" = "SeputarKopiDunia";
+"daily" = "Harian";
+
+// Cart
+
+"titleCart" = "Keranjang";
+
+// Cart - Checkout
+
+"qty" = "Jml :";
+"size" = "Uk :";
+"price" = "Harga";
+"tax" = "Pajak";
+"discount" = "Diskon";
+"total" = "Total";
+"promocode" = "Kode Promo";
+"paynow" = "Bayar Sekarang";
+
+// Home
+
+"welcome" = "Hai, %@";
+
+// Detail Menu
+
+"cartbutton" = "Tambah ke Keranjang";
+"sizedetail" = "Ukuran";
+"weight" = "Berat";
+"roastlvl" = "Tingkat Panggang";

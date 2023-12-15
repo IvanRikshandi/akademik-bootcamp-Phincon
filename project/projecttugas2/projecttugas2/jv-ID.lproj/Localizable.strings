@@ -1,0 +1,63 @@
+// Profile
+
+"changephoto" = "Ganti Foto";
+"gallery" = "Galeri";
+"camera" = "Kamera";
+"username" = "Jeneng Pengguna";
+"password" = "Kata Sandi";
+"phone" = "Telepon";
+"history" = "Riwayat";
+"viewall" = "Tampilke Semua";
+
+// Profile - More Menu
+
+"editprofile" = "Sunting Profil";
+"settings" = "Pengaturan";
+"about" = "Tentang Aplikasi";
+"logout" = "Metu";
+
+// Profile - More Menu - Edit Profile
+
+"please" = "Monggo isi kolom teks ing ngisor iki.";
+"fullname" = "Jeneng Lengkap";
+"nickname" = "Jeneng Sampeyan";
+"birth" = "Tanggal Lahir";
+"buttonsave" = "Simpen";
+
+// Tabbar
+
+"dashboard" = "Beranda";
+"cart" = "Troli";
+"news" = "Berita";
+"profile" = "Profil";
+
+// Coffee News
+
+"titleCoffee" = "Kopi Sadulur";
+"daily" = "Sajeroning Dina";
+
+// Cart
+
+"titleCart" = "Troli";
+
+// Cart - Checkout
+
+"qty" = "Jml :";
+"size" = "Uk :";
+"price" = "Harga";
+"tax" = "Pajak";
+"discount" = "Diskon";
+"total" = "Total";
+"promocode" = "Kode Promo";
+"paynow" = "Bayar Saiki";
+
+// Home
+
+"welcome" = "Hai, %@";
+
+// Detail Menu
+"cartbutton" = "Tambahi nang Keranjang";
+"sizedetail" = "Ukuran";
+"weight" = "Bobot";
+"roastlvl" = "Tingkat Panggangan";
+

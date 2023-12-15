@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" id="gTV-IL-0wX" customClass="FilterPriceCollectionCell" customModule="projecttugas2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="foh-Tv-0HQ">
+                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="slider.vertical.3" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Bu1-Ho-ar9">
+                                <rect key="frame" x="0.0" y="1.6666666666666661" width="20" height="16.333333333333336"/>
+                                <color key="tintColor" systemColor="systemGray2Color"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bu1-Ho-ar9" firstAttribute="top" secondItem="foh-Tv-0HQ" secondAttribute="top" id="GIF-ge-s3F"/>
+                            <constraint firstAttribute="bottom" secondItem="Bu1-Ho-ar9" secondAttribute="bottom" id="GIh-kQ-NaK"/>
+                            <constraint firstItem="Bu1-Ho-ar9" firstAttribute="top" secondItem="foh-Tv-0HQ" secondAttribute="top" id="NJY-Ef-8ui"/>
+                            <constraint firstAttribute="bottom" secondItem="Bu1-Ho-ar9" secondAttribute="bottom" id="OMs-b5-v08"/>
+                            <constraint firstItem="Bu1-Ho-ar9" firstAttribute="leading" secondItem="foh-Tv-0HQ" secondAttribute="leading" id="mGS-g5-0wz"/>
+                            <constraint firstAttribute="trailing" secondItem="Bu1-Ho-ar9" secondAttribute="trailing" id="qwA-cB-1N7"/>
+                            <constraint firstAttribute="trailing" secondItem="Bu1-Ho-ar9" secondAttribute="trailing" id="s0Z-ci-cKZ"/>
+                            <constraint firstItem="Bu1-Ho-ar9" firstAttribute="leading" secondItem="foh-Tv-0HQ" secondAttribute="leading" id="wyS-0y-elq"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="foh-Tv-0HQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="E40-Qz-WVa"/>
+                <constraint firstAttribute="trailing" secondItem="foh-Tv-0HQ" secondAttribute="trailing" id="L6Y-kZ-nQ8"/>
+                <constraint firstAttribute="bottom" secondItem="foh-Tv-0HQ" secondAttribute="bottom" id="nXU-dE-ZRe"/>
+                <constraint firstItem="foh-Tv-0HQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wIw-3T-xxH"/>
+            </constraints>
+            <size key="customSize" width="52" height="54"/>
+            <connections>
+                <outlet property="filterPriceBtn" destination="Bu1-Ho-ar9" id="Lan-F4-Zyi"/>
+            </connections>
+            <point key="canvasLocation" x="111.45038167938931" y="21.126760563380284"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="slider.vertical.3" catalog="system" width="128" height="110"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

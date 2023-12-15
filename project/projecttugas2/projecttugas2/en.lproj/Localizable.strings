@@ -1,0 +1,62 @@
+//Profile
+
+"changephoto" = "Change Photo";
+"gallery" = "Gallery";
+"camera" = "Camera";
+"username" = "Username";
+"password" = "Password";
+"phone" = "Phone";
+"history" = "History";
+"viewall" = "View All";
+
+// Profile - More Menu
+
+"editprofile" = "Edit Profile";
+"settings" = "Settings";
+"about" = "About";
+"logout" = "Log out";
+
+// Profile - More Menu - Edit Profile
+
+"please" = "Please fill in the text field below.";
+"fullname" = "Full Name";
+"gender" = "Gender";
+"birth" = "Date of Birth";
+"button_save" = "Save";
+
+// Tabbar
+
+"dashboard" = "Home";
+"cart" = "Cart";
+"news" = "News";
+"profile" = "Profile";
+
+// Coffee News
+
+"titleCoffee" = "WorldOfCoffee";
+"daily" = "Daily";
+
+// Cart
+
+"titleCart" = "Cart";
+
+// Cart - Checkout
+
+"qty" = "Qty :";
+"size" = "Size :";
+"price" = "Price";
+"tax" = "Tax";
+"discount" = "Discount";
+"total" = "Total";
+"promocode" = "Promo Code";
+"paynow" = "Pay Now";
+
+// Home
+
+"welcome" = "Hello, %@";
+
+// Detail Menu
+"cartbutton" = "Add To Cart";
+"sizedetail" = "Size";
+"weight" = "Weight";
+"roastlvl" = "Roast Level";
