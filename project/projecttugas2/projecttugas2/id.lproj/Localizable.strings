@@ -57,7 +57,7 @@
 
 // Detail Menu
 
-"cartbutton" = "Tambah ke Keranjang";
+"cartbutton" = " Tambah ke Keranjang";
 "sizedetail" = "Ukuran";
 "weight" = "Berat";
 "roastlvl" = "Tingkat Panggang";

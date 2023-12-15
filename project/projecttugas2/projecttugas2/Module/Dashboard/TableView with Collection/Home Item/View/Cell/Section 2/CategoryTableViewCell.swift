@@ -32,7 +32,7 @@ class CategoryTableViewCell: UITableViewCell, UICollectionViewDelegateFlowLayout
         promoView.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(promoTappedView))
         promoView.addGestureRecognizer(tapGesture)
-        promoView.roundCorners(corners: [.bottomRight, .topLeft], radius: 20)
+        promoView.roundCorners(corners: [.bottomRight, .topRight], radius: 20)
     }
     
     func setup() {

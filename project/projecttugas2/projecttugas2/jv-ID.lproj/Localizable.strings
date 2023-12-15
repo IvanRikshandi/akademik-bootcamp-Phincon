@@ -56,7 +56,7 @@
 "welcome" = "Hai, %@";
 
 // Detail Menu
-"cartbutton" = "Tambahi nang Keranjang";
+"cartbutton" = " Tambahi nang Keranjang";
 "sizedetail" = "Ukuran";
 "weight" = "Bobot";
 "roastlvl" = "Tingkat Panggangan";

@@ -50,7 +50,12 @@ class TabelViewDashboardTableViewCell: UITableViewCell {
     
     func setupStyle() {
         updateClock()
-        containerView.makeCornerRadius(20)
+        containerView.roundCorners(corners: .allCorners, radius: 20)
+        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        containerView.layer.shadowRadius = 2
+        containerView.layer.shadowOpacity = 0.2
+        containerView.layer.masksToBounds = false
     }
 
     func updateClock() {

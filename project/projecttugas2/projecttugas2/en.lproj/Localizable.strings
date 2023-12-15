@@ -56,7 +56,7 @@
 "welcome" = "Hello, %@";
 
 // Detail Menu
-"cartbutton" = "Add To Cart";
+"cartbutton" = " Add To Cart";
 "sizedetail" = "Size";
 "weight" = "Weight";
 "roastlvl" = "Roast Level";

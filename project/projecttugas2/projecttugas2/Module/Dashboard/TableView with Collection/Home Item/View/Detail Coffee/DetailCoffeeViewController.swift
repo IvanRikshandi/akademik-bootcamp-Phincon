@@ -9,6 +9,9 @@ protocol DetailCoffeeViewDelegate {
 
 class DetailCoffeeViewController: UIViewController {
     
+    @IBOutlet weak var sizeSbtn: UIButton!
+    @IBOutlet weak var sizeMbtn: UIButton!
+    @IBOutlet weak var sizeLbtn: UIButton!
     @IBOutlet weak var roastLvlTitle: UILabel!
     @IBOutlet weak var weightTitle: UILabel!
     @IBOutlet weak var addCartBtn: UIButton!
@@ -27,12 +30,14 @@ class DetailCoffeeViewController: UIViewController {
     var priceQuantity: Double = 0.0
     var selectedSize: String = "S"
     var weightCoffee: Int = 0, roastCofffee: Int = 0
+    var sizePrices: [String: Double] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         updateLbl()
         setupLocalizedBahasa()
+        style()
     }
     
     func setupLocalizedBahasa() {
@@ -40,6 +45,12 @@ class DetailCoffeeViewController: UIViewController {
         sizeText.text = .localized("sizedetail")
         weightTitle.text = .localized("weight")
         roastLvlTitle.text = .localized("roastlvl")
+    }
+    
+    func style() {
+        sizeLbtn.roundCorners(corners: .allCorners, radius: 10)
+        sizeMbtn.roundCorners(corners: .allCorners, radius: 10)
+        sizeSbtn.roundCorners(corners: .allCorners, radius: 10)
     }
     
     func updateLbl() {
@@ -68,7 +79,7 @@ class DetailCoffeeViewController: UIViewController {
     
     func showToast(isCheck: Bool) {
         let message = isCheck ? "Success add to cart" : "Failed add to cart"
-
+        
         ToastManager.shared.showToastOnlyMessage(message: message)
     }
     
@@ -80,7 +91,7 @@ class DetailCoffeeViewController: UIViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         
         let context = appDelegate.persistentContainer.viewContext
-
+        
         if let cartEntity = NSEntityDescription.entity(forEntityName: "Cart", in: context) {
             let cartItem = NSManagedObject(entity: cartEntity, insertInto: context)
             
@@ -103,33 +114,72 @@ class DetailCoffeeViewController: UIViewController {
         }
     }
     
+    func updatePriceLbl() {
+        if let selectedPrice = sizePrices[selectedSize] {
+            let format = String(format: "%.2f", (selectedPrice * Double(currentValue).rounded(toPlaces: 2)))
+            priceText.text = "$\(format)"
+        }
+    }
+    
     @IBAction func minusBtn(_ sender: Any) {
         if currentValue > 1 {
             currentValue -= 1
-            let format = String(format: "%.2f", (priceQuantity * Double(currentValue)))
-            priceText.text = "$\(format)"
+            updatePriceLbl()
             updateLbl()
         }
     }
+    
     @IBAction func plusBtn(_ sender: Any) {
         currentValue += 1
         if currentValue >= 2 {
-            let format = String(format: "%.2f", (priceQuantity * Double(currentValue)))
-            priceText.text = "$\(format)"
+            updatePriceLbl()
+            updateLbl()
         }
-        updateLbl()
     }
-
+    
     @IBAction func sizeLBtn(_ sender: Any) {
-        selectedSize = "L"
-        updateLbl()
+        if let button = sender as? UIButton {
+            selectedSize = "L"
+            sizePrices[selectedSize] = priceQuantity * 1.6
+            updatePriceLbl()
+            updateLbl()
+            
+            let originalColor = button.backgroundColor
+            button.backgroundColor = UIColor.brown
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                button.backgroundColor = originalColor
+            }
+        }
     }
     @IBAction func sizeMBtn(_ sender: Any) {
-        selectedSize = "M"
-        updateLbl()
+        if let button = sender as? UIButton {
+            selectedSize = "M"
+            sizePrices[selectedSize] = priceQuantity * 1.3
+            updatePriceLbl()
+            updateLbl()
+            
+            let originalColor = button.backgroundColor
+            button.backgroundColor = UIColor.brown
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                button.backgroundColor = originalColor
+            }
+        }
     }
     @IBAction func sizeSBtn(_ sender: Any) {
-        selectedSize = "S"
-        updateLbl()
+        if let button = sender as? UIButton {
+            selectedSize = "S"
+            sizePrices[selectedSize] = priceQuantity * 1.0
+            updatePriceLbl()
+            updateLbl()
+            
+            let originalColor = button.backgroundColor
+            button.backgroundColor = UIColor.brown
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                button.backgroundColor = originalColor
+            }
+        }
     }
 }
