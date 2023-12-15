@@ -72,7 +72,6 @@
 		36651BAD2AF0FD950002ED74 /* ExtUiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36651BAC2AF0FD950002ED74 /* ExtUiView.swift */; };
 		36660B112AF49FE400E95F11 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36660B0F2AF49FE400E95F11 /* RegisterViewController.swift */; };
 		36660B122AF49FE400E95F11 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36660B102AF49FE400E95F11 /* RegisterViewController.xib */; };
-		36660B162AF4A63200E95F11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36B8741B2AF35C5A00F9B936 /* GoogleService-Info.plist */; };
 		36660B192AF4D4CE00E95F11 /* ModelCoffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36660B182AF4D4CE00E95F11 /* ModelCoffee.swift */; };
 		36660B1C2AF4D98B00E95F11 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36660B1B2AF4D98B00E95F11 /* Endpoint.swift */; };
 		3674323B2B0AF18900B1C976 /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367432392B0AF18900B1C976 /* CheckOutViewController.swift */; };
@@ -109,6 +108,7 @@
 		368B4FE52B15B760002BDF3A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368B4FE42B15B760002BDF3A /* RegisterViewModel.swift */; };
 		368B4FE72B15BF64002BDF3A /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368B4FE62B15BF64002BDF3A /* DashboardViewModel.swift */; };
 		3693FDDA2B1827E40052042D /* DetailHistoriViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693FDD92B1827E40052042D /* DetailHistoriViewModel.swift */; };
+		36B3247D2B2BE67B0002ACC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36B3247C2B2BE67B0002ACC5 /* GoogleService-Info.plist */; };
 		36C1CD4F2B0B387700474A86 /* CheckOutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C1CD4E2B0B387700474A86 /* CheckOutModel.swift */; };
 		36CD96B42B219DD900F5C188 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36CD96B62B219DD900F5C188 /* Localizable.strings */; };
 		36CD96B92B219FFB00F5C188 /* ExtString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CD96B82B219FFB00F5C188 /* ExtString.swift */; };
@@ -254,7 +254,7 @@
 		368B4FE42B15B760002BDF3A /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		368B4FE62B15BF64002BDF3A /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		3693FDD92B1827E40052042D /* DetailHistoriViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHistoriViewModel.swift; sourceTree = "<group>"; };
-		36B8741B2AF35C5A00F9B936 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		36B3247C2B2BE67B0002ACC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		36C1CD4E2B0B387700474A86 /* CheckOutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutModel.swift; sourceTree = "<group>"; };
 		36CD96B52B219DD900F5C188 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		36CD96B72B219E2A00F5C188 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1048,7 +1048,7 @@
 				363512CC2AEA46FC005D1155 /* Module */,
 				36EA50B52AE9F1F600E546C3 /* Main.storyboard */,
 				36EA50BD2AE9F1F700E546C3 /* Info.plist */,
-				36B8741B2AF35C5A00F9B936 /* GoogleService-Info.plist */,
+				36B3247C2B2BE67B0002ACC5 /* GoogleService-Info.plist */,
 				36CD96B62B219DD900F5C188 /* Localizable.strings */,
 			);
 			path = projecttugas2;
@@ -1255,7 +1255,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36660B162AF4A63200E95F11 /* GoogleService-Info.plist in Resources */,
 				3602D0782B19C8F100C65274 /* PromotionCell.xib in Resources */,
 				3674323C2B0AF18900B1C976 /* CheckOutViewController.xib in Resources */,
 				363A66972AF3372E006B9A91 /* CartSec1TableViewCell.xib in Resources */,
@@ -1266,6 +1265,7 @@
 				364707132B28576900CBB14C /* PaymentCell.xib in Resources */,
 				36CD96B42B219DD900F5C188 /* Localizable.strings in Resources */,
 				3602E2442AFDD26F002A2A2E /* CategoryCollectionViewCell.xib in Resources */,
+				36B3247D2B2BE67B0002ACC5 /* GoogleService-Info.plist in Resources */,
 				367550D82B103FA8005CA9C7 /* NewsContentTableViewCell.xib in Resources */,
 				36054E7F2B20563E00784FAE /* MoreCell.xib in Resources */,
 				363CD89E2AEF5EC20001475A /* ContentCollectionViewCell.xib in Resources */,
