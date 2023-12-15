@@ -18,6 +18,7 @@ target 'projecttugas2' do
   pod 'FirebaseFirestore'
   pod 'FirebaseStorage'
   pod 'SnapKit'
+  pod 'AdvancedPageControl'
 
   # Pods for projecttugas2
 

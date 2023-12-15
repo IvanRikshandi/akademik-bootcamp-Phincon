@@ -109,6 +109,8 @@
 		368B4FE72B15BF64002BDF3A /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368B4FE62B15BF64002BDF3A /* DashboardViewModel.swift */; };
 		3693FDDA2B1827E40052042D /* DetailHistoriViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693FDD92B1827E40052042D /* DetailHistoriViewModel.swift */; };
 		36B3247D2B2BE67B0002ACC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36B3247C2B2BE67B0002ACC5 /* GoogleService-Info.plist */; };
+		36B324862B2C35BD0002ACC5 /* ConnectionLostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B324842B2C35BD0002ACC5 /* ConnectionLostController.swift */; };
+		36B324872B2C35BD0002ACC5 /* ConnectionLostController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B324852B2C35BD0002ACC5 /* ConnectionLostController.xib */; };
 		36C1CD4F2B0B387700474A86 /* CheckOutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C1CD4E2B0B387700474A86 /* CheckOutModel.swift */; };
 		36CD96B42B219DD900F5C188 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36CD96B62B219DD900F5C188 /* Localizable.strings */; };
 		36CD96B92B219FFB00F5C188 /* ExtString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CD96B82B219FFB00F5C188 /* ExtString.swift */; };
@@ -255,6 +257,8 @@
 		368B4FE62B15BF64002BDF3A /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		3693FDD92B1827E40052042D /* DetailHistoriViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHistoriViewModel.swift; sourceTree = "<group>"; };
 		36B3247C2B2BE67B0002ACC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		36B324842B2C35BD0002ACC5 /* ConnectionLostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionLostController.swift; sourceTree = "<group>"; };
+		36B324852B2C35BD0002ACC5 /* ConnectionLostController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectionLostController.xib; sourceTree = "<group>"; };
 		36C1CD4E2B0B387700474A86 /* CheckOutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutModel.swift; sourceTree = "<group>"; };
 		36CD96B52B219DD900F5C188 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		36CD96B72B219E2A00F5C188 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -481,6 +485,7 @@
 		363512CC2AEA46FC005D1155 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				36B3247E2B2C33000002ACC5 /* Error Handling */,
 				36660B172AF4D4B300E95F11 /* Model */,
 				36660B0E2AF49FAB00E95F11 /* Register */,
 				36F5F6202AF0D33D004D311C /* Login */,
@@ -991,6 +996,23 @@
 			path = "Detail Histori";
 			sourceTree = "<group>";
 		};
+		36B3247E2B2C33000002ACC5 /* Error Handling */ = {
+			isa = PBXGroup;
+			children = (
+				36B3247F2B2C33170002ACC5 /* Connection Lost */,
+			);
+			path = "Error Handling";
+			sourceTree = "<group>";
+		};
+		36B3247F2B2C33170002ACC5 /* Connection Lost */ = {
+			isa = PBXGroup;
+			children = (
+				36B324842B2C35BD0002ACC5 /* ConnectionLostController.swift */,
+				36B324852B2C35BD0002ACC5 /* ConnectionLostController.xib */,
+			);
+			path = "Connection Lost";
+			sourceTree = "<group>";
+		};
 		36CD96BA2B21C7F800F5C188 /* Detail Web Kit */ = {
 			isa = PBXGroup;
 			children = (
@@ -1262,6 +1284,7 @@
 				36CD96BE2B21C83A00F5C188 /* DetailWebKit.xib in Resources */,
 				36EA50BC2AE9F1F700E546C3 /* LaunchScreen.storyboard in Resources */,
 				368326C92B1455D400B398D9 /* DetailHistoriTableViewCell.xib in Resources */,
+				36B324872B2C35BD0002ACC5 /* ConnectionLostController.xib in Resources */,
 				364707132B28576900CBB14C /* PaymentCell.xib in Resources */,
 				36CD96B42B219DD900F5C188 /* Localizable.strings in Resources */,
 				3602E2442AFDD26F002A2A2E /* CategoryCollectionViewCell.xib in Resources */,
@@ -1490,6 +1513,7 @@
 				36CD96C22B22D08C00F5C188 /* FilterPriceCollectionCell.swift in Sources */,
 				368538392B295B0E0090142F /* PaymentDetail.swift in Sources */,
 				368B4FD42B1594D8002BDF3A /* CartViewModel.swift in Sources */,
+				36B324862B2C35BD0002ACC5 /* ConnectionLostController.swift in Sources */,
 				367A1B802AEF41FD00F0144B /* DashboardTabelViewController.swift in Sources */,
 				3602D06F2B19BF6100C65274 /* PromotionViewController.swift in Sources */,
 				363CD88F2AEF5ACB0001475A /* TabelViewDashboardTableViewCell.swift in Sources */,

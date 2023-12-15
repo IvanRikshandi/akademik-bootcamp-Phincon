@@ -628,6 +628,7 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - AdvancedPageControl (0.9.0)
   - Alamofire (5.8.1)
   - BoringSSL-GRPC (0.0.24):
     - BoringSSL-GRPC/Implementation (= 0.0.24)
@@ -778,6 +779,7 @@ PODS:
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
+  - AdvancedPageControl
   - Alamofire
   - FirebaseAuth
   - FirebaseCore
@@ -796,6 +798,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - abseil
+    - AdvancedPageControl
     - Alamofire
     - BoringSSL-GRPC
     - FirebaseAppCheckInterop
@@ -829,6 +832,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   abseil: 926fb7a82dc6d2b8e1f2ed7f3a718bce691d1e46
+  AdvancedPageControl: 39e3b32b00b2d324c534f8e17cc6c5be9abe84b7
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
   FirebaseAppCheckInterop: 3cd914842ba46f4304050874cd284de82f154ffd
@@ -860,6 +864,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 9ef58957389456384dfb39661bf1caf569705404
+PODFILE CHECKSUM: c3549f2e27efe1e78ca9dd5b9b7c793042d1ca11
 
 COCOAPODS: 1.14.2

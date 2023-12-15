@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-projecttugas2-projecttugas2UITests/Pods-projecttugas2-projecttugas2UITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AdvancedPageControl/AdvancedPageControl.framework
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseAppCheckInterop/FirebaseAppCheckInterop.framework

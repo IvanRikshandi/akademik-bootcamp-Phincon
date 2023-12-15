@@ -2,9 +2,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Kingfisher
+import AdvancedPageControl
+
 
 class TabelViewDashboardTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var carouselPageControl: UIPageControl!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var welcomeNameLbl: UILabel!
     @IBOutlet weak var containerView: UIView!
@@ -46,16 +49,24 @@ class TabelViewDashboardTableViewCell: UITableViewCell {
         carouselCollectionView.dataSource = self
         carouselCollectionView.registerCellWithNib(CarouselCell.self)
         Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(scrollToNext), userInfo: nil, repeats: true)
+        configurePageControl()
+    }
+    
+    func configurePageControl() {
+        carouselPageControl.currentPageIndicatorTintColor = UIColor.orange
+        carouselPageControl.pageIndicatorTintColor = UIColor.white.withAlphaComponent(0.2)
+        carouselPageControl.numberOfPages = coffeeAd.count
+        carouselPageControl.alpha = 0.7
     }
     
     func setupStyle() {
         updateClock()
-        containerView.roundCorners(corners: .allCorners, radius: 20)
         containerView.layer.shadowColor = UIColor.black.cgColor
         containerView.layer.shadowOffset = CGSize(width: 0, height: 1)
         containerView.layer.shadowRadius = 2
         containerView.layer.shadowOpacity = 0.2
         containerView.layer.masksToBounds = false
+        containerView.layer.cornerRadius = containerView.frame.height / 2
     }
 
     func updateClock() {
@@ -81,6 +92,8 @@ class TabelViewDashboardTableViewCell: UITableViewCell {
         }
         
         carouselCollectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+        carouselPageControl.currentPage = nextIndexPath.item
+
     }
 }
 
