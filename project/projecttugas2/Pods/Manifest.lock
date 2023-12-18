@@ -628,7 +628,6 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
-  - AdvancedPageControl (0.9.0)
   - Alamofire (5.8.1)
   - BoringSSL-GRPC (0.0.24):
     - BoringSSL-GRPC/Implementation (= 0.0.24)
@@ -767,6 +766,7 @@ PODS:
   - nanopb/encode (2.30909.1)
   - netfox (1.21.0)
   - PromisesObjC (2.3.1)
+  - ReachabilitySwift (5.0.0)
   - RecaptchaInterop (100.0.0)
   - RxCocoa (6.6.0):
     - RxRelay (= 6.6.0)
@@ -779,7 +779,6 @@ PODS:
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
-  - AdvancedPageControl
   - Alamofire
   - FirebaseAuth
   - FirebaseCore
@@ -789,6 +788,7 @@ DEPENDENCIES:
   - Kingfisher
   - lottie-ios
   - netfox
+  - ReachabilitySwift
   - RxCocoa
   - RxSwift
   - SkeletonView
@@ -798,7 +798,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - abseil
-    - AdvancedPageControl
     - Alamofire
     - BoringSSL-GRPC
     - FirebaseAppCheckInterop
@@ -822,6 +821,7 @@ SPEC REPOS:
     - nanopb
     - netfox
     - PromisesObjC
+    - ReachabilitySwift
     - RecaptchaInterop
     - RxCocoa
     - RxRelay
@@ -832,7 +832,6 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   abseil: 926fb7a82dc6d2b8e1f2ed7f3a718bce691d1e46
-  AdvancedPageControl: 39e3b32b00b2d324c534f8e17cc6c5be9abe84b7
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
   FirebaseAppCheckInterop: 3cd914842ba46f4304050874cd284de82f154ffd
@@ -856,6 +855,7 @@ SPEC CHECKSUMS:
   nanopb: d4d75c12cd1316f4a64e3c6963f879ecd4b5e0d5
   netfox: 9d5cc727fe7576c4c7688a2504618a156b7d44b7
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
@@ -864,6 +864,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: c3549f2e27efe1e78ca9dd5b9b7c793042d1ca11
+PODFILE CHECKSUM: 453ee9842d5f4367841910cd2a62b3dbef7d7cc4
 
 COCOAPODS: 1.14.2

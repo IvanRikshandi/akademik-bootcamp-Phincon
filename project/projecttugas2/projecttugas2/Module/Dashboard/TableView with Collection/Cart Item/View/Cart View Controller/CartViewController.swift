@@ -1,4 +1,5 @@
 import UIKit
+import Reachability
 import FloatingPanel
 import Kingfisher
 import CoreData
@@ -8,6 +9,8 @@ class CartViewController: UIViewController {
     
     @IBOutlet weak var cartListTableView: UITableView!
     
+    let refreshControl = UIRefreshControl()
+    private var errorVC: ErrorHandlingController?
     var fpc: FloatingPanelController!
     // tangkap data dari passing data tahap 5
     var fetchData: [CartModelCoffee] = [] {
@@ -27,10 +30,12 @@ class CartViewController: UIViewController {
         cartListTableView.showAnimatedSkeleton()
         fetchData = []
         fetchCoreData()
+        errorVC = ErrorHandlingController()
         cartListTableView.reloadData()
     }
     
     func setup() {
+        
         cartListTableView.isUserInteractionEnabled = true
         cartListTableView.automaticallyAdjustsScrollIndicatorInsets = false
         cartListTableView.delegate = self
@@ -155,11 +160,19 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource{
                         let item = CartModelCoffee(userID: userID, id: id, nama: name, harga: totalHarga, imgUrl: image, size: size, quantity: quantity, region: region)
                         fetchData.append(item)
                     }
+                    
                 }
                 cartListTableView.hideSkeleton()
+                DispatchQueue.main.async {
+                    if !self.isConnected() {
+                        self.showErrorView()
+                        ToastManager.shared.showToastOnlyMessage(message: "Please check your internet connection.")
+                    }
+                }
             }
         } catch let error as NSError {
             print("Failed to fetch data: \(error), \(error.userInfo)")
+            showErrorView()
         }
     }
 
@@ -171,18 +184,14 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource{
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
         
-        // tahap 2 filter data by id
-        //fetchRequest.predicate = NSPredicate(format: "id == %d", index)
-        
         do {
             let fetchedResults = try context.fetch(fetchRequest)
             
             if let cartItems = fetchedResults as? [NSManagedObject]{
                 let itemselected = cartItems[index]
-                
                 context.delete(itemselected)
-                
                 try context.save()
+                cartListTableView.reloadData()
                 ToastManager.shared.showToastOnlyMessage(message: "Success remove data")
             }
         }catch{
@@ -217,3 +226,31 @@ extension CartViewController: SkeletonTableViewDataSource {
     }
 }
 
+extension CartViewController: ErrorHandlingDelegate {
+    
+    
+    func showErrorView() {
+        guard let errorVC = errorVC else { return }
+        
+        if !isConnected() {
+            errorVC.errorType = .networkError
+        } else {
+            errorVC.errorType = .emptyDataError
+        }
+        
+        errorVC.delegate = self
+        addChild(errorVC)
+        view.addSubview(errorVC.view)
+        errorVC.didMove(toParent: self)
+    }
+    
+    func isConnected() -> Bool {
+        guard let reachability = try? Reachability() else { return false }
+        return reachability.connection != .unavailable
+    }
+    
+    func didRefresh() {
+        fetchCoreData()
+        refreshControl.endRefreshing()
+    }
+}

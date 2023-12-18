@@ -1,4 +1,5 @@
 import UIKit
+import Reachability
 import RxSwift
 import SkeletonView
 
@@ -6,6 +7,8 @@ class CoffeeNewsViewController: UIViewController {
 
     @IBOutlet weak var newsTableView: UITableView!
     
+    let refreshControl = UIRefreshControl()
+    private var errorVC: ErrorHandlingController?
     let viewModel = CoffeeNewsViewModel()
     let bag = DisposeBag()
     
@@ -15,6 +18,7 @@ class CoffeeNewsViewController: UIViewController {
         super.viewDidLoad()
         setup()
         newsTableView.showAnimatedSkeleton()
+        errorVC = ErrorHandlingController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +62,10 @@ class CoffeeNewsViewController: UIViewController {
                     }
                 case .failure:
                     self.newsTableView.hideSkeleton()
+                    if !self.isConnected() {
+                        ToastManager.shared.showToastOnlyMessage(message: "Please check your internet connection.")
+                        self.showErrorView()
+                    }
                 }
             
             }).disposed(by: bag)
@@ -69,6 +77,8 @@ class CoffeeNewsViewController: UIViewController {
             }
         }).disposed(by: bag)
     }
+    
+    
 }
 
 extension CoffeeNewsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -146,5 +156,32 @@ extension CoffeeNewsViewController: SkeletonTableViewDataSource {
     
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
         String(describing: NewsContentTableViewCell.self)
+    }
+}
+
+extension CoffeeNewsViewController: ErrorHandlingDelegate {
+    func showErrorView() {
+        guard let errorVC = errorVC else { return }
+        
+        if !isConnected() {
+            errorVC.errorType = .networkError
+        } else {
+            errorVC.errorType = .emptyDataError
+        }
+        errorVC.delegate = self
+        addChild(errorVC)
+        view.addSubview(errorVC.view)
+        errorVC.didMove(toParent: self)
+    }
+    
+    func didRefresh() {
+        viewModel.fetchNews()
+        refreshControl.endRefreshing()
+    }
+    
+    func isConnected() -> Bool {
+        guard let reachability = try? Reachability() else { return false }
+        return reachability.connection != .unavailable
+        
     }
 }

@@ -170,7 +170,7 @@ class DetailCoffeeViewController: UIViewController {
     @IBAction func sizeSBtn(_ sender: Any) {
         if let button = sender as? UIButton {
             selectedSize = "S"
-            sizePrices[selectedSize] = priceQuantity * 1.0
+            sizePrices[selectedSize] = priceQuantity * 1.1
             updatePriceLbl()
             updateLbl()
             

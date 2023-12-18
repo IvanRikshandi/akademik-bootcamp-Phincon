@@ -33,6 +33,8 @@
 		362DA4DB2B0763F6003C9CC7 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362DA4DA2B0763F6003C9CC7 /* ProfileModel.swift */; };
 		3630D9FC2AF1E9E1004D6525 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3630D9FA2AF1E9E1004D6525 /* ProfileViewController.swift */; };
 		3630D9FD2AF1E9E1004D6525 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3630D9FB2AF1E9E1004D6525 /* ProfileViewController.xib */; };
+		363445E22B2FDDA400D184EA /* ErrorHandlingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363445E02B2FDDA400D184EA /* ErrorHandlingController.swift */; };
+		363445E32B2FDDA400D184EA /* ErrorHandlingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 363445E12B2FDDA400D184EA /* ErrorHandlingController.xib */; };
 		363512D22AEA528F005D1155 /* ExtTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363512D12AEA528F005D1155 /* ExtTableView.swift */; };
 		36387E5F2AFB19DC0064D547 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36387E5D2AFB19DC0064D547 /* CategoryTableViewCell.swift */; };
 		36387E602AFB19DC0064D547 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36387E5E2AFB19DC0064D547 /* CategoryTableViewCell.xib */; };
@@ -107,10 +109,7 @@
 		368B4FE12B15A608002BDF3A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368B4FE02B15A608002BDF3A /* LoginViewModel.swift */; };
 		368B4FE52B15B760002BDF3A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368B4FE42B15B760002BDF3A /* RegisterViewModel.swift */; };
 		368B4FE72B15BF64002BDF3A /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368B4FE62B15BF64002BDF3A /* DashboardViewModel.swift */; };
-		3693FDDA2B1827E40052042D /* DetailHistoriViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693FDD92B1827E40052042D /* DetailHistoriViewModel.swift */; };
 		36B3247D2B2BE67B0002ACC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36B3247C2B2BE67B0002ACC5 /* GoogleService-Info.plist */; };
-		36B324862B2C35BD0002ACC5 /* ConnectionLostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B324842B2C35BD0002ACC5 /* ConnectionLostController.swift */; };
-		36B324872B2C35BD0002ACC5 /* ConnectionLostController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B324852B2C35BD0002ACC5 /* ConnectionLostController.xib */; };
 		36C1CD4F2B0B387700474A86 /* CheckOutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C1CD4E2B0B387700474A86 /* CheckOutModel.swift */; };
 		36CD96B42B219DD900F5C188 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36CD96B62B219DD900F5C188 /* Localizable.strings */; };
 		36CD96B92B219FFB00F5C188 /* ExtString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CD96B82B219FFB00F5C188 /* ExtString.swift */; };
@@ -180,6 +179,8 @@
 		362DA4DA2B0763F6003C9CC7 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		3630D9FA2AF1E9E1004D6525 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3630D9FB2AF1E9E1004D6525 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		363445E02B2FDDA400D184EA /* ErrorHandlingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlingController.swift; sourceTree = "<group>"; };
+		363445E12B2FDDA400D184EA /* ErrorHandlingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorHandlingController.xib; sourceTree = "<group>"; };
 		363512D12AEA528F005D1155 /* ExtTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtTableView.swift; sourceTree = "<group>"; };
 		36387E5D2AFB19DC0064D547 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		36387E5E2AFB19DC0064D547 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -255,10 +256,7 @@
 		368B4FE02B15A608002BDF3A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		368B4FE42B15B760002BDF3A /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		368B4FE62B15BF64002BDF3A /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
-		3693FDD92B1827E40052042D /* DetailHistoriViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHistoriViewModel.swift; sourceTree = "<group>"; };
 		36B3247C2B2BE67B0002ACC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		36B324842B2C35BD0002ACC5 /* ConnectionLostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionLostController.swift; sourceTree = "<group>"; };
-		36B324852B2C35BD0002ACC5 /* ConnectionLostController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectionLostController.xib; sourceTree = "<group>"; };
 		36C1CD4E2B0B387700474A86 /* CheckOutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutModel.swift; sourceTree = "<group>"; };
 		36CD96B52B219DD900F5C188 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		36CD96B72B219E2A00F5C188 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -970,14 +968,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		3693FDD72B18276C0052042D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				3693FDD92B1827E40052042D /* DetailHistoriViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		3693FDD82B1827A30052042D /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -990,7 +980,6 @@
 		36ABE1CC2B144DD200538A15 /* Detail Histori */ = {
 			isa = PBXGroup;
 			children = (
-				3693FDD72B18276C0052042D /* ViewModel */,
 				3693FDD82B1827A30052042D /* View */,
 			);
 			path = "Detail Histori";
@@ -999,18 +988,10 @@
 		36B3247E2B2C33000002ACC5 /* Error Handling */ = {
 			isa = PBXGroup;
 			children = (
-				36B3247F2B2C33170002ACC5 /* Connection Lost */,
+				363445E02B2FDDA400D184EA /* ErrorHandlingController.swift */,
+				363445E12B2FDDA400D184EA /* ErrorHandlingController.xib */,
 			);
 			path = "Error Handling";
-			sourceTree = "<group>";
-		};
-		36B3247F2B2C33170002ACC5 /* Connection Lost */ = {
-			isa = PBXGroup;
-			children = (
-				36B324842B2C35BD0002ACC5 /* ConnectionLostController.swift */,
-				36B324852B2C35BD0002ACC5 /* ConnectionLostController.xib */,
-			);
-			path = "Connection Lost";
 			sourceTree = "<group>";
 		};
 		36CD96BA2B21C7F800F5C188 /* Detail Web Kit */ = {
@@ -1284,7 +1265,6 @@
 				36CD96BE2B21C83A00F5C188 /* DetailWebKit.xib in Resources */,
 				36EA50BC2AE9F1F700E546C3 /* LaunchScreen.storyboard in Resources */,
 				368326C92B1455D400B398D9 /* DetailHistoriTableViewCell.xib in Resources */,
-				36B324872B2C35BD0002ACC5 /* ConnectionLostController.xib in Resources */,
 				364707132B28576900CBB14C /* PaymentCell.xib in Resources */,
 				36CD96B42B219DD900F5C188 /* Localizable.strings in Resources */,
 				3602E2442AFDD26F002A2A2E /* CategoryCollectionViewCell.xib in Resources */,
@@ -1297,6 +1277,7 @@
 				36580D4B2AF09A6D00A39A06 /* CartViewController.xib in Resources */,
 				368B4FC62B158B7B002BDF3A /* EditProfileViewController.xib in Resources */,
 				3649FFD22B1733B2007D444F /* SearchBarCell.xib in Resources */,
+				363445E32B2FDDA400D184EA /* ErrorHandlingController.xib in Resources */,
 				367550B22B0C8CD6005CA9C7 /* NotificationPopUpViewController.xib in Resources */,
 				3602D0702B19BF6100C65274 /* PromotionViewController.xib in Resources */,
 				361C469A2B20056800B19C02 /* CarouselCell.xib in Resources */,
@@ -1459,7 +1440,6 @@
 				367550CD2B103E83005CA9C7 /* CoffeeNewsViewController.swift in Sources */,
 				368326D72B157E9200B398D9 /* CoffeNewsViewModel.swift in Sources */,
 				3647654D2AEB60030072C873 /* ExtRupiah.swift in Sources */,
-				3693FDDA2B1827E40052042D /* DetailHistoriViewModel.swift in Sources */,
 				362DA4D52B05F2BF003C9CC7 /* EmailRegexModel.swift in Sources */,
 				3602E2432AFDD26F002A2A2E /* CategoryCollectionViewCell.swift in Sources */,
 				36F5F6272AF0D994004D311C /* LoginViewController.swift in Sources */,
@@ -1488,6 +1468,7 @@
 				367550C22B0F377B005CA9C7 /* HistoryModel.swift in Sources */,
 				367550D12B103F6F005CA9C7 /* HeaderTableViewCell.swift in Sources */,
 				3602D0772B19C8F100C65274 /* PromotionCell.swift in Sources */,
+				363445E22B2FDDA400D184EA /* ErrorHandlingController.swift in Sources */,
 				363CD8AB2AEF82820001475A /* Constants.swift in Sources */,
 				363A66962AF3372E006B9A91 /* CartSec1TableViewCell.swift in Sources */,
 				364707122B28576900CBB14C /* PaymentCell.swift in Sources */,
@@ -1513,7 +1494,6 @@
 				36CD96C22B22D08C00F5C188 /* FilterPriceCollectionCell.swift in Sources */,
 				368538392B295B0E0090142F /* PaymentDetail.swift in Sources */,
 				368B4FD42B1594D8002BDF3A /* CartViewModel.swift in Sources */,
-				36B324862B2C35BD0002ACC5 /* ConnectionLostController.swift in Sources */,
 				367A1B802AEF41FD00F0144B /* DashboardTabelViewController.swift in Sources */,
 				3602D06F2B19BF6100C65274 /* PromotionViewController.swift in Sources */,
 				363CD88F2AEF5ACB0001475A /* TabelViewDashboardTableViewCell.swift in Sources */,

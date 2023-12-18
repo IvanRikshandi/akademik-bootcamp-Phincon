@@ -2,6 +2,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SkeletonView
+import Reachability
 
 class DashboardTabelViewController: UIViewController {
     
@@ -10,9 +11,11 @@ class DashboardTabelViewController: UIViewController {
     let refreshControl = UIRefreshControl()
     var viewModel: DashboardViewModel!
     private let disposeBag = DisposeBag()
+    private var errorVC: ErrorHandlingController?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel.loadData()
         navigationController?.isNavigationBarHidden = true
         bindViewModel()
     }
@@ -22,7 +25,8 @@ class DashboardTabelViewController: UIViewController {
         viewModel = DashboardViewModel()
         configureView()
         setupBackgroundImg()
-        viewModel.loadData()
+        
+        errorVC = ErrorHandlingController()
     }
     
     func setupBackgroundImg() {
@@ -109,7 +113,7 @@ extension DashboardTabelViewController: FilterDataDelegate {
 
 // MARK: - Private Methods
 
-private extension DashboardTabelViewController {
+extension DashboardTabelViewController: ErrorHandlingDelegate {
     
     func configureView() {
         listTabelView.automaticallyAdjustsScrollIndicatorInsets = false
@@ -124,8 +128,6 @@ private extension DashboardTabelViewController {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: listTabelView.bounds.width, height: paddingBottom))
         listTabelView.tableFooterView = paddingView
         
-        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-        listTabelView.refreshControl = refreshControl
     }
     
     private func bindViewModel() {
@@ -139,7 +141,10 @@ private extension DashboardTabelViewController {
                     self?.listTabelView.reloadData()
                 case .failure:
                     self?.listTabelView.hideSkeleton()
-                    self?.showToast(isCheck: true)
+                    if !(self?.isConnected() ?? false)  {
+                        self?.showToast(isCheck: true)
+                        self?.showErrorView()
+                    }
                 }
             })
         .disposed(by: disposeBag)
@@ -147,6 +152,31 @@ private extension DashboardTabelViewController {
         viewModel.onDataLoaded = { [weak self] in
             self?.listTabelView.reloadData()
         }
+    }
+    
+    func showErrorView() {
+        guard let errorVC = errorVC else { return }
+        
+        if !isConnected() {
+            errorVC.errorType = .networkError
+        } else {
+            errorVC.errorType = .emptyDataError
+        }
+        errorVC.delegate = self
+        addChild(errorVC)
+        view.addSubview(errorVC.view)
+        errorVC.didMove(toParent: self)
+    }
+    
+    func didRefresh() {
+        viewModel.loadData()
+        refreshControl.endRefreshing()
+    }
+    
+    func isConnected() -> Bool {
+        guard let reachability = try? Reachability() else { return false }
+        return reachability.connection != .unavailable
+        
     }
     
     func configureDashboardCell(for indexPath: IndexPath) -> UITableViewCell {
@@ -217,10 +247,6 @@ private extension DashboardTabelViewController {
                 filterVc.removeFromParent()
             }
         }
-    }
-    
-    @objc func refreshData() {
-        refreshControl.endRefreshing()
     }
 }
 

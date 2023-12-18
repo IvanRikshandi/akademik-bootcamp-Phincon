@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "359A5225-CF43-41C6-889C-877DB8A83ABA"
+            uuid = "F0AD78DC-49BD-412C-BB0E-B010A9F5B0EB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "projecttugas2/Module/Dashboard/TableView with Collection/Profile Item/View/Histori/Detail Histori/View/View Controller/DetailHistoriViewController.swift"
+            filePath = "projecttugas2/Module/Dashboard/TableView with Collection/Profile Item/View/Profile View/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "searchTextChanged(_:)"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "bindData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

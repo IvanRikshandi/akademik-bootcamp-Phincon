@@ -1,4 +1,5 @@
 import UIKit
+import Reachability
 import FloatingPanel
 import FirebaseStorage
 import FirebaseAuth
@@ -30,6 +31,8 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
     
     // MARK: - Variable
     
+    let refreshControl = UIRefreshControl()
+    private var errorVC: ErrorHandlingController?
     var fpc: FloatingPanelController!
     let pickerImage = UIImagePickerController()
     private let userLogin: String = "isLogin"
@@ -51,6 +54,7 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
         setupImagePickProfile()
         configureView()
         setupLocalizedBahasa()
+        errorVC = ErrorHandlingController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -114,7 +118,11 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
                 self.historyCollection.reloadData()
                 self.hideSkeletonView()
             case .failure:
-                self.hideSkeletonView()
+                if !self.isConnected() {
+                    ToastManager.shared.showToastOnlyMessage(message: "Please check your internet connection.")
+                    self.showErrorView()
+                    self.hideSkeletonView()
+                }
             }
         }).disposed(by: bag)
         
@@ -352,5 +360,32 @@ extension ProfileViewController: MoreSettingsDelegate {
         }
     }
     
+}
+
+extension ProfileViewController: ErrorHandlingDelegate {
+    func showErrorView() {
+        guard let errorVC = errorVC else { return }
+        
+        if !isConnected() {
+            errorVC.errorType = .networkError
+        } else {
+            errorVC.errorType = .emptyDataError
+        }
+        errorVC.delegate = self
+        addChild(errorVC)
+        view.addSubview(errorVC.view)
+        errorVC.didMove(toParent: self)
+    }
+    
+    func didRefresh() {
+        bindData()
+        refreshControl.endRefreshing()
+    }
+    
+    func isConnected() -> Bool {
+        guard let reachability = try? Reachability() else { return false }
+        return reachability.connection != .unavailable
+        
+    }
 }
 

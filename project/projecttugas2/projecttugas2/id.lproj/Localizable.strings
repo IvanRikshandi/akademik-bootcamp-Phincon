@@ -61,3 +61,15 @@
 "sizedetail" = "Ukuran";
 "weight" = "Berat";
 "roastlvl" = "Tingkat Panggang";
+
+// Login
+
+"login" = "Masuk";
+"username" = "Email";
+"password" = "Kata Sandi";
+"noaccount" = "Belum memiliki akun";
+"register" = "Daftar disini";
+
+// Sign Up
+
+//""
