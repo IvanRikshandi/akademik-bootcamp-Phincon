@@ -61,3 +61,28 @@
 "weight" = "Bobot";
 "roastlvl" = "Tingkat Panggangan";
 
+// Login
+
+"login" = "Nganggo";
+"username" = "Surelek";
+"password" = "Sandi";
+"noaccount" = "Ora ana akun?";
+"register" = "Daftar Kene";
+
+// Sign Up
+
+"descrip" = "Sudah ana akun?";
+"signin" = "Log In Kene";
+"nickname" = "Jeneng Sapaan";
+"fullname" = "Jeneng Lengkap";
+"email" = "Surelek Sureng";
+"phonenumber" = "Nomer Telepon";
+"signup" = "Daftar";
+
+// Payment
+
+"paymentdeadline" = "Batas Akhir Pembayaran";
+"accountnumber" = "Nomer Rekening";
+"copy" = "Gandheng";
+"totalpayment" = "Total Pembayaran";
+"confirm" = "Konfirmasi";

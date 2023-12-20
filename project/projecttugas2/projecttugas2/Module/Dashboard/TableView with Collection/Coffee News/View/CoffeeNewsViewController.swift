@@ -26,6 +26,8 @@ class CoffeeNewsViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
+// MARK: - Configuration
+    
     func setup() {
         setupTableView()
         navigationController?.isNavigationBarHidden = true
@@ -43,7 +45,8 @@ class CoffeeNewsViewController: UIViewController {
         let paddingView = UIView(frame:  CGRect(x: 0, y: 0, width: newsTableView.bounds.width, height: paddingBottom))
         newsTableView.tableFooterView = paddingView
     }
-    
+
+// MARK: - Bind Data
     func bindData() {
         viewModel.fetchNews()
         
@@ -81,6 +84,7 @@ class CoffeeNewsViewController: UIViewController {
     
 }
 
+// MARK: Configure Table
 extension CoffeeNewsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -115,7 +119,6 @@ extension CoffeeNewsViewController: UITableViewDelegate, UITableViewDataSource {
             let selectedItem = newsArticle?.articles[indexPath.row]
             if let selectedItemUrl = selectedItem?.url{
                 if let urlData = URL(string: selectedItemUrl) {
-                    //UIApplication.shared.open(urlData, options: [:], completionHandler: nil)
                     let vc = DetailWebKit()
                     vc.selectedUrl = urlData
                     navigationController?.isNavigationBarHidden = false
@@ -145,6 +148,8 @@ extension CoffeeNewsViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+// MARK: - Skeleton
+
 extension CoffeeNewsViewController: SkeletonTableViewDataSource {
     func numSections(in collectionSkeletonView: UITableView) -> Int {
         return 2
@@ -159,6 +164,7 @@ extension CoffeeNewsViewController: SkeletonTableViewDataSource {
     }
 }
 
+// MARK: - Error Handling
 extension CoffeeNewsViewController: ErrorHandlingDelegate {
     func showErrorView() {
         guard let errorVC = errorVC else { return }

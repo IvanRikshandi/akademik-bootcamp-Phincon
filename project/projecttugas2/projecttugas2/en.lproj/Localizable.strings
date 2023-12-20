@@ -60,3 +60,29 @@
 "sizedetail" = "Size";
 "weight" = "Weight";
 "roastlvl" = "Roast Level";
+
+// Login
+
+"login" = "Log In";
+"username" = "Email";
+"password" = "Password";
+"noaccount" = "Don't have an account?";
+"register" = "Register Here";
+
+// Sign Up
+
+"descrip" = "Already have an account?";
+"signin" = "Sign In Here";
+"nickname" = "Nickname";
+"fullname" = "Full Name";
+"email" = "Email";
+"phonenumber" = "Phone Number";
+"signup" = "Sign Up";
+
+// Payment
+
+"paymentdeadline" = "Payment Deadline";
+"accountnumber" = "Account Number";
+"copy" = "Copy";
+"totalpayment" = "Total Payment";
+"confirm" = "Confirm";

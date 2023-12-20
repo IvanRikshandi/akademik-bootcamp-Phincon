@@ -362,6 +362,7 @@ extension ProfileViewController: MoreSettingsDelegate {
     
 }
 
+// MARK: - Error Handling
 extension ProfileViewController: ErrorHandlingDelegate {
     func showErrorView() {
         guard let errorVC = errorVC else { return }

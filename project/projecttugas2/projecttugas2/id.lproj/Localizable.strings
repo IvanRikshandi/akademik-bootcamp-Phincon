@@ -67,9 +67,23 @@
 "login" = "Masuk";
 "username" = "Email";
 "password" = "Kata Sandi";
-"noaccount" = "Belum memiliki akun";
+"noaccount" = "Belum memiliki akun ?";
 "register" = "Daftar disini";
 
 // Sign Up
 
-//""
+"descrip" = "Apakah anda sudah mempunyai akun ?";
+"signin" = "Masuk disini";
+"nickname" = "Nama Panggilan";
+"fullname" = "Nama Lengkap";
+"email" = "Email";
+"phonenumber" = "No Telepon";
+"signup" = "Daftar";
+
+// Payment
+
+"paymentdeadline" = "Batas Akhir Pembayaran";
+"accountnumber" = "No. Rekening";
+"copy" = "Salin";
+"totalpayment" = "Total Pembayaran";
+"confirm" = "Konfirmasi";

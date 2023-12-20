@@ -11,7 +11,7 @@ struct BaseConstant{
     }
     
     struct NewsApi {
-        static let newsURL =  "https://newsapi.org" //"https://berita-indo-api-next.vercel.app/"
+        static let newsURL =  "https://newsapi.org"
     }
     
     struct PromotionApi {
@@ -20,6 +20,10 @@ struct BaseConstant{
     
     struct PaymentApi {
         static let paymentURL = "http://localhost:3000"
+    }
+    
+    struct CoffeeOutletApi {
+        static let outletURL = "http://localhost:3000"
     }
     
     static let userDefaults = UserDefaults.standard

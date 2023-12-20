@@ -4,6 +4,10 @@ import RxCocoa
 
 class RegisterViewController: UIViewController {
     
+    
+    @IBOutlet weak var signInBtn: UILabel!
+    @IBOutlet weak var signUpText: UILabel!
+    @IBOutlet weak var descripText: UILabel!
     @IBOutlet weak var nickNameField: InputField!
     @IBOutlet weak var passwordToggleBtn: UIButton!
     @IBOutlet weak var passwordField: InputField!
@@ -13,7 +17,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var containerView: UIView!
     
-    //let firestoreManager = FirestoreManagement.shared
     let uid = Firebase.uid
     let disposeBag = DisposeBag()
     let isPassword = BehaviorRelay<Bool>(value: false)
@@ -30,25 +33,34 @@ class RegisterViewController: UIViewController {
     
     func setupUI() {
         setupInputFields()
+        localizedToBahasa()
         styleButtons()
         bindPasswordToggle()
         numericPhoneNumber()
     }
     
+    func localizedToBahasa() {
+        signUpText.text = .localized("signup")
+        descripText.text = .localized("descrip")
+        signInBtn.text = .localized("signin")
+        signUpBtn.setTitle(.localized("signup"), for: .normal)
+    }
+    
     func setupInputFields() {
-        nickNameField.setup(title: "Nickname", placeholder: "Input Nickname")
+        nickNameField.setup(title: .localized("nickname"), placeholder: "Input Nickname")
         nickNameField.subtitleText.isHidden = true
-        //nickNameField.inputTextField.addTarget(self, action: <#T##Selector#>, for: .editingChanged)
-        fullNameField.setup(title: "Fullname", placeholder: "Input Fullname")
+        fullNameField.setup(title: .localized("fullname"), placeholder: "Input Fullname")
         fullNameField.subtitleText.isHidden = true
-        emailField.setup(title: "Email", placeholder: "Input Email")
+        emailField.setup(title: .localized("email"), placeholder: "Input Email")
         emailField.subtitleText.isHidden = true
-        phoneNumberField.setup(title: "Phone Number", placeholder: "Input Phone Number")
+        phoneNumberField.setup(title: .localized("phonenumber"), placeholder: "Input Phone Number")
         phoneNumberField.subtitleText.isHidden = true
-        passwordField.setup(title: "Password", placeholder: "Input Password")
+        passwordField.setup(title: .localized("password"), placeholder: "Input Password")
         passwordField.inputTextField.isSecureTextEntry = true
         passwordField.subtitleText.isHidden = true
         emailField.inputTextField.addTarget(self, action: #selector(emailValidator(_:)), for: .editingChanged)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toLogin))
+        signInBtn.addGestureRecognizer(tapGesture)
     }
     
     func styleButtons() {
@@ -99,20 +111,6 @@ class RegisterViewController: UIViewController {
         formattedNumeric
             .bind(to: phoneNumberField.inputTextField.rx.text)
             .disposed(by: disposeBag)
-    }
-    
-    // MARK: - Button Actions
-    
-    @IBAction func signInBtn(_ sender: Any) {
-        navigateToLogin()
-    }
-    
-    @IBAction func signUpBtn(_ sender: Any) {
-        if validateFields() {
-            signUp()
-        } else {
-            showToast(isCheck: false)
-        }
     }
     
     // MARK: - Validation
@@ -194,19 +192,6 @@ class RegisterViewController: UIViewController {
     }
     
     // MARK: - Objc
-//    
-//    @objc func textFillValidator(_ textField: UITextField) {
-//        guard let nickname = nickNameField.inputTextField.text,
-//              let fullname = fullNameField.inputTextField.text,
-//              let phoneNumber = phoneNumberField.inputTextField.text,
-//              let password = passwordField.inputTextField.text
-//        else {
-//            return
-//        }
-//        
-//        let isValidText =
-//    }
-//    
     @objc func emailValidator(_ textField: UITextField) {
         guard let email = textField.text else {return}
         let isValidEmail = EmailValidator.sharedInstance.isValidEmail(email)
@@ -219,4 +204,18 @@ class RegisterViewController: UIViewController {
             emailField.subtitleText.text = "Invalid email format"
         }
     }
+    
+    @objc func toLogin() {
+        navigateToLogin()
+    }
+    
+    // MARK: - Button Actions
+    @IBAction func signUpBtn(_ sender: Any) {
+        if validateFields() {
+            signUp()
+        } else {
+            showToast(isCheck: false)
+        }
+    }
+    
 }

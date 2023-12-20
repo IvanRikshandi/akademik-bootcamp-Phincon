@@ -12,13 +12,16 @@
             <connections>
                 <outlet property="bankTitle" destination="e86-1Q-6CE" id="Jle-se-UOv"/>
                 <outlet property="clockLbl" destination="bxG-mp-h3C" id="Ohk-P0-fUE"/>
-                <outlet property="confirmBtn" destination="4dz-dl-pRB" id="N4Y-OK-Uoy"/>
+                <outlet property="confirmBtn" destination="4dz-dl-pRB" id="CIR-rL-IAL"/>
                 <outlet property="containerView" destination="o0L-gw-ttb" id="DHu-yH-Jh8"/>
                 <outlet property="copyLbl" destination="4ex-Kw-Yav" id="B2v-Op-ehW"/>
                 <outlet property="dateLbl" destination="1Ok-Kw-DiI" id="3kb-B8-ABl"/>
                 <outlet property="imgBank" destination="6MN-ie-6EP" id="pTp-XA-n1Y"/>
+                <outlet property="noRekText" destination="rAw-1Q-ykh" id="6Gz-pe-Vm3"/>
+                <outlet property="paymentDeadline" destination="Z50-g2-xCE" id="ELK-LJ-bAc"/>
                 <outlet property="rekeningLbl" destination="Bou-OV-0yW" id="dSr-JT-xMD"/>
                 <outlet property="totalLbl" destination="lbm-a5-ib9" id="Hlw-vf-7sL"/>
+                <outlet property="totalPaymentTxt" destination="Qks-Gp-OaK" id="jRP-KT-P6z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -54,7 +57,6 @@
                                     <rect key="frame" x="167.33333333333337" y="10" width="149.66666666666663" height="18"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                    <color key="textColor" systemColor="systemRedColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -184,9 +186,6 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

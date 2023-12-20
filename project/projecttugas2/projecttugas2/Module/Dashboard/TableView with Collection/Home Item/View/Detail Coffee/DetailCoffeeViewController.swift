@@ -39,6 +39,8 @@ class DetailCoffeeViewController: UIViewController {
         setupLocalizedBahasa()
         style()
     }
+
+// MARK: - Configure
     
     func setupLocalizedBahasa() {
         addCartBtn.setTitle("cartbutton")
@@ -82,6 +84,8 @@ class DetailCoffeeViewController: UIViewController {
         
         ToastManager.shared.showToastOnlyMessage(message: message)
     }
+    
+// MARK: - Action
     
     @IBAction func addCartButton(_ sender: Any) {
         guard let coffeeData = selectedData, let userID = Firebase.auth.currentUser?.uid else {

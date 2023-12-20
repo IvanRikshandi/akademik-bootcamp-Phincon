@@ -25,6 +25,10 @@
 		36054E7E2B20563E00784FAE /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36054E7C2B20563E00784FAE /* MoreCell.swift */; };
 		36054E7F2B20563E00784FAE /* MoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36054E7D2B20563E00784FAE /* MoreCell.xib */; };
 		36054E812B20570C00784FAE /* MoreMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36054E802B20570C00784FAE /* MoreMenuModel.swift */; };
+		3607977D2B31540800CE1437 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607977B2B31540800CE1437 /* ForgotPasswordController.swift */; };
+		3607977E2B31540800CE1437 /* ForgotPasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3607977C2B31540800CE1437 /* ForgotPasswordController.xib */; };
+		360797802B316EF300CE1437 /* CoffeeOutletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607977F2B316EF300CE1437 /* CoffeeOutletModel.swift */; };
+		360797892B318A7C00CE1437 /* CoffeeOutletController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360797872B318A7C00CE1437 /* CoffeeOutletController.swift */; };
 		361C46992B20056800B19C02 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361C46972B20056800B19C02 /* CarouselCell.swift */; };
 		361C469A2B20056800B19C02 /* CarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 361C46982B20056800B19C02 /* CarouselCell.xib */; };
 		361C469C2B20077C00B19C02 /* CarouselModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361C469B2B20077C00B19C02 /* CarouselModel.swift */; };
@@ -111,6 +115,10 @@
 		368B4FE72B15BF64002BDF3A /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368B4FE62B15BF64002BDF3A /* DashboardViewModel.swift */; };
 		36B3247D2B2BE67B0002ACC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36B3247C2B2BE67B0002ACC5 /* GoogleService-Info.plist */; };
 		36C1CD4F2B0B387700474A86 /* CheckOutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C1CD4E2B0B387700474A86 /* CheckOutModel.swift */; };
+		36C29D582B318F1B00F20986 /* CoffeeOutletController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36C29D572B318F1B00F20986 /* CoffeeOutletController.xib */; };
+		36C29D5E2B31901B00F20986 /* OutletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C29D5C2B31901B00F20986 /* OutletCell.swift */; };
+		36C29D5F2B31901B00F20986 /* OutletCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36C29D5D2B31901B00F20986 /* OutletCell.xib */; };
+		36C29D612B31910900F20986 /* OutletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C29D602B31910900F20986 /* OutletViewModel.swift */; };
 		36CD96B42B219DD900F5C188 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36CD96B62B219DD900F5C188 /* Localizable.strings */; };
 		36CD96B92B219FFB00F5C188 /* ExtString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CD96B82B219FFB00F5C188 /* ExtString.swift */; };
 		36CD96BD2B21C83A00F5C188 /* DetailWebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CD96BB2B21C83A00F5C188 /* DetailWebKit.swift */; };
@@ -171,6 +179,10 @@
 		36054E7C2B20563E00784FAE /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
 		36054E7D2B20563E00784FAE /* MoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreCell.xib; sourceTree = "<group>"; };
 		36054E802B20570C00784FAE /* MoreMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreMenuModel.swift; sourceTree = "<group>"; };
+		3607977B2B31540800CE1437 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
+		3607977C2B31540800CE1437 /* ForgotPasswordController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordController.xib; sourceTree = "<group>"; };
+		3607977F2B316EF300CE1437 /* CoffeeOutletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeOutletModel.swift; sourceTree = "<group>"; };
+		360797872B318A7C00CE1437 /* CoffeeOutletController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeOutletController.swift; sourceTree = "<group>"; };
 		361C46972B20056800B19C02 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
 		361C46982B20056800B19C02 /* CarouselCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselCell.xib; sourceTree = "<group>"; };
 		361C469B2B20077C00B19C02 /* CarouselModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselModel.swift; sourceTree = "<group>"; };
@@ -258,6 +270,10 @@
 		368B4FE62B15BF64002BDF3A /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		36B3247C2B2BE67B0002ACC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		36C1CD4E2B0B387700474A86 /* CheckOutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutModel.swift; sourceTree = "<group>"; };
+		36C29D572B318F1B00F20986 /* CoffeeOutletController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoffeeOutletController.xib; sourceTree = "<group>"; };
+		36C29D5C2B31901B00F20986 /* OutletCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletCell.swift; sourceTree = "<group>"; };
+		36C29D5D2B31901B00F20986 /* OutletCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutletCell.xib; sourceTree = "<group>"; };
+		36C29D602B31910900F20986 /* OutletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletViewModel.swift; sourceTree = "<group>"; };
 		36CD96B52B219DD900F5C188 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		36CD96B72B219E2A00F5C188 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
 		36CD96B82B219FFB00F5C188 /* ExtString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtString.swift; sourceTree = "<group>"; };
@@ -404,6 +420,33 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		3607977A2B3153D100CE1437 /* Forgot Password */ = {
+			isa = PBXGroup;
+			children = (
+				3607977B2B31540800CE1437 /* ForgotPasswordController.swift */,
+				3607977C2B31540800CE1437 /* ForgotPasswordController.xib */,
+			);
+			path = "Forgot Password";
+			sourceTree = "<group>";
+		};
+		360797862B318A5100CE1437 /* Outlet List */ = {
+			isa = PBXGroup;
+			children = (
+				36C29D592B318FCA00F20986 /* View Model */,
+				36C29D5A2B318FD600F20986 /* View */,
+			);
+			path = "Outlet List";
+			sourceTree = "<group>";
+		};
+		3607978B2B318EBB00CE1437 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				36C29D572B318F1B00F20986 /* CoffeeOutletController.xib */,
+				360797872B318A7C00CE1437 /* CoffeeOutletController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
 		361C46962B20054200B19C02 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +530,7 @@
 				36660B172AF4D4B300E95F11 /* Model */,
 				36660B0E2AF49FAB00E95F11 /* Register */,
 				36F5F6202AF0D33D004D311C /* Login */,
+				3607977A2B3153D100CE1437 /* Forgot Password */,
 				363CD8A92AEF81140001475A /* Main Tab Bar */,
 				364765582AEB88270072C873 /* Dashboard */,
 				36EA50B32AE9F1F600E546C3 /* ViewController.swift */,
@@ -662,6 +706,7 @@
 				361C469B2B20077C00B19C02 /* CarouselModel.swift */,
 				36054E802B20570C00784FAE /* MoreMenuModel.swift */,
 				364707162B28596A00CBB14C /* PaymentModel.swift */,
+				3607977F2B316EF300CE1437 /* CoffeeOutletModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -908,6 +953,7 @@
 		368B4FDB2B15969B002BDF3A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				360797862B318A5100CE1437 /* Outlet List */,
 				368B4FDC2B15979A002BDF3A /* Cell */,
 				36660B0C2AF49F4200E95F11 /* Detail Coffee */,
 			);
@@ -992,6 +1038,32 @@
 				363445E12B2FDDA400D184EA /* ErrorHandlingController.xib */,
 			);
 			path = "Error Handling";
+			sourceTree = "<group>";
+		};
+		36C29D592B318FCA00F20986 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				36C29D602B31910900F20986 /* OutletViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		36C29D5A2B318FD600F20986 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				36C29D5B2B31900100F20986 /* Cell */,
+				3607978B2B318EBB00CE1437 /* View Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		36C29D5B2B31900100F20986 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				36C29D5C2B31901B00F20986 /* OutletCell.swift */,
+				36C29D5D2B31901B00F20986 /* OutletCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		36CD96BA2B21C7F800F5C188 /* Detail Web Kit */ = {
@@ -1258,16 +1330,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36C29D5F2B31901B00F20986 /* OutletCell.xib in Resources */,
 				3602D0782B19C8F100C65274 /* PromotionCell.xib in Resources */,
 				3674323C2B0AF18900B1C976 /* CheckOutViewController.xib in Resources */,
 				363A66972AF3372E006B9A91 /* CartSec1TableViewCell.xib in Resources */,
 				367A1B812AEF41FD00F0144B /* DashboardTabelViewController.xib in Resources */,
 				36CD96BE2B21C83A00F5C188 /* DetailWebKit.xib in Resources */,
 				36EA50BC2AE9F1F700E546C3 /* LaunchScreen.storyboard in Resources */,
+				3607977E2B31540800CE1437 /* ForgotPasswordController.xib in Resources */,
 				368326C92B1455D400B398D9 /* DetailHistoriTableViewCell.xib in Resources */,
 				364707132B28576900CBB14C /* PaymentCell.xib in Resources */,
 				36CD96B42B219DD900F5C188 /* Localizable.strings in Resources */,
 				3602E2442AFDD26F002A2A2E /* CategoryCollectionViewCell.xib in Resources */,
+				36C29D582B318F1B00F20986 /* CoffeeOutletController.xib in Resources */,
 				36B3247D2B2BE67B0002ACC5 /* GoogleService-Info.plist in Resources */,
 				367550D82B103FA8005CA9C7 /* NewsContentTableViewCell.xib in Resources */,
 				36054E7F2B20563E00784FAE /* MoreCell.xib in Resources */,
@@ -1432,6 +1507,7 @@
 				367550C92B103DDA005CA9C7 /* NewsModel.swift in Sources */,
 				3647655E2AEB914F0072C873 /* ExtCollectionView.swift in Sources */,
 				36054E7A2B204C0F00784FAE /* MoreSettingsFloatingPanel.swift in Sources */,
+				3607977D2B31540800CE1437 /* ForgotPasswordController.swift in Sources */,
 				368326C82B1455D400B398D9 /* DetailHistoriTableViewCell.swift in Sources */,
 				3674323B2B0AF18900B1C976 /* CheckOutViewController.swift in Sources */,
 				36CD96C72B22F8E200F5C188 /* FilterPriceViewController.swift in Sources */,
@@ -1446,10 +1522,13 @@
 				36660B1C2AF4D98B00E95F11 /* Endpoint.swift in Sources */,
 				36054E772B204BFC00784FAE /* MoreSettingsViewController.swift in Sources */,
 				361C46992B20056800B19C02 /* CarouselCell.swift in Sources */,
+				360797802B316EF300CE1437 /* CoffeeOutletModel.swift in Sources */,
 				3602D0722B19C37500C65274 /* PromotionModel.swift in Sources */,
+				360797892B318A7C00CE1437 /* CoffeeOutletController.swift in Sources */,
 				36387E632AFB3EFD0064D547 /* CoreData.xcdatamodeld in Sources */,
 				36C1CD4F2B0B387700474A86 /* CheckOutModel.swift in Sources */,
 				36054E7E2B20563E00784FAE /* MoreCell.swift in Sources */,
+				36C29D5E2B31901B00F20986 /* OutletCell.swift in Sources */,
 				363CD8A82AEF81090001475A /* MainTabBarViewController.swift in Sources */,
 				361C469C2B20077C00B19C02 /* CarouselModel.swift in Sources */,
 				3602E2472AFE0B77002A2A2E /* CategoryViewModel.swift in Sources */,
@@ -1503,6 +1582,7 @@
 				368B4FE52B15B760002BDF3A /* RegisterViewModel.swift in Sources */,
 				3658B6C32B27FA7900DDB47D /* CoffeeListSectionCell.swift in Sources */,
 				368B4FCE2B159234002BDF3A /* HistoryCollectionViewCell.swift in Sources */,
+				36C29D612B31910900F20986 /* OutletViewModel.swift in Sources */,
 				364CC88D2AF876D90083B3AE /* ApiManager.swift in Sources */,
 				36660B112AF49FE400E95F11 /* RegisterViewController.swift in Sources */,
 			);

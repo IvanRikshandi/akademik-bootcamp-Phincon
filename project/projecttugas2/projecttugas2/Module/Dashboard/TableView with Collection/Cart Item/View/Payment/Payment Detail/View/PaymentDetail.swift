@@ -4,7 +4,10 @@ import RxSwift
 import CoreData
 
 class PaymentDetail: UIViewController {
-    
+
+    @IBOutlet weak var totalPaymentTxt: UILabel!
+    @IBOutlet weak var noRekText: UILabel!
+    @IBOutlet weak var paymentDeadline: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var totalLbl: UILabel!
@@ -27,11 +30,16 @@ class PaymentDetail: UIViewController {
         setupUI()
         actionBtn()
         fetchCoreData()
+        localizeBahasa()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+// MARK: - Configuration Function
+    func localizeBahasa() {
+        paymentDeadline.text = .localized("paymentdeadline")
+        noRekText.text = .localized("accountnumber")
+        copyLbl.text = .localized("copy")
+        totalPaymentTxt.text = .localized("totalpayment")
+        confirmBtn.setTitle(.localized("confirm"), for: .normal)
     }
     
     func setupUI() {
@@ -41,9 +49,7 @@ class PaymentDetail: UIViewController {
         startCountDown()
     }
     
-    func actionBtn() {
-        confirmBtn.addTarget(self, action: #selector(confirmBtnTapped), for: .touchUpInside)
-    }
+// MARK: - Timer
     
     func updateClock() {
             Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance).map {
@@ -82,6 +88,8 @@ class PaymentDetail: UIViewController {
         let seconds = countdownTimer % 60
         clockLbl.text = String(format: "%02d:%02d", minutes, seconds)
     }
+
+// MARK: - Get Core Data
     
     func fetchCoreData() {
         guard let userID = Firebase.auth.currentUser?.uid, let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -125,6 +133,12 @@ class PaymentDetail: UIViewController {
         } catch let error as NSError {
             print("Failed to fetch data: \(error), \(error.userInfo)")
         }
+    }
+
+// MARK: - Navigation
+    
+    func actionBtn() {
+        confirmBtn.addTarget(self, action: #selector(confirmBtnTapped), for: .touchUpInside)
     }
     
     @objc func confirmBtnTapped()  {

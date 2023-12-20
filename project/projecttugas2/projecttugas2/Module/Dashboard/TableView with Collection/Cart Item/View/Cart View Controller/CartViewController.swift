@@ -33,6 +33,7 @@ class CartViewController: UIViewController {
         errorVC = ErrorHandlingController()
         cartListTableView.reloadData()
     }
+// MARK: - Configure
     
     func setup() {
         
@@ -58,6 +59,7 @@ class CartViewController: UIViewController {
     }
 }
 
+// MARK: - UI Tableview Delegate & Data Source
 extension CartViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -114,6 +116,8 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource{
         }
     }
     
+// MARK: - Bottom Sheet Floating Panel
+    
     func setupCheckOut() {
         fpc = FloatingPanelController()
         fpc.delegate = self
@@ -132,6 +136,8 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource{
             fpc.show(animated: true)
         }
     }
+
+// MARK: - Get & Remove Data
     
     func fetchCoreData() {
         
@@ -225,6 +231,9 @@ extension CartViewController: SkeletonTableViewDataSource {
         return String(describing: CartTableViewCell.self)
     }
 }
+
+
+// MARK: - Error Handling Connection
 
 extension CartViewController: ErrorHandlingDelegate {
     

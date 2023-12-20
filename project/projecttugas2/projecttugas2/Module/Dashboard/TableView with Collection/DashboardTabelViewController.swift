@@ -12,12 +12,27 @@ class DashboardTabelViewController: UIViewController {
     var viewModel: DashboardViewModel!
     private let disposeBag = DisposeBag()
     private var errorVC: ErrorHandlingController?
+    private let floatingButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        button.backgroundColor = .systemPink
+        let image = UIImage(systemName: "building.2.crop.circle.fill",
+                            withConfiguration: UIImage.SymbolConfiguration(pointSize: 20, weight: .medium))
+        button.setImage(image, for: .normal)
+        button.tintColor = .white
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 30
+        button.layer.shadowRadius = 10
+        button.layer.shadowOpacity = 0.3
+        
+        return button
+    }()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.loadData()
         navigationController?.isNavigationBarHidden = true
         bindViewModel()
+        
     }
     
     override func viewDidLoad() {
@@ -25,21 +40,17 @@ class DashboardTabelViewController: UIViewController {
         viewModel = DashboardViewModel()
         configureView()
         setupBackgroundImg()
-        
         errorVC = ErrorHandlingController()
+        view.addSubview(floatingButton)
     }
     
-    func setupBackgroundImg() {
-        let backgroundImage = UIImage(named: "1332")
-        let backgroundImageView = UIImageView(image: backgroundImage)
-        backgroundImageView.contentMode = .scaleAspectFill
-        self.listTabelView.backgroundView = backgroundImageView
-        backgroundImageView.alpha = 0.1
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
-        if let tabbar = self.tabBarController?.tabBar {
-            tabbar.barTintColor = self.view.backgroundColor
-        }
+        floatingButton.frame = CGRect(
+            x: view.frame.size.width - 70, y: view.frame.size.height - 200, width: 60, height: 60)
     }
+
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
@@ -115,7 +126,19 @@ extension DashboardTabelViewController: FilterDataDelegate {
 
 extension DashboardTabelViewController: ErrorHandlingDelegate {
     
-    func configureView() {
+    private func setupBackgroundImg() {
+        let backgroundImage = UIImage(named: "1332")
+        let backgroundImageView = UIImageView(image: backgroundImage)
+        backgroundImageView.contentMode = .scaleAspectFill
+        self.listTabelView.backgroundView = backgroundImageView
+        backgroundImageView.alpha = 0.1
+        
+        if let tabbar = self.tabBarController?.tabBar {
+            tabbar.barTintColor = self.view.backgroundColor
+        }
+    }
+    
+    private func configureView() {
         listTabelView.automaticallyAdjustsScrollIndicatorInsets = false
         listTabelView.delegate = self
         listTabelView.dataSource = self
@@ -128,6 +151,9 @@ extension DashboardTabelViewController: ErrorHandlingDelegate {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: listTabelView.bounds.width, height: paddingBottom))
         listTabelView.tableFooterView = paddingView
         
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        floatingButton.addTarget(self, action: #selector(toOutlet), for: .touchUpInside)
+        floatingButton.addGestureRecognizer(panGesture)
     }
     
     private func bindViewModel() {
@@ -154,6 +180,8 @@ extension DashboardTabelViewController: ErrorHandlingDelegate {
         }
     }
     
+// MARK: - Error Handling Connection
+    
     func showErrorView() {
         guard let errorVC = errorVC else { return }
         
@@ -179,6 +207,7 @@ extension DashboardTabelViewController: ErrorHandlingDelegate {
         
     }
     
+// MARK: - Configure Cell
     func configureDashboardCell(for indexPath: IndexPath) -> UITableViewCell {
         let cell = listTabelView.dequeueReusableCell(forIndexPath: indexPath) as TabelViewDashboardTableViewCell
         cell.backgroundColor = UIColor.clear
@@ -247,6 +276,19 @@ extension DashboardTabelViewController: ErrorHandlingDelegate {
                 filterVc.removeFromParent()
             }
         }
+    }
+    
+    @objc func handlePan(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: view)
+        floatingButton.center = CGPoint(x: floatingButton.center.x + translation.x, y: floatingButton.center.y + translation.y)
+        
+        gesture.setTranslation(CGPoint.zero, in: view)
+    }
+    
+    @objc func toOutlet() {
+        let vc = CoffeeOutletController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

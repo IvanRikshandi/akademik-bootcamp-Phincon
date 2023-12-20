@@ -1,9 +1,15 @@
 import UIKit
+import Reachability
 import FirebaseAuth
 import FirebaseCore
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var forgotPasswordBtn: UILabel!
+    @IBOutlet weak var registBtn: UILabel!
+    @IBOutlet weak var descripText: UILabel!
+    @IBOutlet weak var loginText: UILabel!
+    @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet private weak var buttonLogin: UIButton!
     @IBOutlet private weak var passwordField: InputField!
     @IBOutlet private weak var usernameField: InputField!
@@ -18,6 +24,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         animateImageView()
+        localizeBahasa()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,16 +33,26 @@ class LoginViewController: UIViewController {
     
     
     // MARK: - UI
-    private func setupUI() {
+    func setupUI() {
         buttonLogin.layer.cornerRadius = buttonLogin.frame.size.width / 8
         buttonLogin.clipsToBounds = true
-        
         usernameField.subtitleText.isHidden = true
-        usernameField.setup(title: "Username", placeholder: "Input Username")
-        
-        passwordField.setup(title: "Password", placeholder: "Input Password")
+        usernameField.setup(title: .localized("username"), placeholder: "Input Username")
+        passwordField.setup(title: .localized("password"), placeholder: "Input Password")
         passwordField.subtitleText.isHidden = true
         passwordField.inputTextField.isSecureTextEntry = true
+        let tapToRegister = UITapGestureRecognizer(target: self, action: #selector(buttonRegister))
+        let tapToForgotPassword = UITapGestureRecognizer(target: self, action: #selector(buttonForgot))
+        registBtn.addGestureRecognizer(tapToRegister)
+        forgotPasswordBtn.addGestureRecognizer(tapToRegister)
+        forgotPasswordBtn.addGestureRecognizer(tapToForgotPassword)
+    }
+    
+    func localizeBahasa() {
+        loginBtn.setTitle(.localized("login"), for: .normal)
+        loginText.text = .localized("login")
+        descripText.text = .localized("noaccount")
+        registBtn.text = .localized("register")
     }
     
     // MARK: - Animation
@@ -52,10 +69,16 @@ class LoginViewController: UIViewController {
     
     // MARK: - Action Button
     
-    @IBAction private func buttonRegister(_ sender: Any) {
+    @objc func buttonRegister() {
         let registerVC = RegisterViewController()
         UINavigationBar.appearance().isHidden = true
         navigationController?.setViewControllers([registerVC], animated: true)
+    }
+    
+    @objc func buttonForgot() {
+        let forgotVC = ForgotPasswordController()
+        UINavigationBar.appearance().isHidden = true
+        navigationController?.setViewControllers([forgotVC], animated: true)
     }
     
     @IBAction private func buttonLoginTapped(_ sender: Any) {
@@ -67,6 +90,14 @@ class LoginViewController: UIViewController {
             buttonLogin.isEnabled = true
         }
     }
+    
+    func navigateToTabbar() {
+        let tabbarViewController = MainTabBarViewController()
+        UINavigationBar.appearance().isHidden = true
+        navigationController?.setViewControllers([tabbarViewController], animated: true)
+    }
+    
+    // MARK: - Validation
     func validateFields() -> Bool {
         guard let email = usernameField.inputTextField.text, !email.isEmpty,
               let password = passwordField.inputTextField.text, !password.isEmpty
@@ -104,29 +135,6 @@ class LoginViewController: UIViewController {
                 self.showToast(isCheck: false)
             }
         }
-        
-//        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-//            guard let self = self else {return}
-//
-//            self.buttonLogin.isEnabled = true
-//
-//            if let error = error {
-//
-//                self.showToast(isCheck: false)
-//                print("Login failed with error: \(error.localizedDescription)")
-//
-//            } else {
-//
-//                // Login successful
-//                self.showToast(isCheck: true)
-//                if let uid = authResult?.user.uid {
-//                    self.navigateToTabbar()
-//                    print("Login successful. UID: \(uid)")
-//                    self.userLoggedIn(true, uid: uid)
-//
-//                }
-//            }
-//        }
     }
     
     // MARK: - Message & UI Update
@@ -160,12 +168,5 @@ class LoginViewController: UIViewController {
         BaseConstant.userDefaults.set(isLogin, forKey: userLoginKey)
         BaseConstant.userDefaults.set(uid, forKey: userUIDKey)
         BaseConstant.userDefaults.synchronize()
-    }
-    
-    // MARK: - Navigation
-    func navigateToTabbar() {
-        let tabbarViewController = MainTabBarViewController()
-        UINavigationBar.appearance().isHidden = true
-        navigationController?.setViewControllers([tabbarViewController], animated: true)
     }
 }

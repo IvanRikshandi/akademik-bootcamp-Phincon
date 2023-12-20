@@ -14,6 +14,9 @@ enum Endpoint {
     case getPayment
     case getDetailPayment(String)
     
+    case getOutlet
+    case getDetailOutlet(String)
+    
     func path() -> String {
         switch self {
         case .getDetailCoffee(let id):
@@ -33,46 +36,33 @@ enum Endpoint {
             return "/payment"
         case .getDetailPayment(let id):
             return "/payment/\(id)"
+        case .getOutlet:
+            return "/coffeeoutlet"
+        case .getDetailOutlet(let name):
+            return "/coffeeoutlet/\(name)"
         }
     }
     
-//    func method() -> String {
-//        switch self {
-//        case .fetchCoffee, .getDetailCoffee(_), .fetchNewsCoffee, .getDetailNews(_):
-//            return "GET"
-//        }
-//    }
-    
     func method() -> HTTPMethod {
         switch self {
-        case .fetchCoffee, .getDetailCoffee(_), .fetchNewsCoffee, .getDetailNews(_), .getPromotion, .getDetailPromotion(_), .getPayment, .getDetailPayment(_):
+        case .fetchCoffee, .getDetailCoffee(_), .fetchNewsCoffee, .getDetailNews(_), .getPromotion, .getDetailPromotion(_), .getPayment, .getDetailPayment(_), .getOutlet, .getDetailOutlet(_):
             return .get
         }
     }
     
     var parameters: [String: Any]? {
         switch self {
-        case .fetchCoffee, .fetchNewsCoffee, .getPromotion, .getPayment:
+        case .fetchCoffee, .fetchNewsCoffee, .getPromotion, .getPayment, .getOutlet:
             return nil
-        case .getDetailCoffee(_), .getDetailPromotion(_), .getDetailNews(_), .getDetailPayment(_):
+        case .getDetailCoffee(_), .getDetailPromotion(_), .getDetailNews(_), .getDetailPayment(_), .getDetailOutlet(_):
             let params: [String: Any] = [:]
             return params
         }
     }
     
-//    var headers: [String: Any]? {
-//        switch self {
-//        case .fetchCoffee, .getDetailCoffee, .fetchNewsCoffee, .getDetailNews:
-//            let params: [String: Any]? = [
-//                    "Content-Type": "application/json",
-//                ]
-//            return params
-//        }
-//    }
-    
     var headers: HTTPHeaders {
         switch self {
-        case .fetchCoffee, .getDetailCoffee, .fetchNewsCoffee, .getDetailNews, .getPromotion, .getDetailPromotion, .getPayment, .getDetailPayment(_):
+        case .fetchCoffee, .getDetailCoffee, .fetchNewsCoffee, .getDetailNews, .getPromotion, .getDetailPromotion, .getPayment, .getDetailPayment, .getOutlet, .getDetailOutlet:
             let params: HTTPHeaders = [
                 "Content-Type": "application/json"
             ]
@@ -90,12 +80,15 @@ enum Endpoint {
             return BaseConstant.PromotionApi.promoURL + self.path()
         case .getPayment, .getDetailPayment(_):
             return BaseConstant.PaymentApi.paymentURL + self.path()
+        case .getOutlet, .getDetailOutlet(_):
+            return BaseConstant.CoffeeOutletApi.outletURL + self.path()
+        
         }
     }
     
     var encoding: ParameterEncoding {
         switch self {
-        case .fetchCoffee, .fetchNewsCoffee, .getPromotion, .getPayment, .getDetailNews(_), .getDetailCoffee(_), .getDetailPromotion(_), .getDetailPayment(_):
+        case .fetchCoffee, .fetchNewsCoffee, .getPromotion, .getPayment, .getDetailNews(_), .getDetailCoffee(_), .getDetailPromotion(_), .getDetailPayment(_), .getOutlet, .getDetailOutlet(_):
             return URLEncoding.queryString
             //            case .postUserAnime:
             //                return JSONEncoding.default

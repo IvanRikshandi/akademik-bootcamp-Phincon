@@ -16,6 +16,8 @@ class DetailHistoriViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
     }
     
+// MARK: - Configure Function
+    
     func setup() {
         setupBackgroundImg()
         fetchData()
@@ -40,12 +42,8 @@ class DetailHistoriViewController: UIViewController {
             print("Error: History items are empty")
             return
         }
-        
-        print("Success: Fetching data")
-        
         // Sort historyItems by waktu in descending order
         filteredItems.sort { $0.waktu?.compare($1.waktu ?? Date()) == .orderedDescending }
-        
         // Reload the table view with the sorted historyItems
         historyTable.reloadData()
         
