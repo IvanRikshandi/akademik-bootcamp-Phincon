@@ -14,8 +14,8 @@
             filePath = "projecttugas2/Module/Dashboard/TableView with Collection/Profile Item/View/Profile View/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "bindData()"
             landmarkType = "7">
          </BreakpointContent>

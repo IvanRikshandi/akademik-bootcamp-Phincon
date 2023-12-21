@@ -149,15 +149,14 @@ class PaymentDetail: UIViewController {
             return }
         Firebase.saveSubCollectionHistory(uid: userID, id: data.id ?? "", titleCoffee: data.namaCoffee ?? "", sizeCoffe: data.sizeCoffee ?? "", qtyCoffe: data.quantityCoffee ?? 0, totalHarga: data.totalHarga ?? 0, time: time, imgUrl: data.imgUrl ?? "", region: data.region ?? "", completion:  { error in
             if let error = error {
-                print("Firestore error: \(error.localizedDescription)")
-                self.showToast(isCheck: false)
+                ToastManager.shared.showToastOnlyMessage(message: error.localizedDescription)
             } else {
                 self.removeAllDataFromCoreData()
                 self.toCart()
-                self.toPopUp()
                 self.showToast(isCheck: true)
             }
         })
+        toPopUp()
     }
     
     func removeAllDataFromCoreData() {

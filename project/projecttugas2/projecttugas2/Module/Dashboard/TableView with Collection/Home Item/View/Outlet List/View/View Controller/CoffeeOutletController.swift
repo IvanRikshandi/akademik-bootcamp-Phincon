@@ -19,6 +19,7 @@ class CoffeeOutletController: UIViewController {
     // MARK: - FUNTION
     
     func setupConfiguration() {
+        navigationItem.title = "Outlet"
         outletTableView.delegate = self
         outletTableView.dataSource = self
         outletTableView.registerCellWithNib(OutletCell.self)
@@ -63,5 +64,13 @@ extension CoffeeOutletController: UITableViewDataSource, UITableViewDelegate {
             cell.configureContent(data: list)
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let selectedItem = coffeeOutlet?.coffeeoutlet?[indexPath.row] {
+            let vc = MapsOutlet()
+            vc.selectedCoffeeOutlet = selectedItem
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

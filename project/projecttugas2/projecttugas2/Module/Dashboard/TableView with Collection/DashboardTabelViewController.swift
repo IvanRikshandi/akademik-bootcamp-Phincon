@@ -31,8 +31,8 @@ class DashboardTabelViewController: UIViewController {
         super.viewWillAppear(animated)
         viewModel.loadData()
         navigationController?.isNavigationBarHidden = true
+        listTabelView.showSkeleton()
         bindViewModel()
-        
     }
     
     override func viewDidLoad() {

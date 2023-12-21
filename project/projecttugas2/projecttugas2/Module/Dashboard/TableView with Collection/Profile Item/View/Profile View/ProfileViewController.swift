@@ -46,7 +46,6 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
         }
     }
     
-    
     // MARK: - Function
     override func viewDidLoad() {
         super.viewDidLoad()

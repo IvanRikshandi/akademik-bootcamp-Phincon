@@ -113,6 +113,9 @@
 		368B4FE12B15A608002BDF3A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368B4FE02B15A608002BDF3A /* LoginViewModel.swift */; };
 		368B4FE52B15B760002BDF3A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368B4FE42B15B760002BDF3A /* RegisterViewModel.swift */; };
 		368B4FE72B15BF64002BDF3A /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368B4FE62B15BF64002BDF3A /* DashboardViewModel.swift */; };
+		369442D12B33CE6A0013DF41 /* MapsOutlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369442CF2B33CE6A0013DF41 /* MapsOutlet.swift */; };
+		369442D22B33CE6A0013DF41 /* MapsOutlet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 369442D02B33CE6A0013DF41 /* MapsOutlet.xib */; };
+		369442D42B33D3D70013DF41 /* ExtMapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369442D32B33D3D70013DF41 /* ExtMapKit.swift */; };
 		36B3247D2B2BE67B0002ACC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36B3247C2B2BE67B0002ACC5 /* GoogleService-Info.plist */; };
 		36C1CD4F2B0B387700474A86 /* CheckOutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C1CD4E2B0B387700474A86 /* CheckOutModel.swift */; };
 		36C29D582B318F1B00F20986 /* CoffeeOutletController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36C29D572B318F1B00F20986 /* CoffeeOutletController.xib */; };
@@ -268,6 +271,9 @@
 		368B4FE02B15A608002BDF3A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		368B4FE42B15B760002BDF3A /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		368B4FE62B15BF64002BDF3A /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		369442CF2B33CE6A0013DF41 /* MapsOutlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsOutlet.swift; sourceTree = "<group>"; };
+		369442D02B33CE6A0013DF41 /* MapsOutlet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapsOutlet.xib; sourceTree = "<group>"; };
+		369442D32B33D3D70013DF41 /* ExtMapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtMapKit.swift; sourceTree = "<group>"; };
 		36B3247C2B2BE67B0002ACC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		36C1CD4E2B0B387700474A86 /* CheckOutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutModel.swift; sourceTree = "<group>"; };
 		36C29D572B318F1B00F20986 /* CoffeeOutletController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoffeeOutletController.xib; sourceTree = "<group>"; };
@@ -508,6 +514,7 @@
 				3649FFD42B17408D007D444F /* ExtCornerRadius.swift */,
 				36CD96B82B219FFB00F5C188 /* ExtString.swift */,
 				3658B6BB2B26EAFE00DDB47D /* ExtUiButton.swift */,
+				369442D32B33D3D70013DF41 /* ExtMapKit.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1023,6 +1030,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		369442CE2B33CE420013DF41 /* Detail Outlet */ = {
+			isa = PBXGroup;
+			children = (
+				369442CF2B33CE6A0013DF41 /* MapsOutlet.swift */,
+				369442D02B33CE6A0013DF41 /* MapsOutlet.xib */,
+			);
+			path = "Detail Outlet";
+			sourceTree = "<group>";
+		};
 		36ABE1CC2B144DD200538A15 /* Detail Histori */ = {
 			isa = PBXGroup;
 			children = (
@@ -1051,6 +1067,7 @@
 		36C29D5A2B318FD600F20986 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				369442CE2B33CE420013DF41 /* Detail Outlet */,
 				36C29D5B2B31900100F20986 /* Cell */,
 				3607978B2B318EBB00CE1437 /* View Controller */,
 			);
@@ -1343,6 +1360,7 @@
 				36CD96B42B219DD900F5C188 /* Localizable.strings in Resources */,
 				3602E2442AFDD26F002A2A2E /* CategoryCollectionViewCell.xib in Resources */,
 				36C29D582B318F1B00F20986 /* CoffeeOutletController.xib in Resources */,
+				369442D22B33CE6A0013DF41 /* MapsOutlet.xib in Resources */,
 				36B3247D2B2BE67B0002ACC5 /* GoogleService-Info.plist in Resources */,
 				367550D82B103FA8005CA9C7 /* NewsContentTableViewCell.xib in Resources */,
 				36054E7F2B20563E00784FAE /* MoreCell.xib in Resources */,
@@ -1519,7 +1537,9 @@
 				362DA4D52B05F2BF003C9CC7 /* EmailRegexModel.swift in Sources */,
 				3602E2432AFDD26F002A2A2E /* CategoryCollectionViewCell.swift in Sources */,
 				36F5F6272AF0D994004D311C /* LoginViewController.swift in Sources */,
+				369442D12B33CE6A0013DF41 /* MapsOutlet.swift in Sources */,
 				36660B1C2AF4D98B00E95F11 /* Endpoint.swift in Sources */,
+				369442D42B33D3D70013DF41 /* ExtMapKit.swift in Sources */,
 				36054E772B204BFC00784FAE /* MoreSettingsViewController.swift in Sources */,
 				361C46992B20056800B19C02 /* CarouselCell.swift in Sources */,
 				360797802B316EF300CE1437 /* CoffeeOutletModel.swift in Sources */,
