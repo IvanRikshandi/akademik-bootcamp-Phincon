@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  projecttugas2
-//
-//  Created by Phincon on 26/10/23.
-//
-
 import UIKit
 
 
@@ -20,13 +13,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        let tabBarViewController = MainTabBarViewController()
-        let loginViewController = LoginViewController()
+//        let tabBarViewController = MainTabBarViewController()
+        let loginViewController = SplashScreenController()
         let navigationController = UINavigationController(rootViewController: loginViewController)
         
-        if Firebase.currentUser != nil {
-            navigationController.setViewControllers([tabBarViewController], animated: true)
-        }
+//        if Firebase.currentUser != nil {
+//            navigationController.setViewControllers([tabBarViewController], animated: true)
+//        }
         
         navigationController.isNavigationBarHidden = true
         

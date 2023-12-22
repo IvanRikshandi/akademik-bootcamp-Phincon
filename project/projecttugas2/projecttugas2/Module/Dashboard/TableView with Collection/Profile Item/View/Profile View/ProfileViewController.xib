@@ -33,11 +33,11 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HkD-b3-ZUR">
+                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HkD-b3-ZUR">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Dt-V7-R9g">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lig-lv-aYx">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="260"/>
@@ -260,7 +260,7 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="1000" id="2PO-rO-CxE"/>
+                                <constraint firstAttribute="height" constant="852" id="2PO-rO-CxE"/>
                                 <constraint firstItem="2ik-d6-cAP" firstAttribute="top" secondItem="FQe-f7-D5i" secondAttribute="bottom" constant="20" id="3be-IT-GrB"/>
                                 <constraint firstItem="FQe-f7-D5i" firstAttribute="leading" secondItem="3Dt-V7-R9g" secondAttribute="leading" constant="20" id="4Mr-qw-wJf"/>
                                 <constraint firstAttribute="trailing" secondItem="XKg-Ut-tQ8" secondAttribute="trailing" id="6R5-d9-Q1p"/>
@@ -284,7 +284,7 @@
                         <constraint firstItem="3Dt-V7-R9g" firstAttribute="width" secondItem="HkD-b3-ZUR" secondAttribute="width" id="TvN-Oe-9np"/>
                         <constraint firstItem="3Dt-V7-R9g" firstAttribute="top" secondItem="HkD-b3-ZUR" secondAttribute="top" id="a6U-eK-X4X"/>
                         <constraint firstItem="3Dt-V7-R9g" firstAttribute="leading" secondItem="HkD-b3-ZUR" secondAttribute="leading" id="rhe-94-1hK"/>
-                        <constraint firstAttribute="bottom" secondItem="3Dt-V7-R9g" secondAttribute="bottom" constant="-148" id="uoE-sR-Vjp"/>
+                        <constraint firstAttribute="bottom" secondItem="3Dt-V7-R9g" secondAttribute="bottom" id="uoE-sR-Vjp"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="1mi-SA-wQd"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="7EW-VM-wDo"/>

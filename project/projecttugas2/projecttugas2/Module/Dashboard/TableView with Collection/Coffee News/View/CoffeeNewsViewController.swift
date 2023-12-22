@@ -4,7 +4,7 @@ import RxSwift
 import SkeletonView
 
 class CoffeeNewsViewController: UIViewController {
-
+    
     @IBOutlet weak var newsTableView: UITableView!
     
     let refreshControl = UIRefreshControl()
@@ -26,7 +26,7 @@ class CoffeeNewsViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
-// MARK: - Configuration
+    // MARK: - Configuration
     
     func setup() {
         setupTableView()
@@ -45,8 +45,8 @@ class CoffeeNewsViewController: UIViewController {
         let paddingView = UIView(frame:  CGRect(x: 0, y: 0, width: newsTableView.bounds.width, height: paddingBottom))
         newsTableView.tableFooterView = paddingView
     }
-
-// MARK: - Bind Data
+    
+    // MARK: - Bind Data
     func bindData() {
         viewModel.fetchNews()
         
@@ -70,7 +70,7 @@ class CoffeeNewsViewController: UIViewController {
                         self.showErrorView()
                     }
                 }
-            
+                
             }).disposed(by: bag)
         
         viewModel.newsArticle.asObservable().subscribe(onNext: { [weak self] data in
@@ -84,7 +84,7 @@ class CoffeeNewsViewController: UIViewController {
     
 }
 
-// MARK: Configure Table
+// MARK: - Configure Table
 extension CoffeeNewsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -142,7 +142,7 @@ extension CoffeeNewsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configureContent(data: list)
         }
         cell.backgroundColor = UIColor.clear
-                
+        
         return cell
     }
     

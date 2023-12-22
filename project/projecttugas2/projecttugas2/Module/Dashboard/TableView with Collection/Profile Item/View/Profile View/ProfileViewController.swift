@@ -59,7 +59,6 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
-        showSkeletonView()
         bindData()
         getImageFromFirbaseStorage()
         historyCollection.reloadData()
@@ -75,6 +74,16 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
         historyLbl.text = .localized("history")
         seeAllHistory.text = .localized("viewall")
         
+    }
+    
+    func configureView() {
+        toMore()
+        historyCollection.delegate = self
+        historyCollection.dataSource = self
+        historyCollection.registerCellWithNib(HistoryCollectionViewCell.self)
+        historyCollection.showsHorizontalScrollIndicator = false
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(seeAllHistoryTapped))
+        seeAllHistory.addGestureRecognizer(tapGesture)
     }
     
     func style() {
@@ -101,7 +110,7 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
         settingsBtn.isUserInteractionEnabled = true
     }
     
-    // MARK: - Fetch Data
+    // MARK: - Function Data
     func bindData() {
         guard let userID = Firebase.auth.currentUser?.uid else { return }
         profileViewModel.fetchHistory(userID: userID)
@@ -111,8 +120,6 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
             switch loading {
             case .loading:
                 self.showSkeletonView()
-                print("loading")
-                
             case .finished:
                 self.historyCollection.reloadData()
                 self.hideSkeletonView()
@@ -136,8 +143,31 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
         profileViewModel.phoneNumber.bind(to: phoneNumberText.rx.text).disposed(by: bag)
     }
     
-    // MARK: - Skeleton View
-
+    func userLoggedOut(_ isLogin:Bool) {
+        BaseConstant.userDefaults.set(isLogin, forKey: userLogin)
+        BaseConstant.userDefaults.synchronize()
+    }
+    
+    func clearCoreData(forUserID userID: String) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Cart.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "userID == %@", userID)
+        
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try context.execute(batchDeleteRequest)
+            try context.save()
+            print("CoreData cleared for user with ID: \(userID)")
+        } catch {
+            print("Failed to clear CoreData: \(error)")
+        }
+    }
+    
+    // MARK: - Function Skeleton View
+    
     func showSkeletonView() {
         profileImage.showAnimatedSkeleton()
         nameText.showAnimatedSkeleton()
@@ -145,7 +175,7 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
         phoneNumberText.showAnimatedSkeleton()
         historyCollection.showAnimatedSkeleton()
     }
-
+    
     func hideSkeletonView() {
         profileImage.hideSkeleton()
         nameText.hideSkeleton()
@@ -175,6 +205,13 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
         return MoreSettingsFloatingPanel()
     }
     
+    @objc func seeAllHistoryTapped() {
+        let vc = DetailHistoriViewController()
+        vc.hidesBottomBarWhenPushed = true
+        vc.historyItems = self.historyItems
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @objc func onTapGallery() {
         self.pickerImage.allowsEditing = true
         self.pickerImage.delegate = self
@@ -188,31 +225,6 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
         self.pickerImage.sourceType = .camera
         self.present(self.pickerImage, animated: true, completion: nil)
     }
-    
-    func userLoggedOut(_ isLogin:Bool) {
-        BaseConstant.userDefaults.set(isLogin, forKey: userLogin)
-        //BaseConstant.userDefaults.removeObject(forKey: userUIDKey)
-        BaseConstant.userDefaults.synchronize()
-    }
-    
-    func clearCoreData(forUserID userID: String) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Cart.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "userID == %@", userID)
-
-        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-
-        do {
-            try context.execute(batchDeleteRequest)
-            try context.save()
-            print("CoreData cleared for user with ID: \(userID)")
-        } catch {
-            print("Failed to clear CoreData: \(error)")
-        }
-    }
-
 }
 
 // MARK: - IMAGE PICKER
@@ -286,34 +298,14 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
 }
 
-// MARK: - Setup Histori Collection
-
-private extension ProfileViewController {
-    
-    func configureView() {
-        toMore()
-        historyCollection.delegate = self
-        historyCollection.dataSource = self
-        historyCollection.registerCellWithNib(HistoryCollectionViewCell.self)
-        historyCollection.showsHorizontalScrollIndicator = false
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(seeAllHistoryTapped))
-        seeAllHistory.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc func seeAllHistoryTapped() {
-        let vc = DetailHistoriViewController()
-            vc.hidesBottomBarWhenPushed = true
-            vc.historyItems = self.historyItems
-            navigationController?.pushViewController(vc, animated: true)
-    }
-}
+// MARK: - Skeleton View
 
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, SkeletonCollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if historyItems.count > 5 {
             return 5
         }
-        return historyItems.count 
+        return historyItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

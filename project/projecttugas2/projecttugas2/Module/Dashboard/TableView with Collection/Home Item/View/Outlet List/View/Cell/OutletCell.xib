@@ -27,7 +27,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7q-b1-neg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7q-b1-neg">
                                 <rect key="frame" x="10" y="39" width="353" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
@@ -112,22 +112,22 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="16H-yK-3eG">
-                                <rect key="frame" x="329" y="0.0" width="44" height="43"/>
+                                <rect key="frame" x="336" y="0.0" width="37" height="36"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="8MM-eH-CwB">
-                                        <rect key="frame" x="12" y="13.333333333333334" width="20" height="17.333333333333336"/>
+                                        <rect key="frame" x="8.6666666666666856" y="9.6666666666666643" width="20" height="17.333333333333321"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <imageReference key="image" image="location.magnifyingglass" catalog="system" symbolScale="small"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="1tt-Xj-YuG"/>
-                                    <constraint firstItem="8MM-eH-CwB" firstAttribute="width" secondItem="16H-yK-3eG" secondAttribute="width" multiplier="0.338983" constant="5.0847457627118651" id="3kC-qA-AUw"/>
-                                    <constraint firstAttribute="height" constant="43" id="5TR-Xd-Cun"/>
+                                    <constraint firstAttribute="width" constant="37" id="1tt-Xj-YuG"/>
+                                    <constraint firstItem="8MM-eH-CwB" firstAttribute="width" secondItem="16H-yK-3eG" secondAttribute="width" multiplier="0.338983" constant="7.4576290000000007" id="3kC-qA-AUw"/>
+                                    <constraint firstAttribute="height" constant="36" id="5TR-Xd-Cun"/>
                                     <constraint firstItem="8MM-eH-CwB" firstAttribute="centerX" secondItem="16H-yK-3eG" secondAttribute="centerX" id="OIk-cU-Maw"/>
                                     <constraint firstItem="8MM-eH-CwB" firstAttribute="centerY" secondItem="16H-yK-3eG" secondAttribute="centerY" id="YoQ-Y1-887"/>
-                                    <constraint firstItem="8MM-eH-CwB" firstAttribute="height" secondItem="16H-yK-3eG" secondAttribute="height" multiplier="0.453333" constant="3.1733333333333356" id="cvN-xL-ivm"/>
+                                    <constraint firstItem="8MM-eH-CwB" firstAttribute="height" secondItem="16H-yK-3eG" secondAttribute="height" multiplier="0.453333" constant="6.3466786666666657" id="cvN-xL-ivm"/>
                                 </constraints>
                             </view>
                         </subviews>

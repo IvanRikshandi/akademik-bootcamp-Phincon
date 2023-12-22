@@ -116,6 +116,10 @@
 		369442D12B33CE6A0013DF41 /* MapsOutlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369442CF2B33CE6A0013DF41 /* MapsOutlet.swift */; };
 		369442D22B33CE6A0013DF41 /* MapsOutlet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 369442D02B33CE6A0013DF41 /* MapsOutlet.xib */; };
 		369442D42B33D3D70013DF41 /* ExtMapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369442D32B33D3D70013DF41 /* ExtMapKit.swift */; };
+		369FEDB42B356D3800BF88F1 /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FEDB22B356D3800BF88F1 /* SplashScreenController.swift */; };
+		369FEDB52B356D3800BF88F1 /* SplashScreenController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 369FEDB32B356D3800BF88F1 /* SplashScreenController.xib */; };
+		369FEDB82B3572BF00BF88F1 /* ExtUiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FEDB72B3572BF00BF88F1 /* ExtUiColor.swift */; };
+		369FEDBA2B3575BA00BF88F1 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369FEDB92B3575BA00BF88F1 /* SplashViewModel.swift */; };
 		36B3247D2B2BE67B0002ACC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36B3247C2B2BE67B0002ACC5 /* GoogleService-Info.plist */; };
 		36C1CD4F2B0B387700474A86 /* CheckOutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C1CD4E2B0B387700474A86 /* CheckOutModel.swift */; };
 		36C29D582B318F1B00F20986 /* CoffeeOutletController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36C29D572B318F1B00F20986 /* CoffeeOutletController.xib */; };
@@ -134,7 +138,6 @@
 		36EA50B42AE9F1F600E546C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA50B32AE9F1F600E546C3 /* ViewController.swift */; };
 		36EA50B72AE9F1F600E546C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36EA50B52AE9F1F600E546C3 /* Main.storyboard */; };
 		36EA50B92AE9F1F700E546C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36EA50B82AE9F1F700E546C3 /* Assets.xcassets */; };
-		36EA50BC2AE9F1F700E546C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36EA50BA2AE9F1F700E546C3 /* LaunchScreen.storyboard */; };
 		36EA50C72AE9F1F700E546C3 /* projecttugas2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA50C62AE9F1F700E546C3 /* projecttugas2Tests.swift */; };
 		36EA50D12AE9F1F700E546C3 /* projecttugas2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA50D02AE9F1F700E546C3 /* projecttugas2UITests.swift */; };
 		36EA50D32AE9F1F700E546C3 /* projecttugas2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA50D22AE9F1F700E546C3 /* projecttugas2UITestsLaunchTests.swift */; };
@@ -274,6 +277,10 @@
 		369442CF2B33CE6A0013DF41 /* MapsOutlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsOutlet.swift; sourceTree = "<group>"; };
 		369442D02B33CE6A0013DF41 /* MapsOutlet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapsOutlet.xib; sourceTree = "<group>"; };
 		369442D32B33D3D70013DF41 /* ExtMapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtMapKit.swift; sourceTree = "<group>"; };
+		369FEDB22B356D3800BF88F1 /* SplashScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
+		369FEDB32B356D3800BF88F1 /* SplashScreenController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreenController.xib; sourceTree = "<group>"; };
+		369FEDB72B3572BF00BF88F1 /* ExtUiColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtUiColor.swift; sourceTree = "<group>"; };
+		369FEDB92B3575BA00BF88F1 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		36B3247C2B2BE67B0002ACC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		36C1CD4E2B0B387700474A86 /* CheckOutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutModel.swift; sourceTree = "<group>"; };
 		36C29D572B318F1B00F20986 /* CoffeeOutletController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoffeeOutletController.xib; sourceTree = "<group>"; };
@@ -294,7 +301,6 @@
 		36EA50B32AE9F1F600E546C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		36EA50B62AE9F1F600E546C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		36EA50B82AE9F1F700E546C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		36EA50BB2AE9F1F700E546C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36EA50BD2AE9F1F700E546C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36EA50C22AE9F1F700E546C3 /* projecttugas2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = projecttugas2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36EA50C62AE9F1F700E546C3 /* projecttugas2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projecttugas2Tests.swift; sourceTree = "<group>"; };
@@ -515,6 +521,7 @@
 				36CD96B82B219FFB00F5C188 /* ExtString.swift */,
 				3658B6BB2B26EAFE00DDB47D /* ExtUiButton.swift */,
 				369442D32B33D3D70013DF41 /* ExtMapKit.swift */,
+				369FEDB72B3572BF00BF88F1 /* ExtUiColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -524,7 +531,6 @@
 			children = (
 				3602E23A2AFDC59E002A2A2E /* Fonts */,
 				36EA50B82AE9F1F700E546C3 /* Assets.xcassets */,
-				36EA50BA2AE9F1F700E546C3 /* LaunchScreen.storyboard */,
 				36387E612AFB3EFD0064D547 /* CoreData.xcdatamodeld */,
 			);
 			path = Resource;
@@ -533,7 +539,7 @@
 		363512CC2AEA46FC005D1155 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				36B3247E2B2C33000002ACC5 /* Error Handling */,
+				369FEDB12B356D1900BF88F1 /* Splash Screen */,
 				36660B172AF4D4B300E95F11 /* Model */,
 				36660B0E2AF49FAB00E95F11 /* Register */,
 				36F5F6202AF0D33D004D311C /* Login */,
@@ -1039,6 +1045,16 @@
 			path = "Detail Outlet";
 			sourceTree = "<group>";
 		};
+		369FEDB12B356D1900BF88F1 /* Splash Screen */ = {
+			isa = PBXGroup;
+			children = (
+				369FEDB22B356D3800BF88F1 /* SplashScreenController.swift */,
+				369FEDB32B356D3800BF88F1 /* SplashScreenController.xib */,
+				369FEDB92B3575BA00BF88F1 /* SplashViewModel.swift */,
+			);
+			path = "Splash Screen";
+			sourceTree = "<group>";
+		};
 		36ABE1CC2B144DD200538A15 /* Detail Histori */ = {
 			isa = PBXGroup;
 			children = (
@@ -1175,6 +1191,7 @@
 		36F5F6292AF0F747004D311C /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				36B3247E2B2C33000002ACC5 /* Error Handling */,
 				36F5F62A2AF0F78B004D311C /* InputField.swift */,
 				36F5F62C2AF0F79B004D311C /* InputField.xib */,
 				362DA4D22B05AE12003C9CC7 /* ToastMessage.swift */,
@@ -1353,7 +1370,6 @@
 				363A66972AF3372E006B9A91 /* CartSec1TableViewCell.xib in Resources */,
 				367A1B812AEF41FD00F0144B /* DashboardTabelViewController.xib in Resources */,
 				36CD96BE2B21C83A00F5C188 /* DetailWebKit.xib in Resources */,
-				36EA50BC2AE9F1F700E546C3 /* LaunchScreen.storyboard in Resources */,
 				3607977E2B31540800CE1437 /* ForgotPasswordController.xib in Resources */,
 				368326C92B1455D400B398D9 /* DetailHistoriTableViewCell.xib in Resources */,
 				364707132B28576900CBB14C /* PaymentCell.xib in Resources */,
@@ -1372,6 +1388,7 @@
 				3649FFD22B1733B2007D444F /* SearchBarCell.xib in Resources */,
 				363445E32B2FDDA400D184EA /* ErrorHandlingController.xib in Resources */,
 				367550B22B0C8CD6005CA9C7 /* NotificationPopUpViewController.xib in Resources */,
+				369FEDB52B356D3800BF88F1 /* SplashScreenController.xib in Resources */,
 				3602D0702B19BF6100C65274 /* PromotionViewController.xib in Resources */,
 				361C469A2B20056800B19C02 /* CarouselCell.xib in Resources */,
 				363CD8902AEF5ACB0001475A /* TabelViewDashboardTableViewCell.xib in Resources */,
@@ -1540,10 +1557,12 @@
 				369442D12B33CE6A0013DF41 /* MapsOutlet.swift in Sources */,
 				36660B1C2AF4D98B00E95F11 /* Endpoint.swift in Sources */,
 				369442D42B33D3D70013DF41 /* ExtMapKit.swift in Sources */,
+				369FEDB42B356D3800BF88F1 /* SplashScreenController.swift in Sources */,
 				36054E772B204BFC00784FAE /* MoreSettingsViewController.swift in Sources */,
 				361C46992B20056800B19C02 /* CarouselCell.swift in Sources */,
 				360797802B316EF300CE1437 /* CoffeeOutletModel.swift in Sources */,
 				3602D0722B19C37500C65274 /* PromotionModel.swift in Sources */,
+				369FEDBA2B3575BA00BF88F1 /* SplashViewModel.swift in Sources */,
 				360797892B318A7C00CE1437 /* CoffeeOutletController.swift in Sources */,
 				36387E632AFB3EFD0064D547 /* CoreData.xcdatamodeld in Sources */,
 				36C1CD4F2B0B387700474A86 /* CheckOutModel.swift in Sources */,
@@ -1598,6 +1617,7 @@
 				363CD88F2AEF5ACB0001475A /* TabelViewDashboardTableViewCell.swift in Sources */,
 				368B4FE12B15A608002BDF3A /* LoginViewModel.swift in Sources */,
 				36580D4A2AF09A6D00A39A06 /* CartViewController.swift in Sources */,
+				369FEDB82B3572BF00BF88F1 /* ExtUiColor.swift in Sources */,
 				36387E652AFB48260064D547 /* CartModelCoffee.swift in Sources */,
 				368B4FE52B15B760002BDF3A /* RegisterViewModel.swift in Sources */,
 				3658B6C32B27FA7900DDB47D /* CoffeeListSectionCell.swift in Sources */,
@@ -1657,14 +1677,6 @@
 				36EA50B62AE9F1F600E546C3 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		36EA50BA2AE9F1F700E546C3 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				36EA50BB2AE9F1F700E546C3 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1792,13 +1804,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = projecttugas2/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Kami menggunakan pengenalan suara untuk mentranskripsi suara Anda menjadi teks guna pengalaman pengguna yang lebih baik.";
+                INFOPLIST_KEY_UILaunchStoryboardName = "";
+                INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1820,13 +1835,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = projecttugas2/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Kami menggunakan pengenalan suara untuk mentranskripsi suara Anda menjadi teks guna pengalaman pengguna yang lebih baik.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

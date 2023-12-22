@@ -27,8 +27,8 @@
                                     <constraint firstAttribute="height" constant="90" id="xLM-GO-hXm"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="bO8-dN-X1e">
-                                <rect key="frame" x="110" y="3" width="253" height="68.666666666666671"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bO8-dN-X1e">
+                                <rect key="frame" x="112" y="13.666666666666671" width="253" height="63"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T20-yQ-dOm">
                                         <rect key="frame" x="0.0" y="0.0" width="253" height="33"/>
@@ -38,14 +38,14 @@
                                         <attributedString key="attributedText">
                                             <fragment content="Title">
                                                 <attributes>
-                                                    <font key="NSFont" size="13" name="TrebuchetMS"/>
+                                                    <font key="NSFont" size="17" name="TrebuchetMS-Bold"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="LOa-Vm-jqT">
-                                        <rect key="frame" x="0.0" y="37" width="253" height="16"/>
+                                        <rect key="frame" x="0.0" y="33" width="253" height="16"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUh-ua-DNJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="121" height="16"/>
@@ -56,7 +56,7 @@
                                                     <fragment content="Waktu">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="10" name="TrebuchetMS"/>
+                                                            <font key="NSFont" size="12" name="TrebuchetMS"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -72,8 +72,8 @@
                                                     <fragment content="Harga">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="10" name="TrebuchetMS"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            <font key="NSFont" size="12" name="TrebuchetMS"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
@@ -82,12 +82,12 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTS-2B-ygI">
-                                        <rect key="frame" x="0.0" y="57" width="253" height="11.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="49" width="253" height="14"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Grinds">
+                                            <fragment content="Region">
                                                 <attributes>
                                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="10" name="TrebuchetMS"/>
+                                                    <font key="NSFont" size="12" name="TrebuchetMS"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -100,11 +100,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="bUl-eU-kbt" secondAttribute="bottom" id="FLk-sV-VWH"/>
+                            <constraint firstItem="bO8-dN-X1e" firstAttribute="centerY" secondItem="1w6-VJ-0LQ" secondAttribute="centerY" id="LSi-F3-byp"/>
                             <constraint firstItem="bUl-eU-kbt" firstAttribute="top" secondItem="1w6-VJ-0LQ" secondAttribute="top" id="QiB-J2-rvK"/>
                             <constraint firstItem="bUl-eU-kbt" firstAttribute="leading" secondItem="1w6-VJ-0LQ" secondAttribute="leading" id="Rnr-ZF-TlB"/>
-                            <constraint firstAttribute="trailing" secondItem="bO8-dN-X1e" secondAttribute="trailing" constant="10" id="WZ4-gp-uaq"/>
-                            <constraint firstItem="bO8-dN-X1e" firstAttribute="leading" secondItem="bUl-eU-kbt" secondAttribute="trailing" constant="10" id="dpR-9z-Eg0"/>
-                            <constraint firstItem="bO8-dN-X1e" firstAttribute="top" secondItem="1w6-VJ-0LQ" secondAttribute="top" constant="3" id="neh-xt-WnT"/>
+                            <constraint firstAttribute="trailing" secondItem="bO8-dN-X1e" secondAttribute="trailing" constant="8" id="WZ4-gp-uaq"/>
+                            <constraint firstItem="bO8-dN-X1e" firstAttribute="leading" secondItem="bUl-eU-kbt" secondAttribute="trailing" constant="12" id="dpR-9z-Eg0"/>
                         </constraints>
                     </view>
                 </subviews>
