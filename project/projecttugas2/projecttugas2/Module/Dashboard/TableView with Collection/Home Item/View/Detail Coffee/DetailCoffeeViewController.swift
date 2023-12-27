@@ -57,7 +57,7 @@ class DetailCoffeeViewController: UIViewController {
     
     func updateLbl() {
         incrementText.text = "\(currentValue)"
-        sizeText.text = "Size : \(selectedSize)"
+        sizeText.text = .localized("sizedetail") + ": \(selectedSize)"
     }
     
     func setup(){
@@ -71,7 +71,7 @@ class DetailCoffeeViewController: UIViewController {
             weightText.text = "\(weightCoffee)"
             roastCofffee = coffeeData.roastLevel ?? 0
             roastText.text = "\(roastCofffee)"
-            sizeText.text = "Size : \(selectedSize)"
+            sizeText.text = .localized("sizedetail") + "\(selectedSize)"
             
             if let validURl = selectedData?.imageURL {
                 imageDetail.kf.setImage(with: URL(string: validURl), placeholder: UIImage(named: "notavail"))
@@ -81,7 +81,6 @@ class DetailCoffeeViewController: UIViewController {
     
     func showToast(isCheck: Bool) {
         let message = isCheck ? "Success add to cart" : "Failed add to cart"
-        
         ToastManager.shared.showToastOnlyMessage(message: message)
     }
     
@@ -143,7 +142,7 @@ class DetailCoffeeViewController: UIViewController {
     
     @IBAction func sizeLBtn(_ sender: Any) {
         if let button = sender as? UIButton {
-            selectedSize = "L"
+            selectedSize = ": L"
             sizePrices[selectedSize] = priceQuantity * 1.6
             updatePriceLbl()
             updateLbl()
@@ -158,7 +157,7 @@ class DetailCoffeeViewController: UIViewController {
     }
     @IBAction func sizeMBtn(_ sender: Any) {
         if let button = sender as? UIButton {
-            selectedSize = "M"
+            selectedSize = ": M"
             sizePrices[selectedSize] = priceQuantity * 1.3
             updatePriceLbl()
             updateLbl()
@@ -173,7 +172,7 @@ class DetailCoffeeViewController: UIViewController {
     }
     @IBAction func sizeSBtn(_ sender: Any) {
         if let button = sender as? UIButton {
-            selectedSize = "S"
+            selectedSize = ": S"
             sizePrices[selectedSize] = priceQuantity * 1.1
             updatePriceLbl()
             updateLbl()

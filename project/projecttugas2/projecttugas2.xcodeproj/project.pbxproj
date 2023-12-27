@@ -54,8 +54,6 @@
 		363CD89E2AEF5EC20001475A /* ContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 363CD89C2AEF5EC20001475A /* ContentCollectionViewCell.xib */; };
 		363CD8A82AEF81090001475A /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363CD8A72AEF81090001475A /* MainTabBarViewController.swift */; };
 		363CD8AB2AEF82820001475A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363CD8AA2AEF82820001475A /* Constants.swift */; };
-		3647070D2B2840E200CBB14C /* CartBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647070B2B2840E200CBB14C /* CartBtnCell.swift */; };
-		3647070E2B2840E200CBB14C /* CartBtnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3647070C2B2840E200CBB14C /* CartBtnCell.xib */; };
 		364707122B28576900CBB14C /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364707102B28576900CBB14C /* PaymentCell.swift */; };
 		364707132B28576900CBB14C /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 364707112B28576900CBB14C /* PaymentCell.xib */; };
 		364707152B28577E00CBB14C /* BottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364707142B28577E00CBB14C /* BottomSheetViewModel.swift */; };
@@ -214,8 +212,6 @@
 		363CD89C2AEF5EC20001475A /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCollectionViewCell.xib; sourceTree = "<group>"; };
 		363CD8A72AEF81090001475A /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		363CD8AA2AEF82820001475A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3647070B2B2840E200CBB14C /* CartBtnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartBtnCell.swift; sourceTree = "<group>"; };
-		3647070C2B2840E200CBB14C /* CartBtnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartBtnCell.xib; sourceTree = "<group>"; };
 		364707102B28576900CBB14C /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
 		364707112B28576900CBB14C /* PaymentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
 		364707142B28577E00CBB14C /* BottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewModel.swift; sourceTree = "<group>"; };
@@ -608,15 +604,6 @@
 			path = "Main Tab Bar";
 			sourceTree = "<group>";
 		};
-		3647070A2B28407800CBB14C /* Section 2 */ = {
-			isa = PBXGroup;
-			children = (
-				3647070B2B2840E200CBB14C /* CartBtnCell.swift */,
-				3647070C2B2840E200CBB14C /* CartBtnCell.xib */,
-			);
-			path = "Section 2";
-			sourceTree = "<group>";
-		};
 		3647070F2B28536B00CBB14C /* View Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -987,8 +974,7 @@
 			isa = PBXGroup;
 			children = (
 				363A66932AF336FD006B9A91 /* Section 1 */,
-				3647070A2B28407800CBB14C /* Section 2 */,
-				36F7A8D52AF209E4009764D5 /* Section 3 */,
+				36F7A8D52AF209E4009764D5 /* Section 2 */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1217,13 +1203,13 @@
 			path = "Profile Item";
 			sourceTree = "<group>";
 		};
-		36F7A8D52AF209E4009764D5 /* Section 3 */ = {
+		36F7A8D52AF209E4009764D5 /* Section 2 */ = {
 			isa = PBXGroup;
 			children = (
 				363A668E2AF32668006B9A91 /* CartTableViewCell.swift */,
 				363A668F2AF32668006B9A91 /* CartTableViewCell.xib */,
 			);
-			path = "Section 3";
+			path = "Section 2";
 			sourceTree = "<group>";
 		};
 		5966CDECBBCC855116BEF3A9 /* Pods */ = {
@@ -1408,7 +1394,6 @@
 				36054E782B204BFC00784FAE /* MoreSettingsViewController.xib in Resources */,
 				3658B6C42B27FA7900DDB47D /* CoffeeListSectionCell.xib in Resources */,
 				368B4FCF2B159234002BDF3A /* HistoryCollectionViewCell.xib in Resources */,
-				3647070E2B2840E200CBB14C /* CartBtnCell.xib in Resources */,
 				367550CE2B103E83005CA9C7 /* CoffeeNewsViewController.xib in Resources */,
 				368326C12B144E4E00B398D9 /* DetailHistoriViewController.xib in Resources */,
 				36F5F6282AF0D994004D311C /* LoginViewController.xib in Resources */,
@@ -1608,7 +1593,6 @@
 				362DA4D32B05AE12003C9CC7 /* ToastMessage.swift in Sources */,
 				36660B192AF4D4CE00E95F11 /* ModelCoffee.swift in Sources */,
 				3674323E2B0B07AF00B1C976 /* CheckOutFloatingPanel.swift in Sources */,
-				3647070D2B2840E200CBB14C /* CartBtnCell.swift in Sources */,
 				36CD96C22B22D08C00F5C188 /* FilterPriceCollectionCell.swift in Sources */,
 				368538392B295B0E0090142F /* PaymentDetail.swift in Sources */,
 				368B4FD42B1594D8002BDF3A /* CartViewModel.swift in Sources */,
@@ -1811,9 +1795,9 @@
 				INFOPLIST_FILE = projecttugas2/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Kami menggunakan pengenalan suara untuk mentranskripsi suara Anda menjadi teks guna pengalaman pengguna yang lebih baik.";
-                INFOPLIST_KEY_UILaunchStoryboardName = "";
-                INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

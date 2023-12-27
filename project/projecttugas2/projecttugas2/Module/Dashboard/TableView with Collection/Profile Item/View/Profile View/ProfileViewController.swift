@@ -30,30 +30,28 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
     
     
     // MARK: - Variable
-    
     let refreshControl = UIRefreshControl()
-    private var errorVC: ErrorHandlingController?
-    var fpc: FloatingPanelController!
-    let pickerImage = UIImagePickerController()
-    private let userLogin: String = "isLogin"
-    var imageChoosen = [UIImagePickerController.InfoKey: Any]()
     let profileViewModel = ProfileViewModel()
     let bag = DisposeBag()
+    let pickerImage = UIImagePickerController()
+    let userLogin: String = "isLogin"
+    var errorHandlingController: ErrorHandlingController?
+    var fpc: FloatingPanelController!
+    var imageChoosen = [UIImagePickerController.InfoKey: Any]()
     var data: User?
-    private var historyItems: [HistoryModel] = [] {
+    var historyItems: [HistoryModel] = [] {
         didSet {
             historyCollection.reloadData()
         }
     }
     
-    // MARK: - Function
     override func viewDidLoad() {
         super.viewDidLoad()
-        style()
-        setupImagePickProfile()
+        setupUI()
+        setupImagePicker()
         configureView()
-        setupLocalizedBahasa()
-        errorVC = ErrorHandlingController()
+        setupLocalizedStrings()
+        errorHandlingController = ErrorHandlingController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,7 +62,8 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
         historyCollection.reloadData()
     }
     
-    func setupLocalizedBahasa() {
+    // MARK: - Function Data
+    func setupLocalizedStrings() {
         changePhotoLbl.text = .localized("changephoto")
         galleryBtn.setTitle("gallery")
         cameraBtn.setTitle("camera")
@@ -73,7 +72,6 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
         phoneNumberLbl.text = .localized("phone")
         historyLbl.text = .localized("history")
         seeAllHistory.text = .localized("viewall")
-        
     }
     
     func configureView() {
@@ -86,7 +84,7 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
         seeAllHistory.addGestureRecognizer(tapGesture)
     }
     
-    func style() {
+    func setupUI() {
         viewUser.layer.cornerRadius = viewUser.frame.width / 20
         viewUser.layer.shadowColor = UIColor.black.cgColor
         viewUser.layer.shadowOffset = CGSize(width: 0, height: 1)
@@ -95,7 +93,7 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
         viewUser.layer.masksToBounds = false
     }
     
-    func setupImagePickProfile() {
+    func setupImagePicker() {
         galleryBtn.addTarget(self, action: #selector(onTapGallery), for: .touchUpInside)
         cameraBtn.addTarget(self, action: #selector(onTapCamera), for: .touchUpInside)
         profileImage.layer.cornerRadius = (profileImage?.frame.size.width ?? 0.0) / 2
@@ -104,13 +102,99 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
         profileImage.layer.borderColor = UIColor.white.cgColor
     }
     
+    func showMoreSettings() {
+        let floatingPanel = MoreSettingsViewController()
+        floatingPanel.delegate = self
+        fpc.surfaceView.appearance.cornerRadius = 20
+        fpc.set(contentViewController: floatingPanel)
+        present(fpc, animated: true, completion: nil)
+    }
+    
+    func floatingPanel(_ fpc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout {
+        return MoreSettingsFloatingPanel()
+    }
+    
     func toMore() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTapMoreSettings))
         settingsBtn.addGestureRecognizer(tapGesture)
         settingsBtn.isUserInteractionEnabled = true
     }
     
-    // MARK: - Function Data
+    func userLoggedOut(_ isLogin:Bool) {
+        BaseConstant.userDefaults.set(isLogin, forKey: userLogin)
+        BaseConstant.userDefaults.synchronize()
+    }
+    
+    func clearCoreData(forUserID userID: String) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Cart.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "userID == %@", userID)
+        
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try context.execute(batchDeleteRequest)
+            try context.save()
+        } catch {
+            print("Failed to clear CoreData: \(error)")
+        }
+    }
+    
+    // MARK: - Function Skeleton View
+    
+    func showSkeletonView() {
+        profileImage.showAnimatedSkeleton()
+        nameText.showAnimatedSkeleton()
+        passwordText.showAnimatedSkeleton()
+        phoneNumberText.showAnimatedSkeleton()
+        historyCollection.showAnimatedSkeleton()
+    }
+    
+    func hideSkeletonView() {
+        profileImage.hideSkeleton()
+        nameText.hideSkeleton()
+        passwordText.hideSkeleton()
+        phoneNumberText.hideSkeleton()
+        historyCollection.hideSkeleton()
+    }
+}
+
+// MARK: - Action Methods
+extension ProfileViewController {
+    @objc func onTapMoreSettings() {
+        fpc = FloatingPanelController()
+        fpc.delegate = self
+        fpc.backdropView.dismissalTapGestureRecognizer.isEnabled = true
+        fpc.isRemovalInteractionEnabled = true
+        showMoreSettings()
+    }
+    
+    @objc func seeAllHistoryTapped() {
+        let vc = DetailHistoriViewController()
+        vc.hidesBottomBarWhenPushed = true
+        vc.historyItems = self.historyItems
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func onTapGallery() {
+        self.pickerImage.allowsEditing = true
+        self.pickerImage.delegate = self
+        self.pickerImage.sourceType = .photoLibrary
+        self.present(self.pickerImage, animated: true, completion: nil)
+    }
+    
+    @objc func onTapCamera() {
+        self.pickerImage.allowsEditing = true
+        self.pickerImage.delegate = self
+        self.pickerImage.sourceType = .camera
+        self.present(self.pickerImage, animated: true, completion: nil)
+    }
+}
+
+// MARK: - Data Binding
+extension ProfileViewController {
     func bindData() {
         guard let userID = Firebase.auth.currentUser?.uid else { return }
         profileViewModel.fetchHistory(userID: userID)
@@ -142,93 +226,9 @@ class ProfileViewController: UIViewController, FloatingPanelControllerDelegate {
         
         profileViewModel.phoneNumber.bind(to: phoneNumberText.rx.text).disposed(by: bag)
     }
-    
-    func userLoggedOut(_ isLogin:Bool) {
-        BaseConstant.userDefaults.set(isLogin, forKey: userLogin)
-        BaseConstant.userDefaults.synchronize()
-    }
-    
-    func clearCoreData(forUserID userID: String) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Cart.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "userID == %@", userID)
-        
-        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        
-        do {
-            try context.execute(batchDeleteRequest)
-            try context.save()
-            print("CoreData cleared for user with ID: \(userID)")
-        } catch {
-            print("Failed to clear CoreData: \(error)")
-        }
-    }
-    
-    // MARK: - Function Skeleton View
-    
-    func showSkeletonView() {
-        profileImage.showAnimatedSkeleton()
-        nameText.showAnimatedSkeleton()
-        passwordText.showAnimatedSkeleton()
-        phoneNumberText.showAnimatedSkeleton()
-        historyCollection.showAnimatedSkeleton()
-    }
-    
-    func hideSkeletonView() {
-        profileImage.hideSkeleton()
-        nameText.hideSkeleton()
-        passwordText.hideSkeleton()
-        phoneNumberText.hideSkeleton()
-        historyCollection.hideSkeleton()
-    }
-    
-    // MARK: - Action
-    @objc func onTapMoreSettings() {
-        fpc = FloatingPanelController()
-        fpc.delegate = self
-        fpc.backdropView.dismissalTapGestureRecognizer.isEnabled = true
-        fpc.isRemovalInteractionEnabled = true
-        showMoreSettings()
-    }
-    
-    func showMoreSettings() {
-        let floatingPanel = MoreSettingsViewController()
-        floatingPanel.delegate = self
-        fpc.surfaceView.appearance.cornerRadius = 20
-        fpc.set(contentViewController: floatingPanel)
-        present(fpc, animated: true, completion: nil)
-    }
-    
-    func floatingPanel(_ fpc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout {
-        return MoreSettingsFloatingPanel()
-    }
-    
-    @objc func seeAllHistoryTapped() {
-        let vc = DetailHistoriViewController()
-        vc.hidesBottomBarWhenPushed = true
-        vc.historyItems = self.historyItems
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @objc func onTapGallery() {
-        self.pickerImage.allowsEditing = true
-        self.pickerImage.delegate = self
-        self.pickerImage.sourceType = .photoLibrary
-        self.present(self.pickerImage, animated: true, completion: nil)
-    }
-    
-    @objc func onTapCamera() {
-        self.pickerImage.allowsEditing = true
-        self.pickerImage.delegate = self
-        self.pickerImage.sourceType = .camera
-        self.present(self.pickerImage, animated: true, completion: nil)
-    }
 }
 
 // MARK: - IMAGE PICKER
-
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image =  info[.editedImage] as? UIImage else {return}
@@ -356,7 +356,7 @@ extension ProfileViewController: MoreSettingsDelegate {
 // MARK: - Error Handling
 extension ProfileViewController: ErrorHandlingDelegate {
     func showErrorView() {
-        guard let errorVC = errorVC else { return }
+        guard let errorVC = errorHandlingController else { return }
         
         if !isConnected() {
             errorVC.errorType = .networkError

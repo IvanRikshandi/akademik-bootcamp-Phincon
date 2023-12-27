@@ -14,6 +14,7 @@ class EditProfileViewController: UIViewController {
     
     let uid = Firebase.uid
     var editProfileViewModel: EditProfileViewModel!
+    var datePicker = UIDatePicker()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +41,24 @@ class EditProfileViewController: UIViewController {
         phoneNumberField.inputTextField.keyboardType = .numberPad
         favoriteCoffeeField.setup(title: "Nick Name", placeholder: "Input Nickname")
         favoriteCoffeeField.subtitleText.isHidden = true
+        setupDate()
+    }
+    
+    func setupDate() {
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
+        if let tomorrow = Calendar.current.date(byAdding: .day, value: 1,to: Date()) {
+            datePicker.maximumDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: tomorrow)
+        }
+        datePicker.addTarget(self, action: #selector(datePickValue(_ :)), for: .valueChanged)
+        birthField.inputTextField.inputView = datePicker
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        toolbar.setItems([doneBtn], animated: true)
+        birthField.inputTextField.inputAccessoryView = toolbar
         birthField.setup(title: "Birthdate", placeholder: "YYYY-MM-DD")
-        birthField.inputTextField.keyboardType = .numbersAndPunctuation
         birthField.subtitleText.isHidden = true
     }
     
@@ -52,6 +69,18 @@ class EditProfileViewController: UIViewController {
     
     func toProfile() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func datePickValue(_ sender: UIDatePicker) {
+        let selectedDate = sender.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy - MM - dd"
+        let formattedDate = dateFormatter.string(from: selectedDate)
+        birthField.inputTextField.text = formattedDate
+    }
+    
+    @objc func done() {
+        birthField.inputTextField.resignFirstResponder()
     }
     
     @IBAction func saveBtn(_ sender: Any) {

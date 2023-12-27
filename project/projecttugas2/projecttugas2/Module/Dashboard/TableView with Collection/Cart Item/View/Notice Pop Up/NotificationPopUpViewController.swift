@@ -1,7 +1,6 @@
 import UIKit
 import Lottie
 
-
 class NotificationPopUpViewController: UIViewController {
     
     @IBOutlet weak var viewBackground: UIView!

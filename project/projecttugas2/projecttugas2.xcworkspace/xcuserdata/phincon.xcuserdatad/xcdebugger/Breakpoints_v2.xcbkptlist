@@ -7,64 +7,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F0AD78DC-49BD-412C-BB0E-B010A9F5B0EB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "projecttugas2/Module/Dashboard/TableView with Collection/Profile Item/View/Profile View/ProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "bindData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3FC9B79D-C058-4915-B453-0A9DF64BAC81"
+            uuid = "179D72E4-042E-4B45-B10E-2630B03A0D40"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "projecttugas2/Module/Login/View/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "buttonRegister()"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "buttonForgot()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0EA7FA0C-DC83-4F67-A654-5AA36A736745"
-            shouldBeEnabled = "Yes"
+            uuid = "F54EE873-8BA4-4D26-A563-B0AF1025CEAB"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "projecttugas2/Module/Login/View/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "setupUI()"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "navigateToTabbar()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "51BF9CE0-4640-460D-B49C-56FC40CF9937"
-            shouldBeEnabled = "Yes"
+            uuid = "DB735178-48B9-47EA-95A3-84641C1D005A"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "projecttugas2/Module/Dashboard/TableView with Collection/Home Item/View/Outlet List/View Model/OutletViewModel.swift"
+            filePath = "projecttugas2/Module/Forgot Password/ForgotPasswordController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "loadData()"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "toForgot()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

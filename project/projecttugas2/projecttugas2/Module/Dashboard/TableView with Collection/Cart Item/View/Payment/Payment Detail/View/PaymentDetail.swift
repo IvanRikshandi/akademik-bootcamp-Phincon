@@ -139,13 +139,17 @@ class PaymentDetail: UIViewController {
     
     func actionBtn() {
         confirmBtn.addTarget(self, action: #selector(confirmBtnTapped), for: .touchUpInside)
+        let tapCopyLbl = UIGestureRecognizer(target: self, action: #selector(copyLblTapped))
+        copyLbl.addGestureRecognizer(tapCopyLbl)
+    }
+    
+    @objc func copyLblTapped() {
+        UIPasteboard.general.string = totalLbl.text
+        ToastManager.shared.showToastOnlyMessage(message: totalLbl.text ?? "")
     }
     
     @objc func confirmBtnTapped()  {
         guard let userID = Firebase.auth.currentUser?.uid, let data = fetchData.first else {
-            self.removeAllDataFromCoreData()
-            self.toCart()
-            self.showToast(isCheck: false)
             return }
         Firebase.saveSubCollectionHistory(uid: userID, id: data.id ?? "", titleCoffee: data.namaCoffee ?? "", sizeCoffe: data.sizeCoffee ?? "", qtyCoffe: data.quantityCoffee ?? 0, totalHarga: data.totalHarga ?? 0, time: time, imgUrl: data.imgUrl ?? "", region: data.region ?? "", completion:  { error in
             if let error = error {
@@ -153,6 +157,7 @@ class PaymentDetail: UIViewController {
             } else {
                 self.removeAllDataFromCoreData()
                 self.toCart()
+                self.stopCountDown()
                 self.showToast(isCheck: true)
             }
         })

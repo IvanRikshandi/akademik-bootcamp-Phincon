@@ -10,8 +10,8 @@ class CartViewController: UIViewController {
     @IBOutlet weak var cartListTableView: UITableView!
     
     let refreshControl = UIRefreshControl()
-    private var errorVC: ErrorHandlingController?
-    var fpc: FloatingPanelController!
+    var errorController: ErrorHandlingController?
+    var floatingPanelController: FloatingPanelController!
     // tangkap data dari passing data tahap 5
     var fetchData: [CartModelCoffee] = [] {
         didSet {
@@ -30,11 +30,11 @@ class CartViewController: UIViewController {
         cartListTableView.showAnimatedSkeleton()
         fetchData = []
         fetchCoreData()
-        errorVC = ErrorHandlingController()
+        errorController = ErrorHandlingController()
         cartListTableView.reloadData()
     }
-// MARK: - Configure
     
+    // MARK: - Configuration
     func setup() {
         
         cartListTableView.isUserInteractionEnabled = true
@@ -80,12 +80,10 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource{
         switch indexPath.section {
         case 0:
             let cell = cartListTableView.dequeueReusableCell(forIndexPath: indexPath) as CartSec1TableViewCell
-            cell.selectionStyle = .none
             return cell
         case 1:
             let cell = cartListTableView.dequeueReusableCell(forIndexPath: indexPath) as CartTableViewCell
             let list = fetchData[indexPath.row]
-            cell.selectionStyle = .none
             cell.configureContent(data: list)
             return cell
         default:
@@ -116,13 +114,13 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource{
         }
     }
     
-// MARK: - Bottom Sheet Floating Panel
+    // MARK: - Bottom Sheet Floating Panel
     
     func setupCheckOut() {
-        fpc = FloatingPanelController()
-        fpc.delegate = self
-        fpc.backdropView.dismissalTapGestureRecognizer.isEnabled = true
-        fpc.isRemovalInteractionEnabled = true
+        floatingPanelController = FloatingPanelController()
+        floatingPanelController.delegate = self
+        floatingPanelController.backdropView.dismissalTapGestureRecognizer.isEnabled = true
+        floatingPanelController.isRemovalInteractionEnabled = true
     }
     
     func showCheckOut(for item: Int?, index: Int) {
@@ -130,14 +128,14 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource{
             let floatingPanel = CheckOutViewController()
             floatingPanel.configureContent(with: selectedItem, index: index)
             floatingPanel.delegate = self
-            fpc.surfaceView.appearance.cornerRadius = 20
-            fpc.set(contentViewController: floatingPanel)
-            fpc.addPanel(toParent: self)
-            fpc.show(animated: true)
+            floatingPanelController.surfaceView.appearance.cornerRadius = 20
+            floatingPanelController.set(contentViewController: floatingPanel)
+            floatingPanelController.addPanel(toParent: self)
+            floatingPanelController.show(animated: true)
         }
     }
 
-// MARK: - Get & Remove Data
+    // MARK: - Get & Remove Data
     
     func fetchCoreData() {
         
@@ -236,10 +234,8 @@ extension CartViewController: SkeletonTableViewDataSource {
 // MARK: - Error Handling Connection
 
 extension CartViewController: ErrorHandlingDelegate {
-    
-    
     func showErrorView() {
-        guard let errorVC = errorVC else { return }
+        guard let errorVC = errorController else { return }
         
         if !isConnected() {
             errorVC.errorType = .networkError

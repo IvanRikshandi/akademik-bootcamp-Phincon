@@ -5,7 +5,6 @@ import FloatingPanel
 
 class CartTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var checkUncheck: UIImageView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imgUrlKopi: UIImageView!
     @IBOutlet weak var hargaKopi: UILabel!

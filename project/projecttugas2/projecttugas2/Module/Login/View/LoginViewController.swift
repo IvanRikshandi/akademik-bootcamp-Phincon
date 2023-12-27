@@ -5,7 +5,7 @@ import FirebaseCore
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var forgotPasswordBtn: UILabel!
+    @IBOutlet weak var forgotBtn: UILabel!
     @IBOutlet weak var registBtn: UILabel!
     @IBOutlet weak var descripText: UILabel!
     @IBOutlet weak var loginText: UILabel!
@@ -16,8 +16,8 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var imageView: UIImageView!
     
     var userLoginKey = "isLogin"
-    private let userUIDKey = "uID"
-    private let loginViewModel = LoginViewModel()
+    let userUIDKey = "uID"
+    let loginViewModel = LoginViewModel()
     
     // MARK: - Load
     override func viewDidLoad() {
@@ -34,6 +34,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - UI
     func setupUI() {
+        setupNavigation()
         buttonLogin.layer.cornerRadius = buttonLogin.frame.size.width / 8
         buttonLogin.clipsToBounds = true
         usernameField.subtitleText.isHidden = true
@@ -41,11 +42,13 @@ class LoginViewController: UIViewController {
         passwordField.setup(title: .localized("password"), placeholder: "Input Password")
         passwordField.subtitleText.isHidden = true
         passwordField.inputTextField.isSecureTextEntry = true
+    }
+    
+    func setupNavigation() {
         let tapToRegister = UITapGestureRecognizer(target: self, action: #selector(buttonRegister))
         let tapToForgotPassword = UITapGestureRecognizer(target: self, action: #selector(buttonForgot))
         registBtn.addGestureRecognizer(tapToRegister)
-        forgotPasswordBtn.addGestureRecognizer(tapToRegister)
-        forgotPasswordBtn.addGestureRecognizer(tapToForgotPassword)
+        forgotBtn.addGestureRecognizer(tapToForgotPassword)
     }
     
     func localizeBahasa() {
@@ -77,8 +80,8 @@ class LoginViewController: UIViewController {
     
     @objc func buttonForgot() {
         let forgotVC = ForgotPasswordController()
-        UINavigationBar.appearance().isHidden = true
-        navigationController?.setViewControllers([forgotVC], animated: true)
+        forgotVC.modalPresentationStyle = .overFullScreen
+        present(forgotVC, animated: true, completion: nil)
     }
     
     @IBAction private func buttonLoginTapped(_ sender: Any) {
@@ -142,17 +145,17 @@ class LoginViewController: UIViewController {
         let message = isCheck ? "Welcome and enjoy your coffee" : "Please check and try again"
         let title = isCheck ? "Login Successfully" : "Login Failed"
         
-        let image: UIImage?
+        let image: UIImage
         let tintColor: UIColor
         
         if isCheck {
-            image = UIImage(systemName: "checkmark.circle.fill")
+            image = UIImage(systemName: "checkmark.circle.fill") ?? UIImage()
             tintColor = UIColor.systemGreen
         } else {
-            image = UIImage(systemName: "xmark.circle.fill")
+            image = UIImage(systemName: "xmark.circle.fill") ?? UIImage()
             tintColor = UIColor.systemRed
         }
-        ToastManager.shared.showToastWithTitle(message: message, title: title, image: image!, tintColor: tintColor)
+        ToastManager.shared.showToastWithTitle(message: message, title: title, image: image, tintColor: tintColor)
     }
     
     func clearFieldText() {

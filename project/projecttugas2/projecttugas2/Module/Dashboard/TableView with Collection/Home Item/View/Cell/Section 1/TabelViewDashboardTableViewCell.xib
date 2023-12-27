@@ -60,6 +60,8 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Mxn-hd-g6i" secondAttribute="trailing" constant="17.329999999999998" id="GZ4-7R-MbX"/>
+                            <constraint firstItem="Mxn-hd-g6i" firstAttribute="leading" secondItem="q1X-Im-WJv" secondAttribute="leading" constant="17.329999999999998" id="Ov8-sK-k0P"/>
                             <constraint firstItem="Mxn-hd-g6i" firstAttribute="centerX" secondItem="q1X-Im-WJv" secondAttribute="centerX" id="eDB-xd-CVP"/>
                             <constraint firstAttribute="height" constant="40" id="jMU-bz-XVe"/>
                             <constraint firstItem="Mxn-hd-g6i" firstAttribute="centerY" secondItem="q1X-Im-WJv" secondAttribute="centerY" id="rc9-Fu-neg"/>

@@ -21,9 +21,9 @@ class SplashScreenController: UIViewController {
 
     func styleConfiguration() {
         let gradient = CAGradientLayer()
-        let colorTop = UIColor(hex: "A4907C").cgColor
-        let colorMid = UIColor(hex: "F1DEC9").cgColor
-        let colorBottom = UIColor(hex: "C8B6A6").cgColor
+        let colorTop = UIColor(hex: "994D1C").cgColor
+        let colorMid = UIColor(hex: "E48F45").cgColor
+        let colorBottom = UIColor(hex: "6B240C").cgColor
         
         gradient.colors = [colorTop, colorMid, colorBottom]
         

@@ -8,17 +8,16 @@ class CoffeeNewsViewController: UIViewController {
     @IBOutlet weak var newsTableView: UITableView!
     
     let refreshControl = UIRefreshControl()
-    private var errorVC: ErrorHandlingController?
     let viewModel = CoffeeNewsViewModel()
     let bag = DisposeBag()
-    
+    var errorController: ErrorHandlingController?
     var newsArticle: NewsCoffeeModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         newsTableView.showAnimatedSkeleton()
-        errorVC = ErrorHandlingController()
+        errorController = ErrorHandlingController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -119,11 +118,11 @@ extension CoffeeNewsViewController: UITableViewDelegate, UITableViewDataSource {
             let selectedItem = newsArticle?.articles[indexPath.row]
             if let selectedItemUrl = selectedItem?.url{
                 if let urlData = URL(string: selectedItemUrl) {
-                    let vc = DetailWebKit()
-                    vc.selectedUrl = urlData
+                    let viewController = DetailWebKit()
+                    viewController.selectedUrl = urlData
                     navigationController?.isNavigationBarHidden = false
                     navigationController?.hidesBarsOnSwipe = true
-                    navigationController?.pushViewController(vc, animated: true)
+                    navigationController?.pushViewController(viewController, animated: true)
                 }
             }
         }
@@ -136,7 +135,6 @@ extension CoffeeNewsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func configureNewsContent(for indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = newsTableView.dequeueReusableCell(forIndexPath: indexPath) as NewsContentTableViewCell
         if let list = newsArticle?.articles[indexPath.row] {
             cell.configureContent(data: list)
@@ -167,17 +165,17 @@ extension CoffeeNewsViewController: SkeletonTableViewDataSource {
 // MARK: - Error Handling
 extension CoffeeNewsViewController: ErrorHandlingDelegate {
     func showErrorView() {
-        guard let errorVC = errorVC else { return }
+        guard let errorController = errorController else { return }
         
         if !isConnected() {
-            errorVC.errorType = .networkError
+            errorController.errorType = .networkError
         } else {
-            errorVC.errorType = .emptyDataError
+            errorController.errorType = .emptyDataError
         }
-        errorVC.delegate = self
-        addChild(errorVC)
-        view.addSubview(errorVC.view)
-        errorVC.didMove(toParent: self)
+        errorController.delegate = self
+        addChild(errorController)
+        view.addSubview(errorController.view)
+        errorController.didMove(toParent: self)
     }
     
     func didRefresh() {

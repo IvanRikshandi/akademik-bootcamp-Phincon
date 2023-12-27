@@ -12,7 +12,7 @@
             <connections>
                 <outlet property="buttonLogin" destination="ySN-fA-wpX" id="rDb-OZ-U4R"/>
                 <outlet property="descripText" destination="N3w-W5-Mv9" id="b2c-Ha-b1e"/>
-                <outlet property="forgotPasswordBtn" destination="qVa-Q8-GkD" id="nud-I6-w7p"/>
+                <outlet property="forgotBtn" destination="qVa-Q8-GkD" id="aL1-Ub-MgB"/>
                 <outlet property="imageView" destination="7aT-Fx-7BE" id="jVc-BV-kdH"/>
                 <outlet property="loginBtn" destination="ySN-fA-wpX" id="39U-Aq-efv"/>
                 <outlet property="loginText" destination="23Y-eH-UFa" id="KyL-Wx-yix"/>
@@ -89,41 +89,45 @@
                         <action selector="buttonLoginTapped:" destination="-1" eventType="touchUpInside" id="aRX-w5-iVY"/>
                     </connections>
                 </button>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="E5f-fk-sZn">
-                    <rect key="frame" x="84.666666666666686" y="756" width="232" height="14.333333333333371"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="wWG-VM-WIR">
+                    <rect key="frame" x="80.666666666666686" y="755" width="232" height="31.666666666666629"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account yet?" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3w-W5-Mv9">
-                            <rect key="frame" x="0.0" y="0.0" width="153.66666666666666" height="14.333333333333334"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="E5f-fk-sZn">
+                            <rect key="frame" x="0.0" y="0.0" width="232" height="14.333333333333334"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account yet?" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3w-W5-Mv9">
+                                    <rect key="frame" x="0.0" y="0.0" width="153.66666666666666" height="14.333333333333334"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFN-G2-476">
+                                    <rect key="frame" x="156.66666666666669" y="0.0" width="75.333333333333314" height="14.333333333333334"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" systemColor="systemOrangeColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVa-Q8-GkD">
+                            <rect key="frame" x="63.666666666666679" y="17.333333333333371" width="104.33333333333331" height="14.333333333333336"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFN-G2-476">
-                            <rect key="frame" x="156.66666666666669" y="0.0" width="75.333333333333314" height="14.333333333333334"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <color key="textColor" systemColor="systemOrangeColor"/>
+                            <color key="textColor" systemColor="systemRedColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVa-Q8-GkD">
-                    <rect key="frame" x="148.33333333333334" y="777.33333333333337" width="104.33333333333334" height="14.333333333333371"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" systemColor="systemRedColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.91764706370000004" green="0.88235294819999999" blue="0.81960785390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="qVa-Q8-GkD" firstAttribute="centerX" secondItem="E5f-fk-sZn" secondAttribute="centerX" id="1bv-UU-LDQ"/>
                 <constraint firstItem="ySN-fA-wpX" firstAttribute="top" secondItem="7l4-3s-1bu" secondAttribute="bottom" constant="60" id="34e-Rc-A2d"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="23Y-eH-UFa" secondAttribute="trailing" constant="15" id="6qY-kk-Xlh"/>
                 <constraint firstItem="jX7-9n-iUA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="29" id="8ky-kT-6WV"/>
                 <constraint firstItem="s35-E3-grF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-21" id="9Wx-bD-QJK"/>
-                <constraint firstItem="qVa-Q8-GkD" firstAttribute="top" secondItem="E5f-fk-sZn" secondAttribute="bottom" constant="7" id="Esd-ks-S8f"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7l4-3s-1bu" secondAttribute="trailing" constant="31" id="OxE-D8-rm5"/>
-                <constraint firstItem="E5f-fk-sZn" firstAttribute="centerX" secondItem="ySN-fA-wpX" secondAttribute="centerX" id="USg-Fc-1hb"/>
+                <constraint firstItem="wWG-VM-WIR" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Pq7-eq-NxR"/>
+                <constraint firstItem="wWG-VM-WIR" firstAttribute="top" secondItem="ySN-fA-wpX" secondAttribute="bottom" constant="16" id="Vtk-8V-ha5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7aT-Fx-7BE" secondAttribute="trailing" constant="109" id="Xyb-j3-fVg"/>
                 <constraint firstItem="jX7-9n-iUA" firstAttribute="top" secondItem="23Y-eH-UFa" secondAttribute="bottom" constant="115" id="aTC-8W-jKA"/>
                 <constraint firstItem="7l4-3s-1bu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="29" id="c7X-ZT-sP5"/>
@@ -135,7 +139,6 @@
                 <constraint firstItem="23Y-eH-UFa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="vVh-D8-hGw"/>
                 <constraint firstItem="7aT-Fx-7BE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="69" id="w73-4y-8ZF"/>
                 <constraint firstItem="7aT-Fx-7BE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="107" id="x8f-gC-lhI"/>
-                <constraint firstItem="E5f-fk-sZn" firstAttribute="top" secondItem="ySN-fA-wpX" secondAttribute="bottom" constant="17" id="xYd-Um-fXC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jX7-9n-iUA" secondAttribute="trailing" constant="31" id="xgk-ws-r59"/>
             </constraints>
             <point key="canvasLocation" x="26.717557251908396" y="20.422535211267608"/>

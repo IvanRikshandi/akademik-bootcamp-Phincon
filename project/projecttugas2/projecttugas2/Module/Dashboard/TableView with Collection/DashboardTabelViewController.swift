@@ -10,11 +10,11 @@ class DashboardTabelViewController: UIViewController {
     
     let refreshControl = UIRefreshControl()
     var viewModel: DashboardViewModel!
-    private let disposeBag = DisposeBag()
-    private var errorVC: ErrorHandlingController?
-    private let floatingButton: UIButton = {
+    let disposeBag = DisposeBag()
+    var errorController: ErrorHandlingController?
+    let floatingButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        button.backgroundColor = .systemPink
+        button.backgroundColor = .systemRed
         let image = UIImage(systemName: "building.2.crop.circle.fill",
                             withConfiguration: UIImage.SymbolConfiguration(pointSize: 20, weight: .medium))
         button.setImage(image, for: .normal)
@@ -39,8 +39,8 @@ class DashboardTabelViewController: UIViewController {
         super.viewDidLoad()
         viewModel = DashboardViewModel()
         configureView()
-        setupBackgroundImg()
-        errorVC = ErrorHandlingController()
+        setupBackgroundImage()
+        errorController = ErrorHandlingController()
         view.addSubview(floatingButton)
     }
     
@@ -62,12 +62,7 @@ extension DashboardTabelViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0, 1, 2:
-            return 1
-        default:
-            return 0
-        }
+        return section < 3 ? 1 : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,7 +89,6 @@ extension DashboardTabelViewController: CoffeeListSectionCellDelegate {
 }
 
 // MARK: - CategoryTableViewCellDelegate
-
 extension DashboardTabelViewController: CategoryTableViewCellDelegate {
     
     func didFilterPrice() {
@@ -102,9 +96,9 @@ extension DashboardTabelViewController: CategoryTableViewCellDelegate {
     }
     
     func didTapPromoView(in Cell: CategoryTableViewCell) {
-        let vc = PromotionViewController()
-        vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: true)
+        let viewController = PromotionViewController()
+        viewController.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     func didSelectGrindOption(_ grindOptions: [String]) {
@@ -126,7 +120,7 @@ extension DashboardTabelViewController: FilterDataDelegate {
 
 extension DashboardTabelViewController: ErrorHandlingDelegate {
     
-    private func setupBackgroundImg() {
+    func setupBackgroundImage() {
         let backgroundImage = UIImage(named: "1332")
         let backgroundImageView = UIImageView(image: backgroundImage)
         backgroundImageView.contentMode = .scaleAspectFill
@@ -138,7 +132,7 @@ extension DashboardTabelViewController: ErrorHandlingDelegate {
         }
     }
     
-    private func configureView() {
+    func configureView() {
         listTabelView.automaticallyAdjustsScrollIndicatorInsets = false
         listTabelView.delegate = self
         listTabelView.dataSource = self
@@ -183,7 +177,7 @@ extension DashboardTabelViewController: ErrorHandlingDelegate {
 // MARK: - Error Handling Connection
     
     func showErrorView() {
-        guard let errorVC = errorVC else { return }
+        guard let errorVC = errorController else { return }
         
         if !isConnected() {
             errorVC.errorType = .networkError
