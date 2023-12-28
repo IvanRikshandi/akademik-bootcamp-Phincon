@@ -1,49 +1,50 @@
-// Profile
+//Profile
 
 "changephoto" = "Ganti Foto";
 "gallery" = "Galeri";
 "camera" = "Kamera";
 "username" = "Jeneng Pengguna";
-"password" = "Kata Sandi";
+"password" = "Sandi";
 "phone" = "Telepon";
 "history" = "Riwayat";
-"viewall" = "Tampilke Semua";
+"viewall" = "Tampil Kabeh";
 
 // Profile - More Menu
 
 "editprofile" = "Sunting Profil";
-"settings" = "Pengaturan";
+"settings" = "Setelan";
 "about" = "Tentang Aplikasi";
 "logout" = "Metu";
+"languages" = "Basa";
 
 // Profile - More Menu - Edit Profile
 
 "please" = "Monggo isi kolom teks ing ngisor iki.";
 "fullname" = "Jeneng Lengkap";
-"nickname" = "Jeneng Sampeyan";
+"nickname" = "Jeneng Samaran";
 "birth" = "Tanggal Lahir";
 "buttonsave" = "Simpen";
 
 // Tabbar
 
-"dashboard" = "Beranda";
-"cart" = "Troli";
+"dashboard" = "Utama";
+"cart" = "Keranjang";
 "news" = "Berita";
 "profile" = "Profil";
 
 // Coffee News
 
-"titleCoffee" = "Kopi Sadulur";
-"daily" = "Sajeroning Dina";
+"titleCoffee" = "KopiSedunia";
+"daily" = "Pancen Harian";
 
 // Cart
 
-"titleCart" = "Troli";
+"titleCart" = "Keranjang";
 
 // Cart - Checkout
 
-"qty" = "Jml :";
-"size" = "Uk :";
+"qty" = "Jml:";
+"size" = "Ukuran:";
 "price" = "Harga";
 "tax" = "Pajak";
 "discount" = "Diskon";
@@ -56,33 +57,34 @@
 "welcome" = "Hai, %@";
 
 // Detail Menu
-"cartbutton" = " Tambahi nang Keranjang";
+
+"cartbutton" = " Tambahake menyang Keranjang";
 "sizedetail" = "Ukuran";
 "weight" = "Bobot";
-"roastlvl" = "Tingkat Panggangan";
+"roastlvl" = "Tingkat Panggang";
 
 // Login
 
-"login" = "Nganggo";
-"username" = "Surelek";
+"login" = "Mlebu";
+"username" = "Surel";
 "password" = "Sandi";
-"noaccount" = "Ora ana akun?";
-"register" = "Daftar Kene";
+"noaccount" = "Saben ana akun?";
+"register" = "Daftar kene";
 
 // Sign Up
 
 "descrip" = "Sudah ana akun?";
-"signin" = "Log In Kene";
-"nickname" = "Jeneng Sapaan";
+"signin" = "Log In kene";
+"nickname" = "Jeneng Samaran";
 "fullname" = "Jeneng Lengkap";
-"email" = "Surelek Sureng";
-"phonenumber" = "Nomer Telepon";
+"email" = "Surel";
+"phonenumber" = "Nomor Telepon";
 "signup" = "Daftar";
 
 // Payment
 
-"paymentdeadline" = "Batas Akhir Pembayaran";
-"accountnumber" = "Nomer Rekening";
-"copy" = "Gandheng";
-"totalpayment" = "Total Pembayaran";
+"paymentdeadline" = "Waktu Pambayaran Bungah";
+"accountnumber" = "Nomor Rekening";
+"copy" = "Salin";
+"totalpayment" = "Total Pambayaran";
 "confirm" = "Konfirmasi";

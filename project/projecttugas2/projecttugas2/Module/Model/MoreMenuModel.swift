@@ -6,7 +6,8 @@ struct MoreMenuModel {
     
     static var dataMoreMenu = [
         MoreMenuModel(title: .localized("editprofile"), logo: "pencil"),
-        //MoreMenuModel(title: "settings".localized, logo: "gearshape.fill"),
+        MoreMenuModel(title: .localized("languages"), logo: "character.textbox"),
+        //MoreMenuModel(title: .localized("settings"), logo: "gearshape.fill"),
         //MoreMenuModel(title: "about".localized, logo: "quote.opening"),
         MoreMenuModel(title: .localized("logout"), logo: "rectangle.portrait.and.arrow.right")
     ]
@@ -19,11 +20,12 @@ struct MoreMenuModel {
 
 struct LanguageModel {
     let title: String
+    let languageCode: String
     
     static var dataLanguage =  [
-        LanguageModel(title: "Bahasa Indonesia"),
-        LanguageModel(title: "English"),
-        LanguageModel(title: "Javanese"),
-        LanguageModel(title: "Chinese")
+        LanguageModel(title: "Bahasa Indonesia", languageCode: "id"),
+        LanguageModel(title: "English", languageCode: "en"),
+        LanguageModel(title: "Javanese", languageCode: "jv"),
+        LanguageModel(title: "Chinese", languageCode: "zh")
     ]
 }

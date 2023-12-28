@@ -12,3 +12,18 @@ struct CheckOutModelCoffee {
     var discount: Int?
     var total: Int?
 }
+
+struct CheckoutInfo {
+    var subTotal = ""
+    var taxTotal = ""
+    var discountTotal = ""
+    var totalHarga = 0.0
+    var qty = ""
+    var size = ""
+    var titles = ""
+    var idCoffee = ""
+    var imgUrl = ""
+    var index = ""
+    var region = ""
+
+}

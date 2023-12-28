@@ -13,16 +13,17 @@
 
 "editprofile" = "Edit Profile";
 "settings" = "Settings";
-"about" = "About";
-"logout" = "Log out";
+"about" = "About App";
+"logout" = "Logout";
+"languages" = "Languages";
 
 // Profile - More Menu - Edit Profile
 
-"please" = "Please fill in the text field below.";
+"please" = "Please fill in the text fields below.";
 "fullname" = "Full Name";
-"gender" = "Gender";
+"nickname" = "Nickname";
 "birth" = "Date of Birth";
-"button_save" = "Save";
+"buttonsave" = "Save";
 
 // Tabbar
 
@@ -42,8 +43,8 @@
 
 // Cart - Checkout
 
-"qty" = "Qty :";
-"size" = "Size :";
+"qty" = "Qty:";
+"size" = "Size:";
 "price" = "Price";
 "tax" = "Tax";
 "discount" = "Discount";
@@ -53,10 +54,11 @@
 
 // Home
 
-"welcome" = "Hello, %@";
+"welcome" = "Hi, %@";
 
 // Detail Menu
-"cartbutton" = " Add To Cart";
+
+"cartbutton" = " Add to Cart";
 "sizedetail" = "Size";
 "weight" = "Weight";
 "roastlvl" = "Roast Level";
@@ -67,12 +69,12 @@
 "username" = "Email";
 "password" = "Password";
 "noaccount" = "Don't have an account?";
-"register" = "Register Here";
+"register" = "Register here";
 
 // Sign Up
 
 "descrip" = "Already have an account?";
-"signin" = "Sign In Here";
+"signin" = "Sign in here";
 "nickname" = "Nickname";
 "fullname" = "Full Name";
 "email" = "Email";

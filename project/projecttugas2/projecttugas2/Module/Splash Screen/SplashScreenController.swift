@@ -1,6 +1,10 @@
 import UIKit
 
 class SplashScreenController: UIViewController {
+
+    @IBOutlet var backgroundView: UIView!
+    
+    private let viewModel = SplashViewModel()
     
     init() {
         super.init(nibName: "SplashScreenController", bundle: nil)
@@ -9,10 +13,7 @@ class SplashScreenController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
-    @IBOutlet var backgroundView: UIView!
     
-    private let viewModel = SplashViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         styleConfiguration()
@@ -43,8 +44,6 @@ class SplashScreenController: UIViewController {
     }
     
     func navigateToNextScreen() {
-        
-        
         if (Firebase.currentUser != nil) {
             let tabBarViewController = MainTabBarViewController()
             navigationController?.setViewControllers([tabBarViewController], animated: true)
@@ -52,7 +51,6 @@ class SplashScreenController: UIViewController {
             let vc = LoginViewController()
             navigationController?.setViewControllers([vc], animated: true)
         }
-        
     }
     
     
