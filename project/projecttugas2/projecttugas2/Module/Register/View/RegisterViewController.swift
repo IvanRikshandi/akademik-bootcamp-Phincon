@@ -174,12 +174,7 @@ class RegisterViewController: UIViewController {
     }
     
     func clearFieldText() {
-        nickNameField.inputTextField.text = ""
-        fullNameField.inputTextField.text = ""
-        emailField.inputTextField.text = ""
-        phoneNumberField.inputTextField.text = ""
-        passwordField.inputTextField.text = ""
-        
+        [nickNameField,fullNameField, emailField, phoneNumberField, passwordField].forEach { $0.inputTextField.text = "" }
         fullNameField.inputTextField.becomeFirstResponder()
     }
     

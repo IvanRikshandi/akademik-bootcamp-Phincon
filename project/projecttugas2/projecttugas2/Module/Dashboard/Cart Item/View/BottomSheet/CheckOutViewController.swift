@@ -257,7 +257,7 @@ class CheckOutViewController: UIViewController, UITextFieldDelegate {
             paymentObject.setValue(Double(replacingDiscount), forKey: "discount")
             paymentObject.setValue(checkoutInfo.totalHarga, forKey: "totalHarga")
             paymentObject.setValue(checkoutInfo.titles, forKey: "namaCoffee")
-            paymentObject.setValue(size, forKey: "sizeCoffee")
+            paymentObject.setValue(checkoutInfo.size, forKey: "sizeCoffee")
             paymentObject.setValue(checkoutInfo.imgUrl, forKey: "imgUrl")
             paymentObject.setValue(checkoutInfo.idCoffee, forKey: "id")
             paymentObject.setValue(Int(checkoutInfo.qty), forKey: "quantityCoffee")

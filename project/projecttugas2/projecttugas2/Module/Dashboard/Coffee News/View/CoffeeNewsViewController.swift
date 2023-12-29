@@ -56,7 +56,6 @@ class CoffeeNewsViewController: UIViewController {
                 switch loading {
                 case .loading:
                     self.newsTableView.showAnimatedSkeleton()
-                    print("loading")
                 case .finished:
                     self.newsTableView.hideSkeleton()
                     DispatchQueue.main.async {
@@ -186,6 +185,5 @@ extension CoffeeNewsViewController: ErrorHandlingDelegate {
     func isConnected() -> Bool {
         guard let reachability = try? Reachability() else { return false }
         return reachability.connection != .unavailable
-        
     }
 }

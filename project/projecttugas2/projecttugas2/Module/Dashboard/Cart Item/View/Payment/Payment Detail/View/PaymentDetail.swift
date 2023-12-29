@@ -156,12 +156,13 @@ class PaymentDetail: UIViewController {
                 ToastManager.shared.showToastOnlyMessage(message: error.localizedDescription)
             } else {
                 self.removeAllDataFromCoreData()
-                self.toCart()
                 self.stopCountDown()
+                self.toPopUp {
+                    self.toCart()
+                }
                 self.showToast(isCheck: true)
             }
         })
-        toPopUp()
     }
     
     func removeAllDataFromCoreData() {
@@ -187,9 +188,10 @@ class PaymentDetail: UIViewController {
         }
     }
     
-    func toPopUp() {
+    func toPopUp(completion: @escaping () -> Void) {
         let vc = NotificationPopUpViewController()
         vc.modalPresentationStyle = .overCurrentContext
+        vc.completionHandler = completion
         present(vc, animated: true, completion: nil)
     }
     

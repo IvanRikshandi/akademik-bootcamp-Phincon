@@ -6,13 +6,17 @@ class NotificationPopUpViewController: UIViewController {
     @IBOutlet weak var viewBackground: UIView!
     @IBOutlet weak var lotiAnimat: LottieAnimationView!
     
+    var completionHandler: (() -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        successAnimate()
     }
     
     func toDismissPopUp() {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            self.completionHandler?()
+        }
     }
     
     func successAnimate() {

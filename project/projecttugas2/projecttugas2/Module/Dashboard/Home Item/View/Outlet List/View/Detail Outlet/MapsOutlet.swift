@@ -24,15 +24,11 @@ class MapsOutlet: UIViewController, CLLocationManagerDelegate {
            let longitude = coffeeOutlet.longitude {
             let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
-            
             annotation.title = coffeeOutlet.name
             annotation.subtitle = coffeeOutlet.address
             annotation.coordinate = coordinate
-            
             mapOutlet.addAnnotation(annotation)
-            
             mapOutlet.setRegion(region, animated: true)
-            
             getDirections(destinationCoordinate: coordinate)
         }
     }

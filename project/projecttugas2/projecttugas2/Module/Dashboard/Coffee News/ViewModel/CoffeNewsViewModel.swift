@@ -14,12 +14,8 @@ class CoffeeNewsViewModel {
             case .success(let data):
                 self?.loadingState.accept(.finished)
                 self?.newsArticle.accept(data)
-            case .failure(let error):
+            case .failure(_):
                 self?.loadingState.accept(.failure)
-                print("Error fetching news coffee data:", error.localizedDescription)
-                if let urlError = error as? URLError {
-                    print("URL Error Code:", urlError.code.rawValue)
-                }
             }
         }
     }

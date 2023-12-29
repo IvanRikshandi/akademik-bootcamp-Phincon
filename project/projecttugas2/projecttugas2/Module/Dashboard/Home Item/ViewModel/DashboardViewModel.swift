@@ -21,12 +21,8 @@ class DashboardViewModel {
                 self.coffeeModelElement = data
                 self.filteredCoffees = data
                 self.onDataLoaded?()
-            case .failure(let error):
+            case .failure(_):
                 self.loadingState.accept(.failure)
-                print("Error fetching coffee data:", error.localizedDescription)
-                if let urlError = error as? URLError {
-                    print("URL Error Code:", urlError.code.rawValue)
-                }
             }
         }
     }
@@ -69,18 +65,16 @@ class DashboardViewModel {
             switch result {
             case .success(let document):
                 if document.exists {
-                    self.loadingState.accept(.finished)
                     let data = document.data()
                     if let name = data?["nickName"] as? String {
                         self.name.accept(name)
+                        self.loadingState.accept(.finished)
                     }
                 } else {
-                    print("Document does not exist")
+                    self.loadingState.accept(.failure)
                 }
-            case .failure(let error):
+            case .failure(_):
                 self.loadingState.accept(.failure)
-                print("Error fetching user data: \(error.localizedDescription)")
-                
             }
         }
     }
