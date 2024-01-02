@@ -3,7 +3,6 @@ import FloatingPanel
 
 @objc protocol MoreSettingsDelegate: AnyObject {
     func FloatingPanelToEdit()
-    func FloatingPanelToLanguages()
     func FloatingPanelToExit()
 }
 
@@ -45,9 +44,6 @@ extension MoreSettingsViewController: UITableViewDelegate, UITableViewDataSource
             toDismiss()
             break
         case 1:
-            delegate?.FloatingPanelToLanguages()
-            toDismiss()
-        case 2:
             delegate?.FloatingPanelToExit()
             toDismiss()
         default:

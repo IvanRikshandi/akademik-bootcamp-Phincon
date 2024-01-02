@@ -7,7 +7,7 @@ class MoreSettingsFloatingPanel: FloatingPanelLayout {
     var initialState: FloatingPanel.FloatingPanelState = .half
     
     var anchors: [FloatingPanel.FloatingPanelState : FloatingPanel.FloatingPanelLayoutAnchoring] = [
-        .half: FloatingPanelLayoutAnchor(fractionalInset: 0.3, edge: .bottom, referenceGuide: .safeArea)
+        .half: FloatingPanelLayoutAnchor(fractionalInset: 0.2, edge: .bottom, referenceGuide: .safeArea)
     ]
     
     func backdropAlpha(for state: FloatingPanelState) -> CGFloat {

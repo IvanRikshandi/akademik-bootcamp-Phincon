@@ -13,18 +13,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        // Mengambil bahasa terakhir yang disimpan di UserDefaults
-        let selectedLanguage = LanguageManager.shared.currentLanguage
-
-        // Mengatur bahasa aplikasi sesuai dengan preferensi pengguna
-        LanguageManager.shared.setLanguage(selectedLanguage)
-        
         let loginViewController = SplashScreenController()
         let navigationController = UINavigationController(rootViewController: loginViewController)
-        
-//        if Firebase.currentUser != nil {
-//            navigationController.setViewControllers([tabBarViewController], animated: true)
-//        }
         
         navigationController.isNavigationBarHidden = true
         

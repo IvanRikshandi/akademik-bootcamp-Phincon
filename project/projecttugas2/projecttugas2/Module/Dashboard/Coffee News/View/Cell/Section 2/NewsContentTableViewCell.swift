@@ -2,6 +2,8 @@ import UIKit
 import Kingfisher
 
 class NewsContentTableViewCell: UITableViewCell {
+    
+    static let reuseIdentifier = "NewsContentCell"
 
     @IBOutlet weak var viewBackground: UIView!
     @IBOutlet weak var authorNews: UILabel!

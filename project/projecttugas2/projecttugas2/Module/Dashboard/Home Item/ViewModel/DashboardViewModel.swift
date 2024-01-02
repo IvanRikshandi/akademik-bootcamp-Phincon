@@ -12,6 +12,8 @@ class DashboardViewModel {
     var onDataLoaded: (() -> Void)?
     
     func loadData() {
+        self.loadingState.accept(.loading)
+        
         APIManager.shared.fetchRequest(endpoint: .fetchCoffee) { [weak self] (result: Result<CoffeeModel, Error>) in
             guard let self = self else {return}
             

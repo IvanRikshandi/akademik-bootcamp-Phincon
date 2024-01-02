@@ -29,10 +29,9 @@ class DashboardTabelViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        bindViewModel()
         viewModel.loadData()
         navigationController?.isNavigationBarHidden = true
-        listTabelView.showSkeleton()
-        bindViewModel()
     }
     
     override func viewDidLoad() {
@@ -198,7 +197,6 @@ extension DashboardTabelViewController: ErrorHandlingDelegate {
     func isConnected() -> Bool {
         guard let reachability = try? Reachability() else { return false }
         return reachability.connection != .unavailable
-        
     }
     
 // MARK: - Configure Cell

@@ -10,12 +10,15 @@ class CoffeeNewsViewModel {
     func fetchNews() {
         loadingState.accept(.loading)
         APIManager.shared.fetchRequest(endpoint: .fetchNewsCoffee) { [weak self] (result: Result<NewsCoffeeModel, Error>) in
+            
+            guard let self = self else {return}
+            
             switch result {
             case .success(let data):
-                self?.loadingState.accept(.finished)
-                self?.newsArticle.accept(data)
+                self.loadingState.accept(.finished)
+                self.newsArticle.accept(data)
             case .failure(_):
-                self?.loadingState.accept(.failure)
+                self.loadingState.accept(.failure)
             }
         }
     }

@@ -31,15 +31,10 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PvE-5E-ZVj">
                                 <rect key="frame" x="51.000000000000014" y="0.0" width="165.33333333333337" height="50"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Coffee">
+                                    <fragment content="CoffeeWorldNews">
                                         <attributes>
-                                            <color key="NSColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name="TrebuchetMS-Bold"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="WorldNews">
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSBackgroundColor" red="0.96361515271188836" green="0.0" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="NSColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="20" name="TrebuchetMS-Bold"/>
                                         </attributes>
                                     </fragment>

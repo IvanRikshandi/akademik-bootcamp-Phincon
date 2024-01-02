@@ -6,9 +6,6 @@ struct MoreMenuModel {
     
     static var dataMoreMenu = [
         MoreMenuModel(title: .localized("editprofile"), logo: "pencil"),
-        MoreMenuModel(title: .localized("languages"), logo: "character.textbox"),
-        //MoreMenuModel(title: .localized("settings"), logo: "gearshape.fill"),
-        //MoreMenuModel(title: "about".localized, logo: "quote.opening"),
         MoreMenuModel(title: .localized("logout"), logo: "rectangle.portrait.and.arrow.right")
     ]
     

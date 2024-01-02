@@ -38,6 +38,9 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vwa-6b-9OB">
                                 <rect key="frame" x="40" y="30.666666666666664" width="227" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="227" id="oSV-dL-mWQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="LibreBaskerville-Regular" family="Libre Baskerville" pointSize="14"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
@@ -53,6 +56,7 @@
                             <constraint firstAttribute="trailing" secondItem="Vwa-6b-9OB" secondAttribute="trailing" constant="12" id="KaO-G0-ozh"/>
                             <constraint firstAttribute="height" constant="61" id="PBw-Qi-YSz"/>
                             <constraint firstItem="eEu-ZP-OPh" firstAttribute="leading" secondItem="O0D-zY-AT2" secondAttribute="leading" constant="8" id="Xbi-fS-Iit"/>
+                            <constraint firstAttribute="width" constant="279" id="f3u-RQ-4Wr"/>
                             <constraint firstItem="Vwa-6b-9OB" firstAttribute="centerY" secondItem="O0D-zY-AT2" secondAttribute="centerY" id="t3O-bR-sWy"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>

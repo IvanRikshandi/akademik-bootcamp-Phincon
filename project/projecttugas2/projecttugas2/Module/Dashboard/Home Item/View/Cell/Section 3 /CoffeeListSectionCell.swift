@@ -49,7 +49,6 @@ extension CoffeeListSectionCell: UICollectionViewDelegate, UICollectionViewDataS
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCollectionViewCell", for: indexPath) as! ContentCollectionViewCell
         let data = filteredCoffees[indexPath.row]
         cell.configureContent(data: data)
-        //heightCollectionView.constant = collectionView.contentSize.height
         return cell
     }
     

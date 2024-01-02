@@ -327,12 +327,6 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 // MARK: - More Settings Delegate
 
 extension ProfileViewController: MoreSettingsDelegate {
-    func FloatingPanelToLanguages() {
-        let vc = LanguagesController()
-        vc.hidesBottomBarWhenPushed = true
-        navigationController?.isNavigationBarHidden = false
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
     
     func FloatingPanelToEdit() {
         let vc = EditProfileViewController()
