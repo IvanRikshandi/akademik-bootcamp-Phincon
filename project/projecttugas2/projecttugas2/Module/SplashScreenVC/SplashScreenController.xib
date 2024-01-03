@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashScreenController" customModule="projecttugas2" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundView" destination="i5M-Pr-FkT" id="OAS-Zk-eqi"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="y2G-RI-zpP">
+                    <rect key="frame" x="0.0" y="290" width="393" height="433"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="433" id="krV-li-kTP"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffee for Everyone" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2X-7G-WjV">
+                    <rect key="frame" x="43" y="115" width="258" height="170"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="170" id="i0A-Xb-Ss1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="43"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="labelColor"/>
+            <constraints>
+                <constraint firstItem="p2X-7G-WjV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="43" id="0wQ-nA-Bcz"/>
+                <constraint firstItem="y2G-RI-zpP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Meu-8P-SVr"/>
+                <constraint firstItem="y2G-RI-zpP" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="QOx-cn-2XG"/>
+                <constraint firstItem="y2G-RI-zpP" firstAttribute="top" secondItem="p2X-7G-WjV" secondAttribute="bottom" constant="5" id="W1h-T9-ivq"/>
+                <constraint firstItem="p2X-7G-WjV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="56" id="XjV-uS-AJK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="p2X-7G-WjV" secondAttribute="trailing" constant="92" id="nXi-Md-1eK"/>
+            </constraints>
+            <point key="canvasLocation" x="46.564885496183201" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="splash" width="414" height="547"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

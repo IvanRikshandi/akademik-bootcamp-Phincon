@@ -15,8 +15,6 @@ struct User {
         else {
             return nil
         }
-
-
         self.email = email
         self.fullname = fullname
         self.password = password

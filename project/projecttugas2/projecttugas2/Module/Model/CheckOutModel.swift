@@ -25,5 +25,4 @@ struct CheckoutInfo {
     var imgUrl = ""
     var index = ""
     var region = ""
-
 }

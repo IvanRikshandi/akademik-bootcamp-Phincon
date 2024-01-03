@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="" id="gTV-IL-0wX" customClass="ContentCollectionViewCell" customModule="projecttugas2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="158" height="185"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="158" height="185"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iXZ-4A-9aG">
+                        <rect key="frame" x="0.0" y="0.0" width="158" height="185"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8c-gg-KQH">
+                                <rect key="frame" x="8" y="4" width="142" height="177"/>
+                                <subviews>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ezu-ZT-JWt">
+                                        <rect key="frame" x="10" y="130" width="118" height="14.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="textColor" red="0.90588235859999999" green="0.6784313917" blue="0.34901961679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUi-pq-tZl">
+                                        <rect key="frame" x="10" y="151.33333333333334" width="118" height="13.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="0.90588235859999999" green="0.6784313917" blue="0.34901961679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cm7-Vq-iro">
+                                        <rect key="frame" x="0.0" y="0.0" width="142" height="120"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="Zhs-YT-TMy"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Cm7-Vq-iro" secondAttribute="trailing" id="4ZS-DL-1TM"/>
+                                    <constraint firstItem="Cm7-Vq-iro" firstAttribute="leading" secondItem="z8c-gg-KQH" secondAttribute="leading" id="4l0-ES-6UN"/>
+                                    <constraint firstAttribute="bottom" secondItem="zUi-pq-tZl" secondAttribute="bottom" constant="12.33" id="7Oq-Fd-fXk"/>
+                                    <constraint firstItem="Cm7-Vq-iro" firstAttribute="top" secondItem="z8c-gg-KQH" secondAttribute="top" id="Dbp-sd-Km8"/>
+                                    <constraint firstItem="Ezu-ZT-JWt" firstAttribute="top" secondItem="Cm7-Vq-iro" secondAttribute="bottom" constant="10" id="JtL-Ua-N6h"/>
+                                    <constraint firstItem="Ezu-ZT-JWt" firstAttribute="leading" secondItem="z8c-gg-KQH" secondAttribute="leading" constant="10" id="KGh-lb-ey3"/>
+                                    <constraint firstItem="zUi-pq-tZl" firstAttribute="top" secondItem="Ezu-ZT-JWt" secondAttribute="bottom" constant="7" id="UYv-vI-pJ6"/>
+                                    <constraint firstItem="zUi-pq-tZl" firstAttribute="leading" secondItem="z8c-gg-KQH" secondAttribute="leading" constant="10" id="UZC-yH-soX"/>
+                                    <constraint firstAttribute="trailing" secondItem="zUi-pq-tZl" secondAttribute="trailing" constant="14" id="UfN-jX-z3r"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ezu-ZT-JWt" secondAttribute="trailing" constant="14" id="swJ-3o-0iZ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="z8c-gg-KQH" secondAttribute="bottom" constant="4" id="Mlm-4Y-flv"/>
+                            <constraint firstAttribute="trailing" secondItem="z8c-gg-KQH" secondAttribute="trailing" constant="8" id="SQ4-EC-aok"/>
+                            <constraint firstItem="z8c-gg-KQH" firstAttribute="top" secondItem="iXZ-4A-9aG" secondAttribute="top" constant="4" id="o2h-GO-AXV"/>
+                            <constraint firstItem="z8c-gg-KQH" firstAttribute="leading" secondItem="iXZ-4A-9aG" secondAttribute="leading" constant="8" id="qiN-CN-7TU"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="iXZ-4A-9aG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8wu-Vf-e0D"/>
+                <constraint firstAttribute="trailing" secondItem="iXZ-4A-9aG" secondAttribute="trailing" id="VOc-H2-Cau"/>
+                <constraint firstAttribute="bottom" secondItem="iXZ-4A-9aG" secondAttribute="bottom" id="jli-8K-2Qu"/>
+                <constraint firstItem="iXZ-4A-9aG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sTm-fm-7gW"/>
+            </constraints>
+            <size key="customSize" width="232" height="300"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="containerView" destination="z8c-gg-KQH" id="O00-qA-2Th"/>
+                <outlet property="hargaCoffee" destination="zUi-pq-tZl" id="a9O-xw-veq"/>
+                <outlet property="imgUrl" destination="Cm7-Vq-iro" id="I2o-yx-5vw"/>
+                <outlet property="titleCoffee" destination="Ezu-ZT-JWt" id="7nG-iO-Yl4"/>
+            </connections>
+            <point key="canvasLocation" x="123.66412213740458" y="24.295774647887324"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

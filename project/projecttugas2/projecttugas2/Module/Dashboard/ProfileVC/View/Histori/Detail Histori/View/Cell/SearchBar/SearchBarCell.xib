@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="SearchBarCell" customModule="projecttugas2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8FE-Jc-3sy">
+                        <rect key="frame" x="10" y="10" width="373" height="40"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="sLe-ij-ScB">
+                                <rect key="frame" x="10" y="3" width="353" height="34"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="j2d-U7-YmI">
+                                        <rect key="frame" x="0.0" y="5.6666666666666679" width="25" height="23.333333333333336"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="3yr-C5-cDQ"/>
+                                            <constraint firstAttribute="height" constant="25" id="Vzn-P0-4tl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6y8-KD-EeB">
+                                        <rect key="frame" x="29" y="0.0" width="295" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="HV3-gQ-Zl3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" image="mic.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZXI-WB-amH">
+                                        <rect key="frame" x="328" y="4.3333333333333357" width="25" height="24.666666666666664"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="FU9-eu-6Lp"/>
+                                            <constraint firstAttribute="height" constant="25" id="mkF-Se-A6g"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sLe-ij-ScB" firstAttribute="top" secondItem="8FE-Jc-3sy" secondAttribute="top" constant="3" id="AYK-Lq-srY"/>
+                            <constraint firstAttribute="trailing" secondItem="sLe-ij-ScB" secondAttribute="trailing" constant="10" id="JpN-B3-eTj"/>
+                            <constraint firstAttribute="bottom" secondItem="sLe-ij-ScB" secondAttribute="bottom" constant="3" id="zmD-kb-jar"/>
+                            <constraint firstItem="sLe-ij-ScB" firstAttribute="leading" secondItem="8FE-Jc-3sy" secondAttribute="leading" constant="10" id="zyq-Hw-DcF"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="8FE-Jc-3sy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="4qV-FL-AQ2"/>
+                    <constraint firstItem="8FE-Jc-3sy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="nVB-dz-KIr"/>
+                    <constraint firstAttribute="bottom" secondItem="8FE-Jc-3sy" secondAttribute="bottom" constant="10" id="sIZ-g1-cJb"/>
+                    <constraint firstAttribute="trailing" secondItem="8FE-Jc-3sy" secondAttribute="trailing" constant="10" id="wU7-yq-HSO"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="containerView" destination="8FE-Jc-3sy" id="PQp-yL-6ga"/>
+                <outlet property="searchField" destination="6y8-KD-EeB" id="Drc-FR-fPO"/>
+                <outlet property="voiceHistory" destination="ZXI-WB-amH" id="2he-9H-och"/>
+            </connections>
+            <point key="canvasLocation" x="110.68702290076335" y="20.422535211267608"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="mic.fill" catalog="system" width="110" height="128"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

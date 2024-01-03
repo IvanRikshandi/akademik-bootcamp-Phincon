@@ -775,7 +775,6 @@ PODS:
     - RxSwift (= 6.6.0)
   - RxSwift (6.6.0)
   - SkeletonView (1.30.4)
-  - SnapKit (5.6.0)
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
@@ -792,7 +791,6 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SkeletonView
-  - SnapKit
   - Toast-Swift
 
 SPEC REPOS:
@@ -827,7 +825,6 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SkeletonView
-    - SnapKit
     - Toast-Swift
 
 SPEC CHECKSUMS:
@@ -861,9 +858,8 @@ SPEC CHECKSUMS:
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
-  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 453ee9842d5f4367841910cd2a62b3dbef7d7cc4
+PODFILE CHECKSUM: 6b30e4fd8e5a50fe49e4922b00f24137aa2f1ea9
 
 COCOAPODS: 1.14.2

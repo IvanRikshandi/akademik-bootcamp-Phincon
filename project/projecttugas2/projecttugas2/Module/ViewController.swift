@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  projecttugas2
-//
-//  Created by Phincon on 26/10/23.
-//
-
 import UIKit
 
 class ViewController: UIViewController {

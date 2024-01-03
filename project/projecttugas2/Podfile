@@ -17,7 +17,6 @@ target 'projecttugas2' do
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   pod 'FirebaseStorage'
-  pod 'SnapKit'
   pod 'ReachabilitySwift'
 
   # Pods for projecttugas2
