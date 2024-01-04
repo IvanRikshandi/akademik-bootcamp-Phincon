@@ -23,5 +23,7 @@
 2. Connect and get Api with Mockoon
 3. User Default
 4. Core Data
-5. Final Project
-6. Quiz
+5. Error Handling
+6. Bottom Sheet
+7. Final Project
+8. Quiz
