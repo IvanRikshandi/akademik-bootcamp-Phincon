@@ -17,7 +17,7 @@ The goal of this application serves as the final project during the iOS develope
   <img src="https://github.com/IvanRikshandi/bootcamp-swift-phincon-batch-3/raw/main/project/Presentasi%20Final%20Project.jpg" alt="TechStack" height="400">
 </p>
 
-## Feature Higlights
+## Feature Highlights
 <p align="center">
   <img src="https://github.com/IvanRikshandi/bootcamp-swift-phincon-batch-3/raw/main/project/Presentasi%20Final%20Project%20(1).jpg" alt="TechStack" height="400">
 </p>
